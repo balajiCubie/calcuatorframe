@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/va-mortgage-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>VA Mortgage Calculator</title>
+	<meta name="description" content="Free VA mortgage calculator to find the monthly payment, total interest, funding fee, and amortization details of a VA loan, or to learn more about VA loans." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/mortgagenew.js"></script>
+</head><body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="va-mortgage-calculator.html" itemprop="item"><span itemprop="name">va mortgage calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>VA Mortgage Calculator</h1>
+<div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div>
+<script>
+function cshmoreoptionva(optVar){
+	if (optVar==1){
+		document.getElementById("cmoreoptioninputs1").style.display = 'block';
+		document.getElementById("cmoreoptioninputs2").style.display = 'block';
+		document.getElementById("caddoptional").value = "1";
+		document.getElementById("cmoreoption").value = "1";
+		document.getElementById("cmoreoptionlinks").innerHTML = "<a href=\"#\" onClick=\"cshmoreoptionva(0);return false;\">- Less Options</a>";
+	}else{
+		document.getElementById("cmoreoptioninputs1").style.display = 'none';
+		document.getElementById("cmoreoptioninputs2").style.display = 'none';
+		document.getElementById("caddoptional").value = "0";
+		document.getElementById("cmoreoption").value = "0";
+		document.getElementById("cmoreoptionlinks").innerHTML = "<a href=\"#\" onClick=\"cshmoreoptionva(1);return false;\">+ More Options</a>";
+	}
+}
+</script>
+
+
+<table width="100%">
+<tr><td valign="top">
+<table class="panel">
+<form name="calform" action="https://www.calculator.net/va-mortgage-calculator.html#varesult">
+<tr><td>Home Price</td><td align="right"><input type="text" name="chouseprice" id="chouseprice" value="200000" class="innormal indollar"></td><td>&nbsp;</td></tr>
+<tr><td>Down Payment</td><td align="right" valign="bottom"><input type="text" name="cdownpayment" id="cdownpayment" value="0" class="innormal"></td><td><select name="cdownpaymentunit" onChange="cunitchange('cdownpayment', this.value);"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td>Loan Term</td><td align="right"><input type="text" name="cloanterm" id="cloanterm" value="30" class="innormal"></td><td>years</td></tr>
+<tr><td>Interest Rate</td><td align="right"><input type="text" name="cinterestrate" id="cinterestrate" value="6.94" class="innormal"></td><td>%</td></tr>
+
+<tr><td colspan="3">
+<div style="padding-top: 12px;">VA Eligibility:</div>
+<div style="padding-left: 20px;">
+<label for="vaeligibility1" class="cbcontainer"><input type="radio" name="vaeligibility" id="vaeligibility1" value="v" checked /><span class="rbmark"></span>Active/Veteran</label><br>
+<label for="vaeligibility2" class="cbcontainer"><input type="radio" name="vaeligibility" id="vaeligibility2" value="r"  /><span class="rbmark"></span>Reservist/National Guard</label><br>
+<label for="vaeligibility3" class="cbcontainer"><input type="radio" name="vaeligibility" id="vaeligibility3" value="s"  /><span class="rbmark"></span>Surviving Spouses</label>
+</div>
+
+<div style="padding-top: 12px;">Used VA Loan Before?</div>
+<div style="padding-left: 20px;">
+<label for="valoanbefore1" class="cbcontainer"><input type="radio" name="valoanbefore" id="valoanbefore1" value="y"  /><span class="rbmark"></span>Yes</label> &nbsp;
+<label for="valoanbefore2" class="cbcontainer"><input type="radio" name="valoanbefore" id="valoanbefore2" value="n" checked /><span class="rbmark"></span>No</label>
+</div>
+
+<div style="padding-top: 12px;">Service-Related Disability (10+%)?</div>
+<div style="padding-left: 20px;">
+<label for="disabled1" class="cbcontainer"><input type="radio" name="disabled" id="disabled1" value="y"  /><span class="rbmark"></span>Yes</label> &nbsp;
+<label for="disabled2" class="cbcontainer"><input type="radio" name="disabled" id="disabled2" value="n" checked /><span class="rbmark"></span>No</label>
+</div>
+
+<div style="padding-top: 12px;">VA Funding Fee</div>
+<div style="padding-left: 20px;">
+<label for="fundingfeeoption1" class="cbcontainer"><input type="radio" name="fundingfeeoption" id="fundingfeeoption1" value="f" checked /><span class="rbmark"></span>Financed Into Loan</label> <br>
+<label for="fundingfeeoption2" class="cbcontainer"><input type="radio" name="fundingfeeoption" id="fundingfeeoption2" value="u"  /><span class="rbmark"></span>Paid Upfront</label>
+</div>
+
+</td></tr>
+
+<tr><td colspan="3" align="center">
+<div style="padding:10px 0px;font-weight:bold;"><span id="cmoreoptionlinks"><a href="#" onClick="cshmoreoptionva(1);return false;">+ More Options</a></span><input type="hidden" name="cmoreoption" id="cmoreoption" value="0"></div>
+<input name="caddoptional" value="0" id="caddoptional" type="hidden">
+<table id="cmoreoptioninputs1" style="display: none;">
+<tr><td align="right">Property Taxes</td><td><input type="text" name="cpropertytaxes" id="cpropertytaxes" value="1.2" class="innormal"></td><td><select name="cpropertytaxesunit" onChange="cunitchange('cpropertytaxes', this.value);"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td align="right">Home Insurance</td><td><input type="text" name="chomeins" id="chomeins" value="1200" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">HOA Fee</td><td><input type="text" name="choa" id="choa" value="0" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">Other Costs</td><td><input type="text" name="cothercost" id="cothercost" value="3000" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">Start Date</td><td colspan="2"><select name="cstartmonth" id="cstartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cstartyear" id="cstartyear" value="2023" class="in4char"></td></tr>
+</table>
+
+<table id="cmoreoptioninputs2" style="display: none;">
+	<tr><td colspan="3" style="padding-top:5px;font-weight:bold;">Annual Tax &amp; Cost Increase</td></tr>
+	<tr><td style="padding-left:10px;">Property Taxes Increase</td><td><input type="text" name="cpropertytaxesincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">Home Insurance Increase</td><td><input type="text" name="chomeinsincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">HOA Fee Increase</td><td><input type="text" name="choainsincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">Other Costs Increase</td><td><input type="text" name="cothercostincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td colspan="3" style="padding:10px 0px 3px 0px;font-weight:bold;">Extra Payments</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra Monthly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cextramonthly" value="0" class="innormal indollar"> from <select name="cextramonthlystartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextramonthlystartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra Yearly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cextrayearly" value="0" class="innormal indollar"> from <select name="cextrayearlystartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextrayearlystartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra One-time Pay
+		<div><input type="text" name="cextraonetime" value="0" class="innormal indollar"> on <select name="cextraonetimestartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextraonetimestartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding:10px 0px 6px 0px">
+		<label for="cshowbiweekly" class="cbcontainer"><input type="checkbox" name="cshowbiweekly" id="cshowbiweekly" value="1" checked /><span class="cbmark"></span><b>Show Biweekly Payback Results</b></label>
+	</td></tr>
+</table>
+<script>
+cshmoreoptionva(0);
+</script>
+</td></tr>
+<tr><td colspan="2" align="right"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td><td>&nbsp;</td></tr>
+</form>
+</table>
+</td><td valign="top">
+<a name="varesult"></a><h2 class="h2result">Monthly Pay: &nbsp; $1,352.97</h2><table cellpadding='3' width='100%'><tr><td colspan="3">&nbsp;</td></tr><tr><td colspan='2'>House Price</td><td align='right'>$200,000.00</td></tr><tr><td colspan='2'>VA Funding Fee (2.3%)</td><td align='right'>$4,600.00</td></tr><tr><td colspan='2'>Down Payment</td><td align='right'>$0.00</td></tr><tr><td colspan='2'>Loan Amount</td><td align='right'>$204,600.00</td></tr><tr><td colspan='2'>Total of 360 Mortgage Payments</td><td align='right'>$487,070.78</td></tr><tr><td colspan='2'>Total Interest</td><td align='right'>$282,470.78</td></tr><tr><td colspan='2'>Mortgage Payoff Date</td><td align='right'>Feb. 2053</td></tr></table></td></tr></table>
+<div id="mRateData"></div><table width="100%">
+	<tr>
+		<td valign="top" width="200">
+			<br><div class="bigtext" style="text-align:center;"><b>Payment Breakdown</b></div>			<div id="cpiechartdiv" style="min-width: 155px; height: 300px; margin: 0 auto"></div>
+		</td><td>&nbsp;</td>
+		<td valign="top">
+			<br><div class="bigtext" style="text-align:center;"><b>Mortgage Amortization Graph</b></div>
+			<div id="cchartdiv" style="min-width: 370px; height: 300px; margin: 0 auto"></div>
+		</td>
+	</tr>
+</table>
+<div id="camortizationschdis"></div>
+
+<br><br>
+<p>VA loans are mortgages granted to veterans, service members on active duty, members of national guards, reservists, or surviving spouses, guaranteed by the U.S. Department of Veterans Affairs (VA). As long as the person was given a DD 214 document, which proves honorable discharge on good terms, they may qualify. VA loans are intended to help growing populations of homeless veterans in the U.S. find affordable houses. VA loans make up a small portion of all mortgages in the U.S. due to the specific demographic who qualify, but studies have shown that they have the lowest foreclosure rates of all loans.</p>
+
+<h3>VA Funding Fee</h3>
+<p>A VA funding fee is a one-time payment that borrowers typically pay as part of acquiring a VA loan. The fee is a percentage of the loan amount that varies from 0% to 3.6% depending on factors such as the down payment amount, veteran's military experience, type of home, and loan purpose. It is the fee that goes towards the upkeep of the program and is used in the case that a borrower defaults.</p>
+<p>For applicants with 10% or more service-related disability (or their surviving spouse), the fee is waived.</p>
+<p>The VA funding fee can be financed into the loan amount. All other fees must be paid in cash at closing after negotiations to determine whether the buyers or sellers are responsible for them.</p>
+<p>Below is a chart that shows the standard VA funding fee structure:</p>
+<table class="cinfoT" align="center">
+	<tr><td class="cinfoHd" valign="bottom">Down Payment</td><td class="cinfoHdL" align="center">First Time Use</td><td class="cinfoHdL" align="center">Second and Subsequent Use</td></tr>
+	<tr align="center"><td>&lt;5%</td><td>2.3%</td><td>3.6%</td></tr>
+	<tr align="center"><td>5-10%</td><td>1.65%</td><td>1.65%</td></tr>
+	<tr align="center"><td>&ge;10%</td><td>1.4%</td><td>1.4%</td></tr>
+</table>
+
+<p>There are also other VA Funding Fee rates for different scenarios:</p>
+<ul>
+	<li>Interest Rate Reduction Refinancing Loans: 0.50%<br>Also called IRRRL, they can be used to lower interest rates by refinancing existing VA loans. It is also possible to refinance adjustable-rate mortgages (ARM) into fixed-rate mortgages.</li>
+	<li>Assumptions: 0.50%<br>A loan assumption allows a third party to step in and take over the remainder of the loan without a new mortgage. Note that the assumer does not have to be a veteran, just as long as they are approved by the lender.</li>
+	<li>Manufactured Home Loans (Not Permanently Affixed): 1.00%<br>Manufactured homes, or mobile homes that are not permanently affixed, have a fixed rate of 1.00%.</li>
+</ul>
+
+<h3>Other Common Fees Paid at Closing</h3>
+<p>Aside from the VA funding fee, borrowers will most likely need to pay some closing fees:</p>
+<ul>
+	<li>Loan Origination Fee&mdash;Used to cover administrative costs for processing of VA loans.</li>
+	<li>Loan Discount Points&mdash;Charged in order to receive interest rates lower than current market rates. Two discount points (2%), or less, is considered to be reasonable. Discount points may be paid by either the buyer or seller.</li>
+	<li>Credit Report&mdash;This fee is paid to credit agencies to evaluate the credit history of a potential borrower. It may not be refunded, even if the loan never closes.</li>
+	<li>Appraisal Fee&mdash;Appraisals are formal statements of property value to determine maximum loan amounts obtained without a down payment. Non-refundable even if loan never closes.</li>
+	<li>Hazard Insurance and Real Estate Taxes&mdash;Necessary to insure payment of taxes and insurance during the first year.</li>
+	<li>Title Insurance&mdash;Used to verify there are no outstanding liens against the property.</li>
+	<li>Recording Fee&mdash;Used to record deed on county records.</li>
+</ul>
+<p>Certain fees are normally not paid by buyers. These include brokerage fees, real estate commissions, and title insurance.</p>
+
+<h3>Pros and Cons of VA Loans</h3>
+<p>Like any financial product, VA loans have pros and cons.</p>
+<p><b>Pros</b></p>
+<ul>
+	<li>The defining feature of any VA loan is that there is no down payment required. There are only a handful of mortgages today that don't require a down payment; the other two are Navy Federal and USDA. In comparison, conventional loans normally require at least 5%, while FHA loans require a bare minimum of 3.5%.</li>
+	<li>There is no mortgage insurance involved, relieving VA loan borrowers of a big expense.</li>
+	<li>Sellers and buyers are allowed to negotiate the payment of fees. Sellers can pay portions of or even all of the closing fees, up to 4% of the loan amount. However, they are under no obligation to do so.</li>
+	<li>VA loans can be used for purchases or refinance on existing loans, and qualified applicants need not be first-time buyers and can reuse their benefits.</li>
+	<li>Typically, both the interest rates and closing costs are slightly lower than other mortgages.</li>
+	<li>Because property appraisals are done by the VA, homebuyers are given some peace of mind that they probably will not overpay for a certain home.</li>
+</ul>
+<p><b>Cons</b></p>
+<ul>
+	<li>Only applicants given DD 214 documents can qualify for VA loans.</li>
+	<li>The VA funding fee can be expensive for those not exempted.</li>
+	<li>VA loans cannot cover projected home improvements, so no fixer-upper homes.</li>
+	<li>Not all sellers or lenders do business with VA purchasers, and the ones who try to are usually not well-versed in dealing with them because they are not as prevalent as other home loans. There have been reports of erroneous information being passed on and lending representatives lacking in knowledge. It is best to find expert real estate agents or lenders who specialize in VA loans, but options for loans are limited to what they can offer.</li>
+	<li>VA loans can only be used on primary residences (owner-occupied homes only), not investment properties or empty land.</li>
+	<li>Relative to other loans, a lot of paperwork must be done at closing for VA loans.</li>
+</ul>
+<p>Considering the pros and cons, for anyone who can qualify, VA loans are often the best option. This is especially true for those exempted from VA funding fee and those who plan to put little or no down payment. When comparing the VA loans with another loan, the VA funding fee is the key. Make sure the VA funding fee to be paid is outweighed by the benefits from the VA loan.</p>
+
+<h3>Prepayment</h3>
+<p>Making prepayments can potentially shorten the loan term and reduce the interest payments. In the More Options input section of the calculator is an Extra Payments section to input monthly, yearly, or single payments. Use the results to see how much can be saved by making extra payments in terms of interest paid as well as the reduction in loan term. Note that, making prepayments is not for everybody. Be sure to evaluate your financial situation before making any prepayments.</p>
+<p>There are no prepayment penalties or early payoff penalties associated with VA guaranteed loans. According to Title 38 of the Electronic Code of Federal Regulations, "The debtor shall have the right to prepay at any time, without premium or fee, the entire indebtedness or any part thereof not less than the amount of one installment, or $100, whichever is less."</p>
+
+<h3>House Affordability</h3>
+<p>To determine the house affordability of a VA loan, please use our <a href="house-affordability-calculator.html">House Affordability Calculator</a>. In the Debt-to-Income (DTI) Ratio drop-down selection, there is an option called VA Loan.</p>
+<p>Although DTI ratio requirements are used by VA lenders as a tool to gauge the risk concerning potential borrowers, if they cannot be met, other possible considerations are reviewed before an application is finally rejected. VA lenders may look at things such as a borrower's history of income or dutiful payments of credit as compensating factors.</p>
+
+
+
+<script>
+document.getElementById("mRateData").innerHTML = '<div style="background:#eee;border:1px solid #ccc;padding: 3px;margin:3px;"><b>Latest Mortgage Rate:</b> <span style="font-size:11px;color:#888;">(U.S. National Average Fixed, Source: BankRate.com, Feb. 23, 2023)</span><br>&nbsp; &nbsp; 30 Years: <a href="#" onClick="return setYearRate(\'6.94\', \'30\');">6.94%</a> &nbsp; 15 Years: <a href="#" onClick="return setYearRate(\'6.22\', \'15\');">6.22%</a> &nbsp; 10 Years: <a href="#" onClick="return setYearRate(\'6.4\', \'10\');">6.4%</a></div>';
+</script>
+<script type="text/javascript">
+allData = "204600.00:204430.30:1352.97:1183.27:1183.27|204430.30:204259.61:1352.97:1182.29:2365.56|204259.61:204087.94:1352.97:1181.30:3546.86|204087.94:203915.27:1352.97:1180.31:4727.17|203915.27:203741.61:1352.97:1179.31:5906.48|203741.61:203566.94:1352.97:1178.31:7084.78|203566.94:203391.26:1352.97:1177.30:8262.08|203391.26:203214.56:1352.97:1176.28:9438.36|203214.56:203036.85:1352.97:1175.26:10613.62|203036.85:202858.10:1352.97:1174.23:11787.85|202858.10:202678.32:1352.97:1173.20:12961.04|202678.32:202497.51:1352.97:1172.16:14133.20|202497.51:202315.64:1352.97:1171.11:15304.31|202315.64:202132.73:1352.97:1170.06:16474.37|202132.73:201948.75:1352.97:1169.00:17643.37|201948.75:201763.72:1352.97:1167.94:18811.31|201763.72:201577.61:1352.97:1166.87:19978.17|201577.61:201390.42:1352.97:1165.79:21143.96|201390.42:201202.16:1352.97:1164.71:22308.67|201202.16:201012.80:1352.97:1163.62:23472.29|201012.80:200822.35:1352.97:1162.52:24634.81|200822.35:200630.80:1352.97:1161.42:25796.24|200630.80:200438.14:1352.97:1160.31:26956.55|200438.14:200244.37:1352.97:1159.20:28115.75|200244.37:200049.47:1352.97:1158.08:29273.83|200049.47:199853.45:1352.97:1156.95:30430.79|199853.45:199656.30:1352.97:1155.82:31586.60|199656.30:199458.00:1352.97:1154.68:32741.28|199458.00:199258.56:1352.97:1153.53:33894.82|199258.56:199057.96:1352.97:1152.38:35047.19|199057.96:198856.21:1352.97:1151.22:36198.41|198856.21:198653.28:1352.97:1150.05:37348.46|198653.28:198449.19:1352.97:1148.88:38497.34|198449.19:198243.91:1352.97:1147.70:39645.04|198243.91:198037.45:1352.97:1146.51:40791.55|198037.45:197829.79:1352.97:1145.32:41936.87|197829.79:197620.93:1352.97:1144.12:43080.98|197620.93:197410.86:1352.97:1142.91:44223.89|197410.86:197199.58:1352.97:1141.69:45365.58|197199.58:196987.08:1352.97:1140.47:46506.05|196987.08:196773.35:1352.97:1139.24:47645.30|196773.35:196558.38:1352.97:1138.01:48783.30|196558.38:196342.17:1352.97:1136.76:49920.06|196342.17:196124.70:1352.97:1135.51:51055.58|196124.70:195905.98:1352.97:1134.25:52189.83|195905.98:195686.00:1352.97:1132.99:53322.82|195686.00:195464.74:1352.97:1131.72:54454.54|195464.74:195242.21:1352.97:1130.44:55584.98|195242.21:195018.38:1352.97:1129.15:56714.13|195018.38:194793.26:1352.97:1127.86:57841.98|194793.26:194566.84:1352.97:1126.55:58968.54|194566.84:194339.11:1352.97:1125.24:60093.78|194339.11:194110.07:1352.97:1123.93:61217.71|194110.07:193879.70:1352.97:1122.60:62340.31|193879.70:193647.99:1352.97:1121.27:63461.58|193647.99:193414.95:1352.97:1119.93:64581.52|193414.95:193180.56:1352.97:1118.58:65700.10|193180.56:192944.81:1352.97:1117.23:66817.33|192944.81:192707.70:1352.97:1115.86:67933.19|192707.70:192469.22:1352.97:1114.49:69047.68|192469.22:192229.36:1352.97:1113.11:70160.80|192229.36:191988.11:1352.97:1111.73:71272.52|191988.11:191745.47:1352.97:1110.33:72382.85|191745.47:191501.42:1352.97:1108.93:73491.78|191501.42:191255.96:1352.97:1107.52:74599.30|191255.96:191009.09:1352.97:1106.10:75705.40|191009.09:190760.78:1352.97:1104.67:76810.07|190760.78:190511.04:1352.97:1103.23:77913.30|190511.04:190259.85:1352.97:1101.79:79015.09|190259.85:190007.22:1352.97:1100.34:80115.42|190007.22:189753.12:1352.97:1098.88:81214.30|189753.12:189497.55:1352.97:1097.41:82311.70|189497.55:189240.50:1352.97:1095.93:83407.63|189240.50:188981.97:1352.97:1094.44:84502.07|188981.97:188721.94:1352.97:1092.95:85595.02|188721.94:188460.41:1352.97:1091.44:86686.46|188460.41:188197.36:1352.97:1089.93:87776.39|188197.36:187932.80:1352.97:1088.41:88864.80|187932.80:187666.70:1352.97:1086.88:89951.68|187666.70:187399.06:1352.97:1085.34:91037.01|187399.06:187129.88:1352.97:1083.79:92120.81|187129.88:186859.14:1352.97:1082.23:93203.04|186859.14:186586.83:1352.97:1080.67:94283.71|186586.83:186312.95:1352.97:1079.09:95362.80|186312.95:186037.49:1352.97:1077.51:96440.31|186037.49:185760.43:1352.97:1075.92:97516.23|185760.43:185481.77:1352.97:1074.31:98590.54|185481.77:185201.50:1352.97:1072.70:99663.25|185201.50:184919.61:1352.97:1071.08:100734.33|184919.61:184636.09:1352.97:1069.45:101803.78|184636.09:184350.92:1352.97:1067.81:102871.59|184350.92:184064.11:1352.97:1066.16:103937.76|184064.11:183775.64:1352.97:1064.50:105002.26|183775.64:183485.50:1352.97:1062.84:106065.10|183485.50:183193.69:1352.97:1061.16:107126.25|183193.69:182900.18:1352.97:1059.47:108185.72|182900.18:182604.98:1352.97:1057.77:109243.50|182604.98:182308.07:1352.97:1056.07:110299.56|182308.07:182009.45:1352.97:1054.35:111353.91|182009.45:181709.09:1352.97:1052.62:112406.53|181709.09:181407.00:1352.97:1050.88:113457.42|181407.00:181103.17:1352.97:1049.14:114506.55|181103.17:180797.57:1352.97:1047.38:115553.93|180797.57:180490.21:1352.97:1045.61:116599.55|180490.21:180181.07:1352.97:1043.84:117643.38|180181.07:179870.14:1352.97:1042.05:118685.43|179870.14:179557.42:1352.97:1040.25:119725.68|179557.42:179242.88:1352.97:1038.44:120764.12|179242.88:178926.53:1352.97:1036.62:121800.74|178926.53:178608.35:1352.97:1034.79:122835.53|178608.35:178288.32:1352.97:1032.95:123868.48|178288.32:177966.45:1352.97:1031.10:124899.58|177966.45:177642.72:1352.97:1029.24:125928.82|177642.72:177317.11:1352.97:1027.37:126956.19|177317.11:176989.62:1352.97:1025.48:127981.67|176989.62:176660.23:1352.97:1023.59:129005.26|176660.23:176328.94:1352.97:1021.69:130026.95|176328.94:175995.74:1352.97:1019.77:131046.72|175995.74:175660.61:1352.97:1017.84:132064.56|175660.61:175323.54:1352.97:1015.90:133080.46|175323.54:174984.52:1352.97:1013.95:134094.42|174984.52:174643.54:1352.97:1011.99:135106.41|174643.54:174300.58:1352.97:1010.02:136116.43|174300.58:173955.65:1352.97:1008.04:137124.47|173955.65:173608.72:1352.97:1006.04:138130.51|173608.72:173259.78:1352.97:1004.04:139134.55|173259.78:172908.82:1352.97:1002.02:140136.57|172908.82:172555.84:1352.97:999.99:141136.56|172555.84:172200.81:1352.97:997.95:142134.51|172200.81:171843.73:1352.97:995.89:143130.40|171843.73:171484.59:1352.97:993.83:144124.23|171484.59:171123.37:1352.97:991.75:145115.98|171123.37:170760.05:1352.97:989.66:146105.65|170760.05:170394.64:1352.97:987.56:147093.21|170394.64:170027.12:1352.97:985.45:148078.66|170027.12:169657.47:1352.97:983.32:149061.98|169657.47:169285.68:1352.97:981.19:150043.17|169285.68:168911.74:1352.97:979.04:151022.20|168911.74:168535.64:1352.97:976.87:151999.08|168535.64:168157.36:1352.97:974.70:152973.77|168157.36:167776.90:1352.97:972.51:153946.28|167776.90:167394.23:1352.97:970.31:154916.59|167394.23:167009.35:1352.97:968.10:155884.69|167009.35:166622.25:1352.97:965.87:156850.56|166622.25:166232.91:1352.97:963.63:157814.19|166232.91:165841.31:1352.97:961.38:158775.57|165841.31:165447.45:1352.97:959.12:159734.69|165447.45:165051.32:1352.97:956.84:160691.53|165051.32:164652.89:1352.97:954.55:161646.07|164652.89:164252.16:1352.97:952.24:162598.32|164252.16:163849.11:1352.97:949.92:163548.24|163849.11:163443.73:1352.97:947.59:164495.84|163443.73:163036.00:1352.97:945.25:165441.09|163036.00:162625.92:1352.97:942.89:166383.98|162625.92:162213.47:1352.97:940.52:167324.50|162213.47:161798.63:1352.97:938.13:168262.63|161798.63:161381.39:1352.97:935.74:169198.37|161381.39:160961.74:1352.97:933.32:170131.69|160961.74:160539.66:1352.97:930.90:171062.58|160539.66:160115.14:1352.97:928.45:171991.04|160115.14:159688.16:1352.97:926.00:172917.04|159688.16:159258.72:1352.97:923.53:173840.57|159258.72:158826.79:1352.97:921.05:174761.61|158826.79:158392.36:1352.97:918.55:175680.16|158392.36:157955.42:1352.97:916.04:176596.20|157955.42:157515.96:1352.97:913.51:177509.71|157515.96:157073.95:1352.97:910.97:178420.67|157073.95:156629.39:1352.97:908.41:179329.09|156629.39:156182.25:1352.97:905.84:180234.93|156182.25:155732.53:1352.97:903.25:181138.18|155732.53:155280.21:1352.97:900.65:182038.83|155280.21:154825.28:1352.97:898.04:182936.87|154825.28:154367.71:1352.97:895.41:183832.28|154367.71:153907.49:1352.97:892.76:184725.04|153907.49:153444.62:1352.97:890.10:185615.13|153444.62:152979.06:1352.97:887.42:186502.56|152979.06:152510.82:1352.97:884.73:187387.28|152510.82:152039.86:1352.97:882.02:188269.31|152039.86:151566.19:1352.97:879.30:189148.60|151566.19:151089.77:1352.97:876.56:190025.16|151089.77:150610.60:1352.97:873.80:190898.96|150610.60:150128.66:1352.97:871.03:191769.99|150128.66:149643.93:1352.97:868.24:192638.24|149643.93:149156.39:1352.97:865.44:193503.68|149156.39:148666.04:1352.97:862.62:194366.30|148666.04:148172.85:1352.97:859.79:195226.09|148172.85:147676.81:1352.97:856.93:196083.02|147676.81:147177.90:1352.97:854.06:196937.08|147177.90:146676.10:1352.97:851.18:197788.26|146676.10:146171.40:1352.97:848.28:198636.54|146171.40:145663.79:1352.97:845.36:199481.90|145663.79:145153.24:1352.97:842.42:200324.32|145153.24:144639.73:1352.97:839.47:201163.79|144639.73:144123.26:1352.97:836.50:202000.29|144123.26:143603.80:1352.97:833.51:202833.80|143603.80:143081.33:1352.97:830.51:203664.31|143081.33:142555.84:1352.97:827.49:204491.80|142555.84:142027.32:1352.97:824.45:205316.24|142027.32:141495.73:1352.97:821.39:206137.64|141495.73:140961.07:1352.97:818.32:206955.95|140961.07:140423.33:1352.97:815.22:207771.18|140423.33:139882.47:1352.97:812.11:208583.29|139882.47:139338.48:1352.97:808.99:209392.28|139338.48:138791.34:1352.97:805.84:210198.12|138791.34:138241.05:1352.97:802.68:211000.80|138241.05:137687.57:1352.97:799.49:211800.29|137687.57:137130.89:1352.97:796.29:212596.58|137130.89:136570.98:1352.97:793.07:213389.66|136570.98:136007.85:1352.97:789.84:214179.49|136007.85:135441.45:1352.97:786.58:214966.07|135441.45:134871.78:1352.97:783.30:215749.38|134871.78:134298.81:1352.97:780.01:216529.38|134298.81:133722.53:1352.97:776.69:217306.08|133722.53:133142.92:1352.97:773.36:218079.44|133142.92:132559.96:1352.97:770.01:218849.45|132559.96:131973.62:1352.97:766.64:219616.09|131973.62:131383.89:1352.97:763.25:220379.34|131383.89:130790.76:1352.97:759.84:221139.17|130790.76:130194.19:1352.97:756.41:221895.58|130194.19:129594.17:1352.97:752.96:222648.54|129594.17:128990.68:1352.97:749.49:223398.02|128990.68:128383.70:1352.97:746.00:224144.02|128383.70:127773.22:1352.97:742.49:224886.50|127773.22:127159.20:1352.97:738.96:225625.46|127159.20:126541.63:1352.97:735.40:226360.86|126541.63:125920.48:1352.97:731.83:227092.70|125920.48:125295.75:1352.97:728.24:227820.94|125295.75:124667.40:1352.97:724.63:228545.56|124667.40:124035.42:1352.97:720.99:229266.56|124035.42:123399.78:1352.97:717.34:229983.89|123399.78:122760.47:1352.97:713.66:230697.56|122760.47:122117.46:1352.97:709.96:231407.52|122117.46:121470.73:1352.97:706.25:232113.77|121470.73:120820.27:1352.97:702.51:232816.27|120820.27:120166.03:1352.97:698.74:233515.02|120166.03:119508.02:1352.97:694.96:234209.98|119508.02:118846.20:1352.97:691.15:234901.13|118846.20:118180.55:1352.97:687.33:235588.46|118180.55:117511.06:1352.97:683.48:236271.94|117511.06:116837.69:1352.97:679.61:236951.54|116837.69:116160.43:1352.97:675.71:237627.25|116160.43:115479.25:1352.97:671.79:238299.05|115479.25:114794.13:1352.97:667.85:238966.90|114794.13:114105.04:1352.97:663.89:239630.80|114105.04:113411.98:1352.97:659.91:240290.70|113411.98:112714.90:1352.97:655.90:240946.60|112714.90:112013.80:1352.97:651.87:241598.47|112013.80:111308.63:1352.97:647.81:242246.28|111308.63:110599.39:1352.97:643.73:242890.02|110599.39:109886.05:1352.97:639.63:243529.65|109886.05:109168.59:1352.97:635.51:244165.16|109168.59:108446.97:1352.97:631.36:244796.52|108446.97:107721.18:1352.97:627.18:245423.70|107721.18:106991.19:1352.97:622.99:246046.69|106991.19:106256.99:1352.97:618.77:246665.46|106256.99:105518.53:1352.97:614.52:247279.97|105518.53:104775.81:1352.97:610.25:247890.22|104775.81:104028.78:1352.97:605.95:248496.18|104028.78:103277.44:1352.97:601.63:249097.81|103277.44:102521.76:1352.97:597.29:249695.10|102521.76:101761.70:1352.97:592.92:250288.02|101761.70:100997.25:1352.97:588.52:250876.54|100997.25:100228.37:1352.97:584.10:251460.64|100228.37:99455.05:1352.97:579.65:252040.29|99455.05:98677.26:1352.97:575.18:252615.47|98677.26:97894.97:1352.97:570.68:253186.16|97894.97:97108.15:1352.97:566.16:253752.32|97108.15:96316.79:1352.97:561.61:254313.93|96316.79:95520.85:1352.97:557.03:254870.96|95520.85:94720.30:1352.97:552.43:255423.39|94720.30:93915.13:1352.97:547.80:255971.19|93915.13:93105.29:1352.97:543.14:256514.33|93105.29:92290.78:1352.97:538.46:257052.79|92290.78:91471.55:1352.97:533.75:257586.54|91471.55:90647.59:1352.97:529.01:258115.55|90647.59:89818.86:1352.97:524.25:258639.79|89818.86:88985.34:1352.97:519.45:259159.24|88985.34:88147.00:1352.97:514.63:259673.88|88147.00:87303.80:1352.97:509.78:260183.66|87303.80:86455.74:1352.97:504.91:260688.57|86455.74:85602.76:1352.97:500.00:261188.57|85602.76:84744.86:1352.97:495.07:261683.64|84744.86:83881.99:1352.97:490.11:262173.75|83881.99:83014.14:1352.97:485.12:262658.86|83014.14:82141.26:1352.97:480.10:263138.96|82141.26:81263.34:1352.97:475.05:263614.01|81263.34:80380.33:1352.97:469.97:264083.98|80380.33:79492.23:1352.97:464.87:264548.85|79492.23:78598.98:1352.97:459.73:265008.58|78598.98:77700.57:1352.97:454.56:265463.14|77700.57:76796.97:1352.97:449.37:265912.51|76796.97:75888.13:1352.97:444.14:266356.66|75888.13:74974.05:1352.97:438.89:266795.54|74974.05:74054.67:1352.97:433.60:267229.14|74054.67:73129.98:1352.97:428.28:267657.42|73129.98:72199.94:1352.97:422.94:268080.36|72199.94:71264.52:1352.97:417.56:268497.92|71264.52:70323.69:1352.97:412.15:268910.06|70323.69:69377.43:1352.97:406.71:269316.77|69377.43:68425.68:1352.97:401.23:269718.00|68425.68:67468.44:1352.97:395.73:270113.73|67468.44:66505.66:1352.97:390.19:270503.92|66505.66:65537.31:1352.97:384.62:270888.55|65537.31:64563.36:1352.97:379.02:271267.57|64563.36:63583.77:1352.97:373.39:271640.96|63583.77:62598.52:1352.97:367.73:272008.69|62598.52:61607.58:1352.97:362.03:272370.72|61607.58:60610.90:1352.97:356.30:272727.01|60610.90:59608.46:1352.97:350.53:273077.55|59608.46:58600.22:1352.97:344.74:273422.28|58600.22:57586.15:1352.97:338.90:273761.19|57586.15:56566.22:1352.97:333.04:274094.23|56566.22:55540.38:1352.97:327.14:274421.37|55540.38:54508.62:1352.97:321.21:274742.58|54508.62:53470.88:1352.97:315.24:275057.82|53470.88:52427.15:1352.97:309.24:275367.06|52427.15:51377.38:1352.97:303.20:275670.26|51377.38:50321.54:1352.97:297.13:275967.39|50321.54:49259.59:1352.97:291.03:276258.42|49259.59:48191.50:1352.97:284.88:276543.30|48191.50:47117.23:1352.97:278.71:276822.01|47117.23:46036.75:1352.97:272.49:277094.51|46036.75:44950.02:1352.97:266.25:277360.75|44950.02:43857.01:1352.97:259.96:277620.71|43857.01:42757.68:1352.97:253.64:277874.35|42757.68:41651.98:1352.97:247.28:278121.64|41651.98:40539.90:1352.97:240.89:278362.52|40539.90:39421.38:1352.97:234.46:278596.98|39421.38:38296.39:1352.97:227.99:278824.97|38296.39:37164.90:1352.97:221.48:279046.45|37164.90:36026.86:1352.97:214.94:279261.38|36026.86:34882.24:1352.97:208.36:279469.74|34882.24:33731.00:1352.97:201.74:279671.47|33731.00:32573.11:1352.97:195.08:279866.55|32573.11:31408.51:1352.97:188.38:280054.93|31408.51:30237.18:1352.97:181.65:280236.58|30237.18:29059.08:1352.97:174.87:280411.45|29059.08:27874.17:1352.97:168.06:280579.51|27874.17:26682.40:1352.97:161.21:280740.71|26682.40:25483.74:1352.97:154.31:280895.03|25483.74:24278.14:1352.97:147.38:281042.41|24278.14:23065.58:1352.97:140.41:281182.82|23065.58:21846.00:1352.97:133.40:281316.21|21846.00:20619.37:1352.97:126.34:281442.56|20619.37:19385.64:1352.97:119.25:281561.80|19385.64:18144.78:1352.97:112.11:281673.92|18144.78:16896.74:1352.97:104.94:281778.86|16896.74:15641.49:1352.97:97.72:281876.57|15641.49:14378.97:1352.97:90.46:281967.03|14378.97:13109.16:1352.97:83.16:282050.19|13109.16:11832.00:1352.97:75.81:282126.01|11832.00:10547.45:1352.97:68.43:282194.44|10547.45:9255.48:1352.97:61.00:282255.44|9255.48:7956.03:1352.97:53.53:282308.96|7956.03:6649.07:1352.97:46.01:282354.98|6649.07:5334.55:1352.97:38.45:282393.43|5334.55:4012.42:1352.97:30.85:282424.28|4012.42:2682.65:1352.97:23.21:282447.49|2682.65:1345.19:1352.97:15.51:282463.00|1345.19:-0.00:1352.97:7.78:282470.78|";cstartmonth=02;cstartyear=2023;monthlypayment=1352.9743893475;cloanterm=30;cloanamount=204600;remainingTerm=0;biggestItem=359;
+var chartStrBuilderPayment = [];
+var chartStrBuilderBalance = [];
+var chartStrBuilderInterest = [];
+xmax = cloanterm;
+chartSep = 12;
+if (cloanterm<=5){
+	chartSep = 1;
+	xmax = cloanterm*12;
+
+	chartStrBuilderPayment.push(0);
+	chartStrBuilderBalance.push(cloanamount);
+	chartStrBuilderInterest.push(0);
+}
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+
+		if (((i%chartSep)==0)||((i+2)==allDataArray.length)){
+			chartStrBuilderPayment.push((i+1)*monthlypayment);
+			chartStrBuilderBalance.push(outPutData[i][1]);
+			chartStrBuilderInterest.push(outPutData[i][4]);
+		}
+	}
+}
+hideDate = 0;
+if (cloanterm>5){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "28%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:0,			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',204600],['Interest',282471]]
+		}]
+	});
+});
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cloanterm<=5){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Balance',data: chartStrBuilderBalance},
+			{name: 'Interest',data: chartStrBuilderInterest},
+			{name: 'Payment',data: chartStrBuilderPayment}
+		]
+	});
+});
+
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/va-mortgage-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/va-mortgage-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

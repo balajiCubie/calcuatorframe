@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/annuity-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Annuity Calculator</title>
+	<meta name="description" content="Free annuity calculator to forecast the growth of an annuity with optional annual or monthly additions using either annuity due or immediate annuity." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="annuity-calculator.html" itemprop="item"><span itemprop="name">annuity calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Annuity Calculator</h1>
+
+<p>The Annuity Calculator is intended for use involving the accumulation phase of an annuity and shows growth based on regular deposits. Please use our <a href="annuity-payout-calculator.html">Annuity Payout Calculator</a> to determine the income payment phase of an annuity.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top" width="330"><table id="calinputtable" class="panel" border="0"><form name="calform" action="https://www.calculator.net/annuity-calculator.html#annuity-result">
+<tr><td>Starting Principal</td><td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="0" class="inhalf indollar"></td></tr>
+<tr><td>Annual Addition</td><td><input type="text" name="cannualaddition" id="cannualaddition" value="2000" class="inhalf indollar"></td></tr>
+<tr><td>Monthly Addition</td><td><input type="text" name="cmonthlyaddition" id="cmonthlyaddition" value="0" class="inhalf indollar"></td></tr>
+<tr><td colspan="2">
+	Add at each period's<br>
+	&nbsp; <label for="cadditionat1" class="cbcontainer"><input name="cadditionat1" id="cadditionat1" value="beginning" type="radio" checked><span class="rbmark"></span><b>beginning</b> (annuity due)</label><br>
+	&nbsp; <label for="cadditionat2" class="cbcontainer"><input name="cadditionat1" id="cadditionat2" value="end" type="radio" ><span class="rbmark"></span><b>end</b> (ordinary/immediate annuity) </label>
+	</td></tr>
+<tr><td>Annual Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="6" class="inhalf inpct"></td></tr>
+<tr><td>After</td><td><input type="text" name="cyears" id="cyears" value="10" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</td><td valign="top"><a name="annuity-result"></a><h2 class="h2result">Results</h2><table cellpadding='3' width='100%'><tr><td><b>End Balance</b></td><td align=right><b>$27,943.29</b></td></tr><tr><td>Total Principal</td><td align=right>$20,000.00</td></tr><tr><td>Total Interest</td><td align=right>$7,943.29</td></tr></table></td></tr></table>
+<div id="mRateData"></div>
+<div class="leftchart">
+	<div class="bigtext" style="text-align:center;"><b>Balance Accumulation Graph</b></div>
+	<div id="cchartdiv" style="min-width: 320px; height: 250px; margin: 0 auto"></div>
+</div>
+<div class="rightpie">
+	<div class="bigtext" style="text-align:center;"><b>Breakdown</b></div>
+	<div id="cpiechartdiv" style="min-width: 155px; max-width: 165px; height: 250px; margin: 0 auto"></div>
+</div>
+<div id="clear"></div>
+<div id="camortizationschdis"></div>
+<p><fieldset><legend>Related</legend><a href="annuity-payout-calculator.html">Annuity Payout Calculator</a> | <a href="retirement-calculator.html">Retirement Calculator</a></fieldset></p>
+<script type="text/javascript">
+allData = "2000.00:2000.00:2009.74:9.74:2000.00:9.74:0.00:0.00|2000.00:2009.74:2019.52:9.78:2000.00:19.52:0.00:0.00|2000.00:2019.52:2029.35:9.83:2000.00:29.35:0.00:0.00|2000.00:2029.35:2039.23:9.88:2000.00:39.23:0.00:0.00|2000.00:2039.23:2049.15:9.93:2000.00:49.15:0.00:0.00|2000.00:2049.15:2059.13:9.97:2000.00:59.13:0.00:0.00|2000.00:2059.13:2069.15:10.02:2000.00:69.15:0.00:0.00|2000.00:2069.15:2079.22:10.07:2000.00:79.22:0.00:0.00|2000.00:2079.22:2089.34:10.12:2000.00:89.34:0.00:0.00|2000.00:2089.34:2099.51:10.17:2000.00:99.51:0.00:0.00|2000.00:2099.51:2109.73:10.22:2000.00:109.73:0.00:0.00|2000.00:2109.73:2120.00:10.27:2000.00:120.00:0.00:0.00|4000.00:4120.00:4140.05:20.05:4000.00:140.05:0.00:0.00|4000.00:4140.05:4160.21:20.15:4000.00:160.21:0.00:0.00|4000.00:4160.21:4180.46:20.25:4000.00:180.46:0.00:0.00|4000.00:4180.46:4200.80:20.35:4000.00:200.80:0.00:0.00|4000.00:4200.80:4221.25:20.45:4000.00:221.25:0.00:0.00|4000.00:4221.25:4241.80:20.55:4000.00:241.80:0.00:0.00|4000.00:4241.80:4262.45:20.65:4000.00:262.45:0.00:0.00|4000.00:4262.45:4283.19:20.75:4000.00:283.19:0.00:0.00|4000.00:4283.19:4304.04:20.85:4000.00:304.04:0.00:0.00|4000.00:4304.04:4324.99:20.95:4000.00:324.99:0.00:0.00|4000.00:4324.99:4346.05:21.05:4000.00:346.05:0.00:0.00|4000.00:4346.05:4367.20:21.15:4000.00:367.20:0.00:0.00|6000.00:6367.20:6398.19:30.99:6000.00:398.19:0.00:0.00|6000.00:6398.19:6429.34:31.14:6000.00:429.34:0.00:0.00|6000.00:6429.34:6460.63:31.30:6000.00:460.63:0.00:0.00|6000.00:6460.63:6492.08:31.45:6000.00:492.08:0.00:0.00|6000.00:6492.08:6523.68:31.60:6000.00:523.68:0.00:0.00|6000.00:6523.68:6555.43:31.75:6000.00:555.43:0.00:0.00|6000.00:6555.43:6587.34:31.91:6000.00:587.34:0.00:0.00|6000.00:6587.34:6619.41:32.06:6000.00:619.41:0.00:0.00|6000.00:6619.41:6651.63:32.22:6000.00:651.63:0.00:0.00|6000.00:6651.63:6684.00:32.38:6000.00:684.00:0.00:0.00|6000.00:6684.00:6716.54:32.53:6000.00:716.54:0.00:0.00|6000.00:6716.54:6749.23:32.69:6000.00:749.23:0.00:0.00|8000.00:8749.23:8791.82:42.59:8000.00:791.82:0.00:0.00|8000.00:8791.82:8834.61:42.79:8000.00:834.61:0.00:0.00|8000.00:8834.61:8877.62:43.00:8000.00:877.62:0.00:0.00|8000.00:8877.62:8920.83:43.21:8000.00:920.83:0.00:0.00|8000.00:8920.83:8964.25:43.42:8000.00:964.25:0.00:0.00|8000.00:8964.25:9007.89:43.63:8000.00:1007.89:0.00:0.00|8000.00:9007.89:9051.73:43.85:8000.00:1051.73:0.00:0.00|8000.00:9051.73:9095.79:44.06:8000.00:1095.79:0.00:0.00|8000.00:9095.79:9140.07:44.27:8000.00:1140.07:0.00:0.00|8000.00:9140.07:9184.56:44.49:8000.00:1184.56:0.00:0.00|8000.00:9184.56:9229.26:44.71:8000.00:1229.26:0.00:0.00|8000.00:9229.26:9274.19:44.92:8000.00:1274.19:0.00:0.00|10000.00:11274.19:11329.06:54.88:10000.00:1329.06:0.00:0.00|10000.00:11329.06:11384.21:55.14:10000.00:1384.21:0.00:0.00|10000.00:11384.21:11439.62:55.41:10000.00:1439.62:0.00:0.00|10000.00:11439.62:11495.30:55.68:10000.00:1495.30:0.00:0.00|10000.00:11495.30:11551.26:55.95:10000.00:1551.26:0.00:0.00|10000.00:11551.26:11607.48:56.23:10000.00:1607.48:0.00:0.00|10000.00:11607.48:11663.98:56.50:10000.00:1663.98:0.00:0.00|10000.00:11663.98:11720.76:56.78:10000.00:1720.76:0.00:0.00|10000.00:11720.76:11777.81:57.05:10000.00:1777.81:0.00:0.00|10000.00:11777.81:11835.14:57.33:10000.00:1835.14:0.00:0.00|10000.00:11835.14:11892.75:57.61:10000.00:1892.75:0.00:0.00|10000.00:11892.75:11950.64:57.89:10000.00:1950.64:0.00:0.00|12000.00:13950.64:14018.54:67.91:12000.00:2018.54:0.00:0.00|12000.00:14018.54:14086.78:68.24:12000.00:2086.78:0.00:0.00|12000.00:14086.78:14155.35:68.57:12000.00:2155.35:0.00:0.00|12000.00:14155.35:14224.25:68.90:12000.00:2224.25:0.00:0.00|12000.00:14224.25:14293.49:69.24:12000.00:2293.49:0.00:0.00|12000.00:14293.49:14363.06:69.57:12000.00:2363.06:0.00:0.00|12000.00:14363.06:14432.97:69.91:12000.00:2432.97:0.00:0.00|12000.00:14432.97:14503.23:70.25:12000.00:2503.23:0.00:0.00|12000.00:14503.23:14573.82:70.60:12000.00:2573.82:0.00:0.00|12000.00:14573.82:14644.76:70.94:12000.00:2644.76:0.00:0.00|12000.00:14644.76:14716.04:71.28:12000.00:2716.04:0.00:0.00|12000.00:14716.04:14787.68:71.63:12000.00:2787.68:0.00:0.00|14000.00:16787.68:16869.39:81.71:14000.00:2869.39:0.00:0.00|14000.00:16869.39:16951.50:82.11:14000.00:2951.50:0.00:0.00|14000.00:16951.50:17034.02:82.51:14000.00:3034.02:0.00:0.00|14000.00:17034.02:17116.93:82.91:14000.00:3116.93:0.00:0.00|14000.00:17116.93:17200.25:83.32:14000.00:3200.25:0.00:0.00|14000.00:17200.25:17283.97:83.72:14000.00:3283.97:0.00:0.00|14000.00:17283.97:17368.10:84.13:14000.00:3368.10:0.00:0.00|14000.00:17368.10:17452.64:84.54:14000.00:3452.64:0.00:0.00|14000.00:17452.64:17537.59:84.95:14000.00:3537.59:0.00:0.00|14000.00:17537.59:17622.96:85.37:14000.00:3622.96:0.00:0.00|14000.00:17622.96:17708.74:85.78:14000.00:3708.74:0.00:0.00|14000.00:17708.74:17794.94:86.20:14000.00:3794.94:0.00:0.00|16000.00:19794.94:19891.29:96.35:16000.00:3891.29:0.00:0.00|16000.00:19891.29:19988.11:96.82:16000.00:3988.11:0.00:0.00|16000.00:19988.11:20085.40:97.29:16000.00:4085.40:0.00:0.00|16000.00:20085.40:20183.17:97.77:16000.00:4183.17:0.00:0.00|16000.00:20183.17:20281.41:98.24:16000.00:4281.41:0.00:0.00|16000.00:20281.41:20380.13:98.72:16000.00:4380.13:0.00:0.00|16000.00:20380.13:20479.34:99.20:16000.00:4479.34:0.00:0.00|16000.00:20479.34:20579.02:99.68:16000.00:4579.02:0.00:0.00|16000.00:20579.02:20679.19:100.17:16000.00:4679.19:0.00:0.00|16000.00:20679.19:20779.85:100.66:16000.00:4779.85:0.00:0.00|16000.00:20779.85:20880.99:101.15:16000.00:4880.99:0.00:0.00|16000.00:20880.99:20982.63:101.64:16000.00:4982.63:0.00:0.00|18000.00:22982.63:23094.50:111.87:18000.00:5094.50:0.00:0.00|18000.00:23094.50:23206.91:112.41:18000.00:5206.91:0.00:0.00|18000.00:23206.91:23319.88:112.96:18000.00:5319.88:0.00:0.00|18000.00:23319.88:23433.39:113.51:18000.00:5433.39:0.00:0.00|18000.00:23433.39:23547.45:114.06:18000.00:5547.45:0.00:0.00|18000.00:23547.45:23662.07:114.62:18000.00:5662.07:0.00:0.00|18000.00:23662.07:23777.24:115.18:18000.00:5777.24:0.00:0.00|18000.00:23777.24:23892.98:115.74:18000.00:5892.98:0.00:0.00|18000.00:23892.98:24009.28:116.30:18000.00:6009.28:0.00:0.00|18000.00:24009.28:24126.15:116.87:18000.00:6126.15:0.00:0.00|18000.00:24126.15:24243.58:117.44:18000.00:6243.58:0.00:0.00|18000.00:24243.58:24361.59:118.01:18000.00:6361.59:0.00:0.00|20000.00:26361.59:26489.91:128.32:20000.00:6489.91:0.00:0.00|20000.00:26489.91:26618.85:128.94:20000.00:6618.85:0.00:0.00|20000.00:26618.85:26748.42:129.57:20000.00:6748.42:0.00:0.00|20000.00:26748.42:26878.62:130.20:20000.00:6878.62:0.00:0.00|20000.00:26878.62:27009.45:130.83:20000.00:7009.45:0.00:0.00|20000.00:27009.45:27140.92:131.47:20000.00:7140.92:0.00:0.00|20000.00:27140.92:27273.03:132.11:20000.00:7273.03:0.00:0.00|20000.00:27273.03:27405.78:132.75:20000.00:7405.78:0.00:0.00|20000.00:27405.78:27539.18:133.40:20000.00:7539.18:0.00:0.00|20000.00:27539.18:27673.23:134.05:20000.00:7673.23:0.00:0.00|20000.00:27673.23:27807.93:134.70:20000.00:7807.93:0.00:0.00|20000.00:27807.93:27943.29:135.36:20000.00:7943.29:0.00:0.00|";cyears=10;remainingTerm=0;biggestItem=120;var chartStrBuilderBalance = [];
+var chartStrBuilderPrincipal = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderTax = [];
+xmax = cyears;
+if (cyears<=1) xmax = cyears*12;
+chartStrBuilderBalance.push([0,2000]);
+chartStrBuilderPrincipal.push([0,2000]);
+chartStrBuilderInterest.push([0,0]);
+chartStrBuilderTax.push([0,0]);
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+		outPutData[i][5] = parseFloat(tempArray[5]);
+		outPutData[i][6] = parseFloat(tempArray[6]);
+		outPutData[i][7] = parseFloat(tempArray[7]);
+
+		tempVal = (i+1)/12;
+		if (cyears<=1) tempVal = i+1;
+		chartStrBuilderBalance.push([tempVal,outPutData[i][2]]);
+		chartStrBuilderPrincipal.push([tempVal,outPutData[i][4]]);
+		chartStrBuilderInterest.push([tempVal,outPutData[i][5]]);
+		chartStrBuilderTax.push([tempVal,outPutData[i][7]]);
+	}
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-28,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',20000],['Interest',7943]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cyears<=1){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Principal',data: chartStrBuilderPrincipal},
+			{name: 'Interest',data: chartStrBuilderInterest},
+						{name: 'Balance',data: chartStrBuilderBalance}
+		]
+	});
+});
+function showAmo(showOption){
+	var outputStrBuilder = [];
+	outputStrBuilder.push("<table border='0'  cellpadding='3' width='100%'>");
+	outputStrBuilder.push("<tr align='right' bgcolor='#E0F0FE'><td>&nbsp;</td><td><b>start principal</b></td><td><b>start balance</b></td><td><b>interest</b></td><td><b>end balance</b></td><td><b>end principal</b></td></tr>");
+	if (showOption==1){
+		for (i=1;i<=(cyears*12);i++){
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align='right' bgcolor='#dddddd'><td>" + i);
+			}else{
+				outputStrBuilder.push("<tr align='right'><td>" + i);
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(outPutData[(i-1)][0]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][1]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][3]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][2]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][4]) + "</td></tr>");
+			if ((i%12)==0){
+				tempVal = parseInt(i/12);
+				outputStrBuilder.push("<tr bgcolor='#E0F0FE' align='center'><td colspan='7'><b>year " + tempVal + " end</b></td></tr>");
+			}
+		}
+		if (remainingTerm > 0.0001){
+			showLastNum = (biggestItem + remainingTerm).toFixed(3);
+			outputStrBuilder.push("<tr align=right><td>" + showLastNum + "</td><td>" + formatAsMoney(outPutData[biggestItem][0]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][1]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][3]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][2]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][4]) + "</td></tr>");
+		}
+	}else{
+		for (i=0;i<parseInt(cyears);i++){
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(i*12+11)][2];
+			tData4 = outPutData[(i*12+11)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=0;j<12;j++){
+				idN = i * 12 + j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align='right'><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align='right' bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(tData0) + "</td><td>" + formatAsMoney(tData1) + "</td><td>" + formatAsMoney(tData3) + "</td><td>" + formatAsMoney(tData2) + "</td><td>" + formatAsMoney(tData4) + "</td></tr>");
+		}
+
+		if ((cyears - parseInt(cyears)) > 0.0001){
+			i = parseInt(cyears);
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[biggestItem][2];
+			tData4 = outPutData[biggestItem][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=(i*12);j<=biggestItem;j++){
+				idN = j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align='right'><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align='right' bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(tData0) + "</td><td>" + formatAsMoney(tData1) + "</td><td>" + formatAsMoney(tData3) + "</td><td>" + formatAsMoney(tData2) + "</td><td>" + formatAsMoney(tData4) + "</td></tr>");
+		}
+
+	}
+	outputStrBuilder.push("</table>");
+	outPutString = outputStrBuilder.join("");
+	if (showOption==1){
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Monthly Schedule</h2><div id='topmenu'><ul><li><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li id='menuon'><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}else{
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Annual Schedule</h2><div id='topmenu'><ul><li id='menuon'><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}
+}
+if (cyears>2){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+</script>
+<br>
+
+<h3>General Annuity Information</h3>
+<p>In the U.S., an annuity is a contract for a fixed sum of money usually paid by an insurance company to an investor in a stream of cash flows over a period of time, typically as a means of saving for retirement. In many cases, this sum is paid annually over the duration of the investor's life. The investor, or annuity owner, is usually the policyholder and is often also the annuitant (the beneficiary (or beneficiaries) of the annuity whose life expectancy and age are used to determine the terms of the annuity).  The owner controls incidents of ownership in the annuity, has the right to the cash surrender value, and can also assign the policy and make withdrawals. Insurance companies that offer annuities pay a specific amount over a predetermined period of time either as an immediate annuity (beginning immediately) or as a deferred annuity (after an accumulation phase). Earnings in annuities grow and compound, tax-deferred, which means that the payment of taxes is reserved for a future time.</p>
+<p>Most people use annuities as supplemental investments in combination with other investments such as IRAs, 401(k)s, or other pension plans. Many people find that as they get older, investment options with tax shields approach or reach their contribution limits. As a result, conservative investment options can be sparse, and buying an annuity can be a viable alternative. Annuities can also be helpful for those seeking to diversify their retirement portfolios. The majority of annuity investments are made by investors looking to ensure that they are provided for later in life. In general, annuities make sense for some, but not all. It is important for each individual to evaluate their specific situations or consult professionals.</p>
+<p>There are many different types of annuities, including tax-advantaged annuities, fixed or variable rate annuities, annuities that pay out a death benefit to families or last a lifetime, and more. Different annuities serve different purposes, and have pros and cons depending on an individual's situation.</p>
+
+<h3>Quick Pros and Cons of Annuities</h3>
+<p><b>Pros</b></p>
+<ul>
+	<li>For deferred annuities, similar to 401(k)s or traditional IRAs, there are tax benefits associated with building capital by deferring the payment of taxes.</li>
+	<li>Unlike other retirement plans, there is no limit to the amount that can be invested in an annuity.</li>
+	<li>Certain annuities can provide guaranteed, predictable income with minimum risk, which can make them attractive to highly conservative investors. For example, a retiree who is more concerned about outliving their assets than receiving the highest returns possible may find annuities appealing.</li>
+	<li>Annuities can be used as a regulated stream of income, which can make it easier for a person to manage their assets in a way that ensures that those assets last for the duration of their lifetime.  For instance, a heavy spender who suddenly receives a large inheritance can use an annuity to reduce the risk of overspending and depleting their assets.</li>
+</ul>
+<p><b>Cons</b></p>
+<ul>
+	<li>Certain annuity features such as surrender charges implemented by insurance companies, or early withdrawal penalties implemented by the IRS, reduce liquidity. Annuities are not liquid financial assets unless the investor is willing to pay a hefty surrender charge. Investors who are prone to moving money around may want to avoid annuities for this reason. Also, once annuitization begins, marking the transition from contribution to distribution, the action generally can't be reversed.</li>
+	<li>Annuities tend to have complicated tax and withdrawal rules. Each annuity product can have many different rules laid out in their respective contracts, and it is up to each investor to make sure they are operating accordingly and within legal bounds.</li>
+	<li>Annuities also have relatively high fees, with some commissions as high as 10%. If there is no commission fee visible on a statement, it may not mean that there is no commission involved in the sale of an annuity; the fee may be hidden in the annuity's operating costs. On top of that, many annuities (mostly of the variable variety) charge annual fees.</li>
+	<li>Annuities normally have low returns. A study of fixed indexed annuities found that their average annualized return rate was 3.27%, which is less than the frequently cited 7% historical return rate of the stock market. This figure generally falls within the ballpark of bond interest rates because insurance companies typically invest up to 70% of their capital in fixed income forms such as corporate bonds. Annuities may not have the higher return rates associated with equities, as observed here, but there is less volatility and risk involved. They sit in a middle category that is below equities but above treasury bills and savings accounts, which generates conservative return rates just above inflation.</li>
+</ul>
+
+<h3>Fixed vs. Variable Annuities</h3>
+<p>Most annuities can be differentiated as fixed or variable annuities. However, there is a third category that is becoming increasingly common, called "indexed annuities," which combines aspects of both.</p>
+
+<p><b>Fixed Annuities</b></p>
+<p>Fixed annuities pay out a guaranteed amount after a certain date, and a return rate is largely dependent on market interest rates at the time the annuity contract is signed. In theory, high interest rate environments allow for higher rate fixed annuities (annuity investors make more money). However, the value of existing, already issued fixed-rate annuities is not impacted by changes in interest rates. Most do not have cost-of-living adjustments (COLA), and as a result, their real purchasing power may decline with time.</p>
+<p>Unless insurance companies go bankrupt, fixed annuities promise the return of principal. As a result, they are commonly used by retirees to guarantee themselves a steady income for the rest of their lives. They also tend to be useful for more conservative investors or people who want a way to control their spending through regulated, steady cash flows.</p>
+<p>It is worth mentioning that there exists a subset of fixed annuities called multi-year guarantee annuities (MYGA) that work a bit differently from traditional fixed annuities. Traditional fixed annuities earn interest based on a rate that is guaranteed one year at a time, with a minimum guaranteed rate that it cannot drop below. In contrast, MYGAs pay a specific percentage yield for a certain amount of time. MYGAs are a lot like Certificates of Deposit (CDs), except that they have tax deferral benefits, greater time horizons, and are usually purchased with a lump sum of funds. An MYGA's rate of return is generally similar to that of 10 or 20-year treasury bonds. Investors who can't decide between investing in a CD or annuity can consider an MYGA. For more information about or to do calculations involving CDs, please visit the CD Calculator.</p>
+
+<p><b>Variable Annuities</b></p>
+<p>Unlike fixed annuities, variable annuities pay out a fluctuating amount based on the investment performance of assets (usually mutual funds) in an annuity. This type of annuity allows the most flexibility in terms of where investments can go, such as large-cap stocks, foreign stocks, bonds, and money market instruments. As a result, this type of annuity requires that an investor spend some time managing these investments. It is important to note that variable annuities do not guarantee the return of principal. Because the funds are invested in assets that fluctuate in value, it is possible for the total value of assets in a variable annuity to be lower than the principal. Investors who cannot take on this risk are probably better off with a fixed annuity. Keep in mind that variable annuities have some of the highest fees in the financial industry.</p>
+
+<p><b>Indexed Annuities</b></p>
+<p>An indexed annuity, sometimes called an equity-indexed annuity, combines aspects of both fixed and variable annuities, though they are defined as a fixed annuity by legal statute. They pay out a guaranteed minimum such as a fixed annuity does, but a portion of it is also tied to the performance of the investments within, which is similar to a variable annuity. Unlike variable annuities, which allow the investor to pick and choose investments or asset allocations, indexed annuities are generally only offered as part of major financial indices such as the Standard and Poor's 500 (S&P 500). If an index of an indexed annuity doesn't receive enough positive growth, the annuity investor will receive a guaranteed minimum interest return at the bare minimum. The crediting formulas of indexed annuities generally have some type of limiting factor that is intended to cause interest earnings to be based only on a portion of the change in whatever index it is tied to. In other words, while the index of an index annuity may have a 15% return during a year, the indexed annuity may only payout 10% of returns that year to its investor because of a cap placed on gains. Clearly, there is a tradeoff between added guarantees and receiving 100% of market gains (most variable annuities receive 100%).</p>
+
+<h3>Immediate vs. Deferred Annuities</h3>
+<p>Choosing between an immediate or deferred annuity is just as important as choosing between a fixed or variable annuity.</p>
+
+<p><b>Immediate Annuities</b></p>
+<p>An immediate annuity involves an upfront premium that is paid out from the principal fairly early, anywhere from as early as the next month to no later than a year after the initial premium is received. This means that, for the most part, immediate annuities will not have accumulation phases. An immediate annuity primarily serves as a great way to guarantee a fixed stream of predictable income for retirement. Immediate annuities are most popular among people who are already retired, are retiring in the near future, want to receive a steady payout for life, or who like the idea of guaranteed predictability.</p>
+
+<p><b>Deferred Annuities</b></p>
+<p>A deferred annuity is one that is built over time with tax shields. Usually, deposits are made over many years (though deposits can be made as a lump sum) until a specific date at which the total is taken over by the annuity issuer, probably an insurance company, and an income stream is provided. The advantage of a deferred annuity, as compared to an immediate annuity, is that taxes on built capital are deferred. This allows earnings to grow tax-free. However, after annuitization (when it is converted from a deferred annuity to an income stream), earnings become taxable. Investors will need to wait until at least age 59 &#189; or older before they can start the payout phase. Otherwise, there will be a 10% early withdrawal penalty enforced by the IRS. Deferred annuities are common among people who want to save for retirement relatively early, are content with not receiving funds until age 59 &#189; or older, want to earn tax-deferred interest, or want to save more than the limits imposed by their IRAs or 401(k)s.</p>
+
+<h3>Surrendering an Annuity</h3>
+<p>Canceling an annuity contract is called surrendering an annuity. Most insurance companies charge a surrender fee if canceled within the first 5 to 9 years of ownership. In general, the shorter an annuity is owned, the higher the surrender fee. As an example, if an annuity contract has an eight-year surrender period, it's quite possible to have to pay eight percent of the value of the investment if it is surrendered within the first year. The second year would be seven percent, and so on. Surrender fee schedules will most likely start on the initial date of the contract and not on subsequent deposits to the same annuity, though some calculate it based on each premium payment during the surrender period. When surrendering annuities, other penalties may also be applied, such as a 10% IRS penalty.</p>
+<p>Although an annuity is a contract that generally does not allow for a lot of flexibility, in most cases, they come with a free-look provision that allows new holders to terminate their policies without paying surrender charges. This is usually allowable within the first 10 to 30 days of signing the contract.</p>
+
+<h3>Annuity Fees</h3>
+<p>Like most financial products, annuities have certain associated fees. These fees are sometimes called basis points. The number of basis points reflects a percentage of the investment. For instance, 100 basis points would be 1% of an investment, while 115 basis points would be 1.15%. Different annuities have different fees, but most of the fees below pertain specifically to variable annuities, which generally have more fees due to their more complex nature.</p>
+<p><b>Surrender Charges</b>&ndash;This only applies when canceling or "surrendering" an annuity. In most cases, it only applies to the beginning 5 to 9 years of the life of an annuity, but some plans may be subject to a surrender charge for as long as 15 to 20 years. For some policies, the surrender charge may decline over the years. It is possible to find annuities that don't have surrender charges, but these likely require higher annual expenses. Surrender charges can also be called contingent deferred sales charges or back-end sales load.</p>
+<p><b>Administrative Charges</b>&ndash;These are used to cover the cost of mailings and ongoing service. It can range anywhere from 0.10% to 0.30% of the policy value per year.</p>
+<p><b>Commissions</b>&ndash;Annuities are generally sold by insurance brokers who charge a fee of anywhere from 1% for the most basic annuity to as much as 10% for complex annuities indexed to the stock market. In general, the simpler the annuity structure or the shorter the surrender charge period, the lower the commission. For example, a variable annuity with a 10-year surrender charge period will pay a higher commission than one with a 5-year surrender charge, which results in a higher commission fee for the investor. In general, commissions for variable annuities average around 4% to 7%, while immediate annuities average from 1% to 3%.</p>
+<p><b>Investment Management Fees</b>&ndash;Similar to management fees paid to portfolio managers of mutual funds and ETFs, variable annuity investments also require fees to pay portfolio managers.</p>
+<p><b>Mortality and Expense Fee</b>&ndash;This is a fee the insurance company charges for providing lifetime income and a death benefit during the accumulation phase. This fee usually ranges from 0.40% to 1.75% a year. In general, a person purchasing an annuity at a younger age will benefit from reduced mortality fees.</p>
+<p><b>Rider Charges</b>&ndash;An annuity rider is an amendment to an annuity contract that has the effect of either expanding or restricting the policy's benefits or excluding certain conditions from coverage. A popular example is an income rider; in the case of dramatic drops in the value of mutual fund investments in an annuity, an income rider prevents it from falling below a guaranteed amount. Another common rider is an annual increase rider that increases payment each year by a predetermined percent, usually 1% to 5%, in order to keep pace with inflation. Other examples include a long-term care rider that covers nursing home costs or a legacy through a guaranteed death benefit. While riders are entirely optional add-ons that add specific features to annuities, they are not free, and each will tack on additional fees to an annuity. While rider charges were initially created for variable annuities, they can also be purchased today for fixed or indexed annuities.</p>
+
+<h3>Rolling 401(k)s or IRAs Into Annuities</h3>
+<p>It is possible to roll over qualified retirement plans like 401(k)s and IRAs into annuities tax-free. After all, these retirement savings accounts do have the primary purpose of providing income in retirement. Annuities can help dictate how retirees live in accordance with their funds or at least make their future income streams more predictable through fixed annuities. As a result, annuities can act as a sort of insurance for guaranteed income in retirement. The resulting annuities are classified as "qualified annuities," which means they are funded with pretax money.</p>
+<p>Several things to keep in mind:</p>
+<ul>
+	<li>While transfers aren't taxable, they must still be reported on tax returns for that year.
+	<li>Only one IRA rollover to another account can be completed within any one-year period.
+	<li>When rolling into an annuity, remember to complete the transaction within 60 days. Any amount not rolled over is taxable as ordinary income.
+</ul>
+<p>For more information about or to do calculations involving retirement, IRAs, or 401(k)s, please visit the <a href="retirement-calculator.html">Retirement Calculator</a>, <a href="roth-ira-calculator.html">Roth IRA Calculator</a>, <a href="ira-calculator.html">IRA Calculator</a>, or <a href="401k-calculator.html">401K Calculator</a>.</p>
+
+
+
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/annuity-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/annuity-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:41 GMT -->
+</html>

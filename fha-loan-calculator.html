@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/fha-loan-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>FHA Loan Calculator</title>
+	<meta name="description" content="Free FHA loan calculator to find the monthly payment, total interest, and amortization details of an FHA loan, or learn more about FHA loans." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/mortgagenew.js"></script>
+</head><body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="fha-loan-calculator.html" itemprop="item"><span itemprop="name">fha loan calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>FHA Loan Calculator</h1>
+<div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%">
+<tr><td valign="top">
+<table class="panel">
+<form name="calform" action="https://www.calculator.net/fha-loan-calculator.html#fharesult">
+<tr><td align="right">Home Price</td><td><input type="text" name="chouseprice" id="chouseprice" value="200000" class="innormal indollar" onChange="cFHAPop();"></td><td>&nbsp;</td></tr>
+<tr><td align="right">Down Payment</td><td valign="bottom"><input type="text" name="cdownpayment" id="cdownpayment" value="3.5" class="innormal" onChange="cFHAPop();"></td><td><select name="cdownpaymentunit" id="cdownpaymentunit" onChange="cunitchange('cdownpayment', this.value);cFHAPop();"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td align="right">Loan Term</td><td><input type="text" name="cloanterm" id="cloanterm" value="30" class="innormal" onChange="cFHAPop();"></td><td>years</td></tr>
+<tr><td align="right">Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="6.94" class="innormal"></td><td>%</td></tr>
+
+<tr><td align="right">Upfront FHA MIP</td><td><input type="text" name="cupfrontmip" id="cupfrontmip" value="1.75" class="innormal"></td><td>%</td></tr>
+<tr><td align="right">Annual FHA MIP</td><td><input type="text" name="cannualmip" id="cannualmip" value="0.85" class="innormal"></td><td>%</td></tr>
+<tr><td align="right">Annual FHA<br>MIP Duration</td><td align="center" colspan="2"><select name="cmipduration"><option value="term" selected>Loan Term</option><option value="11">11 Years</option><option value="5">5 Years</option><option value="78">78% LTV</option><option value="no">No Annual MIP</option></select></td></tr>
+
+<tr><td colspan="3"><br><label for="caddoptional" class="cbcontainer"><input type="checkbox" name="caddoptional" id="caddoptional" value="1" checked /><span class="cbmark"></span><b>Include Optionals Below</b></label></td></tr>
+<tr><td align="right">Property Taxes</td><td><input type="text" name="cpropertytaxes" id="cpropertytaxes" value="1.2" class="innormal"></td><td><select name="cpropertytaxesunit" onChange="cunitchange('cpropertytaxes', this.value);"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td align="right">Home Insurance</td><td><input type="text" name="chomeins" id="chomeins" value="1200" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">HOA Fee</td><td><input type="text" name="choa" id="choa" value="0" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">Other Costs</td><td><input type="text" name="cothercost" id="cothercost" value="3000" class="innormal indollar"></td><td>/year</td></tr>
+<tr><td align="right">Start Date</td><td colspan="2"><select name="cstartmonth" id="cstartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cstartyear" size="4" id="cstartyear" value="2023" class="in4char"></td></tr>
+<tr><td colspan="3" align="center">
+<div style="padding:10px 0px;font-weight:bold;"><span id="cmoreoptionlinks"><a href="#" onClick="cshmoreoption(1);return false;">+ More Options</a></span><input type="hidden" name="cmoreoption" id="cmoreoption" value="0"></div>
+<table id="cmoreoptioninputs" style="display: none;">
+	<tr><td colspan="3" style="padding-top:5px;font-weight:bold;">Annual Tax &amp; Cost Increase</td></tr>
+	<tr><td style="padding-left:10px;">Property Taxes Increase</td><td><input type="text" name="cpropertytaxesincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">Home Insurance Increase</td><td><input type="text" name="chomeinsincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">HOA Fee Increase</td><td><input type="text" name="choainsincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td style="padding-left:10px;">Other Costs Increase</td><td><input type="text" name="cothercostincrease" value="0" class="in4char"></td><td>%</td></tr>
+	<tr><td colspan="3" style="padding:10px 0px 3px 0px;font-weight:bold;">Extra Payments</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra Monthly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cextramonthly" value="0" class="innormal indollar"> from <select name="cextramonthlystartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextramonthlystartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra Yearly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cextrayearly" value="0" class="innormal indollar"> from <select name="cextrayearlystartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextrayearlystartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;">Extra One-time Pay
+		<div><input type="text" name="cextraonetime" value="0" class="innormal indollar"> on <select name="cextraonetimestartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cextraonetimestartyear" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding:10px 0px 6px 0px">
+		<label for="cshowbiweekly" class="cbcontainer"><input type="checkbox" name="cshowbiweekly" id="cshowbiweekly" value="1" checked /><span class="cbmark"></span><b>Show Biweekly Payback Results</b></label>
+	</td></tr>
+</table>
+<script>
+cshmoreoption(0);
+</script>
+</td></tr>
+<tr><td colspan="2" align="right"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td><td>&nbsp;</td></tr>
+</form>
+</table>
+</td><td valign="top">
+<a name="fharesult"></a><h2 class="h2result">Monthly Pay: &nbsp; $1,299.41</h2><table cellpadding='3' width='100%'><tr><td>&nbsp;</td><td align=right><b>Monthly</b></td><td align=right><b>Total</b></td></tr><tr bgcolor='#dddddd'><td><b>Mortgage Payment</b></td><td align=right><b>$1,299.41</b></td><td align=right><b>$467,787.92</b></td></tr><tr><td>Property Tax</td><td align=right>$200.00</td><td align=right>$72,000.00</td></tr><tr><td>Home Insurance</td><td align=right>$100.00</td><td align=right>$36,000.00</td></tr><tr><td>Annual MIP</td><td align=right>$136.71</td><td align=right>$49,215.00</td></tr><tr><td>Other Costs</td><td align=right>$250.00</td><td align=right>$90,000.00</td></tr><tr bgcolor='#dddddd'><td><b>Total Out-of-Pocket</b></td><td align=right>$1,986.12</td><td align=right>$715,002.92</td></tr><tr><td colspan="3">&nbsp;</td></tr><tr bgcolor='#dddddd'><td colspan='2'><b>House Price</b></td><td align='right'>$200,000.00</td></tr><tr><td colspan='2'>Loan Amount with Upfront MIP</td><td align='right'>$196,500.00</td></tr><tr><td colspan='2'>Down Payment</td><td align='right'>$7,000.00</td></tr><tr><td colspan='2'>Upfront MIP</td><td align='right'>$3,500.00</td></tr><tr><td colspan='2'>Total of 360 Mortgage Payments</td><td align='right'>$467,787.92</td></tr><tr><td colspan='2'>Total Interest</td><td align='right'>$271,287.92</td></tr><tr><td colspan='2'>Mortgage Payoff Date</td><td align='right'>Feb. 2053</td></tr></table><br><p class="smalltext">*MIP: Mortgage Insurance Premium</p></td></tr></table>
+<div id="mRateData"></div><table width="100%">
+	<tr>
+		<td valign="top" width="200">
+			<br><div class="bigtext" style="text-align:center;"><b>Payments</b></div>			<div id="cpiechartdiv" style="min-width: 155px; height: 250px; margin: 0 auto"></div>
+		</td><td>&nbsp;</td>
+		<td valign="top">
+			<br><div class="bigtext" style="text-align:center;"><b>Mortgage Amortization Graph</b></div>
+			<div id="cchartdiv" style="min-width: 370px; height: 250px; margin: 0 auto"></div>
+		</td>
+	</tr>
+</table>
+<div id="camortizationschdis"></div>
+<script>
+function cFHAPop(){
+	var cfphouseprice = document.getElementById("chouseprice").value;
+	var cfpdownpayment = document.getElementById("cdownpayment").value;
+	var cfploanterm = document.getElementById("cloanterm").value;
+	var cfpdownpaymentunit = document.getElementById("cdownpaymentunit").value;
+	var cupfrontmip = 1.75;
+	var cannualmip = 0.85;
+	if (isNumber(cfphouseprice)&&isNumber(cfpdownpayment)&&isNumber(cfploanterm)){
+		if (cfpdownpaymentunit=='d'){
+			cfpdownpayment = 100 * cfpdownpayment / cfphouseprice;
+		}
+		cfploanamount = cfphouseprice*(100 - cfpdownpayment)/100;
+		if (cfploanterm>15){
+			if (cfploanamount>625500){
+				if (cfpdownpayment<5){
+					cannualmip = 1.05;
+				}else{
+					cannualmip = 1;
+				}
+			}else{
+				if (cfpdownpayment<5){
+					cannualmip = 0.85;
+				}else{
+					cannualmip = 0.8;
+				}
+			}
+		}else{
+			if (cfploanamount>625500){
+				if (cfpdownpayment<10){
+					cannualmip = 0.95;
+				}else if (cfpdownpayment<22){
+					cannualmip = 0.7;
+				}else{
+					cannualmip = 0.45;
+				}
+			}else{
+				if (cfpdownpayment<10){
+					cannualmip = 0.7;
+				}else{
+					cannualmip = 0.45;
+				}
+			}
+		}
+	}else{
+		cannualmip = 0.85;
+	}
+	document.getElementById("cupfrontmip").value = cupfrontmip;
+	document.getElementById("cannualmip").value = cannualmip;
+}
+</script>
+
+<br><br>
+<p>FHA loans are mortgages insured by the Federal Housing Administration, the largest mortgage insurer in the world. The FHA was established in 1934 after The Great Depression, and its continuing mission is to create more homeowners in the U.S. Therefore, it is plainly obvious that the popularity of FHA loans comes from their ability to extend mortgage loans to most people trying to buy a home. It is important to remember that the FHA doesn't lend money, but insures lenders instead.
+
+<h3>Mortgage Insurance Premiums</h3>
+<p>To qualify, the FHA charges a single upfront mortgage insurance payment (MIP) along with annual mortgage insurance premiums. The mortgage insurance payments from borrowers are mandatory in order to protect lenders from losses in instances of defaults on loans. The upfront MIP is the same for all, which is 1.75% of the loan amounts and can be financed directly into the mortgage loans. The annual MIP varies based on the loan term, loan amount, and loan-to-value (LTV) ratio. Use the tables below to figure out proper MIP rates.</p>
+
+<h3>2023 FHA Annual MIP Rates</h3>
+<p><b>Loan Term&mdash;Longer than 15 Years</b></p>
+<table class="cinfoT">
+	<tr><td class="cinfoHd">Loan Amount</td><td class="cinfoHdL">LTV Ratio</td><td class="cinfoHdL">Annual MIP Ratio</td></tr>
+	<tr><td>$625,500 or Less</td><td>95% or Less</td><td>0.8%</td></tr>
+	<tr><td>$625,500 or Less</td><td>more than 95%</td><td>0.85%</td></tr>
+	<tr><td>More than $625,500</td><td>95% or Less</td><td>1%</td></tr>
+	<tr><td>More than $625,500</td><td>more than 95%</td><td>1.05%</td></tr>
+</table>
+
+<br><p><b>Loan Term&mdash;15 Years or Less</b></p>
+<table class="cinfoT">
+	<tr><td class="cinfoHd">Loan Amount</td><td class="cinfoHdL">LTV Ratio</td><td class="cinfoHdL">Annual MIP Ratio</td></tr>
+	<tr><td>$625,500 or Less</td><td>90% or Less</td><td>0.45%</td></tr>
+	<tr><td>$625,500 or Less</td><td>more than 90%</td><td>0.7%</td></tr>
+
+	<tr><td>More than $625,500</td><td>78% or Less</td><td>0.45%</td></tr>
+	<tr><td>More than $625,500</td><td>78% - 90%</td><td>0.7%</td></tr>
+	<tr><td>More than $625,500</td><td>more than 90%</td><td>0.95%</td></tr>
+</table>
+
+<h3>Pros and Cons of FHA Loans</h3>
+<p>Like any financial product, FHA loans have pros and cons.</p>
+<p><b>Pros</b></p>
+<ul>
+<li>No requirement for large down payment. FHA loans are famous for requiring down payments as low as 3.5%. This might be the single biggest contributing factor to FHA's importance in helping to realize the dreams of home ownership to less-than-qualified households.</li>
+<li>No requirement for high credit scores. As a matter of fact, the FHA approves loans for households with credit scores of 580 or even lower.</li>
+<li>No prepayment penalties.</li>
+<li>No expectation for income must be met. As long as borrowers can show that they can repay the loan (either through a history of payments or large savings), even the lowest income households can qualify. </li>
+<li>Certain scenarios where FHA loan borrowers are allowed to spend up to 57% of their income on all monthly debt obligations, which can be considered exceedingly high compared to the debt-to-income ratio requirements of other mortgage loans.</li>
+</ul>
+<p>Not only do they have very appealing incentives for borrowers, but for certain mortgage lenders also; because they are a federal entity upheld by tax dollars, FHA loans basically guarantee the ability to take over any remaining loan payments when borrowers happen to default. </p>
+
+<p><b>Cons</b></p>
+<p>With as many benefits as they come with, there are reasons why they haven't been adopted as the universal method for mortgage loans. </p>
+<ul>
+<li>The MIP and subsequent payments contribute to why FHA loans tend to be more expensive than conventional loans. Also, unlike the latter, FHA insurance premiums cannot be canceled once 20% of home equity is reached; this is a very expensive and important cost to account for. When people speak the good virtues of FHA, it is usually coupled with the 'catch' afterward - the insurance payments. FHA insurance is often unavoidable without paying off the loan entirely.</li>
+<li>They hand out relatively smaller loans than otherwise. People seeking more expensive home purchases may want to look at conventional loans instead.</li>
+<li>Borrowers with excellent credit are more likely to get better rates from conventional loans.</li>
+<li>There are certain limitations to properties that can qualify for FHA loans because they must meet standards such as basic health and safety.</li>
+<li>As a general assumption, potential buyers that finance using FHA loans may raise eyebrows from sellers. As compared to conventional mortgage loans, FHA loan borrowers carry rash generalizations associated with low-income demographics.</li>
+</ul>
+<p>As with any other big financial decision, take the time to evaluate all options. While FHA loans are a viable choice, conventional loans may be better for some people, such as when the down payment is over 20% or they have excellent credit scores. Veterans and similarly applicable individuals should consider <a href="va-mortgage-calculator.html">VA loans</a>. Compare rates offered by different lenders.</p>
+
+<h3>Home Affordability</h3>
+<p>The Department of Housing and Urban Development (HUD) is the organization that sets specific guidelines for FHA debt-to-income ratios and formulas used to manage the risk of each potential household that borrows FHA loans for home purchases. To determine the house affordability of an FHA loan, please use our <a href="house-affordability-calculator.html">House Affordability Calculator</a>. In the Debt-to-Income Ratio drop-down selection, there is an option for FHA loan. </p>
+<p>It becomes immediately apparent that FHA loans have the most stringent debt-to-income ratio requirements. After all, the FHA was essentially created to absorb the risk inherent in handing out many loans that could be defaulted at any time.</p>
+<p>However, there are exceptions that can be made for borrowers who cannot adhere to the front or  back-end ratios of 31% and 43%, respectively. The HUD can give mortgage lenders leeway to approve borrowers as long as lenders give evidence of significant compensating factors. One or more is typically sufficient to qualify borrowers. These compensating factors include:</p>
+<ul>
+<li>A higher down payment than the minimum requirement of 3.5%, which most FHA loan borrowers take advantage of.</li>
+<li>Applicants showing dutiful mortgage payments in the past equal to or greater than the new potential loan.</li>
+<li>Excellent credit scores (however, people with great credit scores will probably get more enticing offers from conventional loans).</li>
+<li>Proof of substantial savings, usually three months' worth of mortgage payments in the bank.</li>
+</ul>
+
+<h3>Prepayment</h3>
+<p>There is no prepayment penalty for FHA loans, so it can make financial sense for some FHA borrowers to supplement an FHA loan with additional payments. However, we recommend it only when the financial situation allows for it, and our calculator can help. Inside the More Options input section of the calculator is an Extra Payments section to input monthly, yearly, or single payments. Use the results to see how much the length of the loan is cut short.</p>
+
+<h3>FHA 203K Loans</h3>
+<p>An FHA 203(k) loan allows borrowers to finance both the purchase and renovation of a primary residence or to finance the renovation of their existing home. Basically, it allows borrowers to buy and refinance a home that needs work and roll the renovation costs into the mortgage.</p>
+<p>FHA 203k loans carry many of the same aspects as the regular FHA loan, such as ease of qualification for loans, high insurance premiums, and a small ongoing fee. The completion of improvements must be finished within six months. FHA loan funds are transferred into an escrow account and paid to contractors as improvements occur. A minimum of $5,000 must be borrowed and maximum limits are set by the FHA that differs according to locations. Similar to regular FHA loans, they tend to be enough for most families purchasing homes that aren't decked-out mansions. Funds can also be used for temporary housing while improvements are being made for up to six months.</p>
+<p>There also exists a mini version of the FHA 203k called the Streamlined FHA 203k made specifically for lower borrowing amounts that are processed much more easily.</p>
+
+
+	
+<script>
+document.getElementById("mRateData").innerHTML = '<div style="background:#eee;border:1px solid #ccc;padding: 3px;margin:3px;"><b>Latest Mortgage Rate:</b> <span style="font-size:11px;color:#888;">(U.S. National Average Fixed, Source: BankRate.com, Feb. 23, 2023)</span><br>&nbsp; &nbsp; 30 Years: <a href="#" onClick="return setYearRate(\'6.94\', \'30\');">6.94%</a> &nbsp; 15 Years: <a href="#" onClick="return setYearRate(\'6.22\', \'15\');">6.22%</a> &nbsp; 10 Years: <a href="#" onClick="return setYearRate(\'6.4\', \'10\');">6.4%</a></div>';
+</script>
+<script type="text/javascript">
+allData = "196500.00:196337.01:1299.41:1136.43:1136.43|196337.01:196173.09:1299.41:1135.48:2271.91|196173.09:196008.21:1299.41:1134.53:3406.44|196008.21:195842.38:1299.41:1133.58:4540.02|195842.38:195675.59:1299.41:1132.62:5672.64|195675.59:195507.84:1299.41:1131.66:6804.30|195507.84:195339.11:1299.41:1130.69:7934.99|195339.11:195169.41:1299.41:1129.71:9064.70|195169.41:194998.73:1299.41:1128.73:10193.43|194998.73:194827.06:1299.41:1127.74:11321.17|194827.06:194654.40:1299.41:1126.75:12447.92|194654.40:194480.74:1299.41:1125.75:13573.67|194480.74:194306.08:1299.41:1124.75:14698.42|194306.08:194130.40:1299.41:1123.74:15822.16|194130.40:193953.71:1299.41:1122.72:16944.88|193953.71:193776.00:1299.41:1121.70:18066.58|193776.00:193597.26:1299.41:1120.67:19187.25|193597.26:193417.49:1299.41:1119.64:20306.89|193417.49:193236.68:1299.41:1118.60:21425.48|193236.68:193054.82:1299.41:1117.55:22543.04|193054.82:192871.91:1299.41:1116.50:23659.54|192871.91:192687.94:1299.41:1115.44:24774.98|192687.94:192502.91:1299.41:1114.38:25889.36|192502.91:192316.80:1299.41:1113.31:27002.67|192316.80:192129.63:1299.41:1112.23:28114.90|192129.63:191941.36:1299.41:1111.15:29226.05|191941.36:191752.01:1299.41:1110.06:30336.11|191752.01:191561.57:1299.41:1108.97:31445.07|191561.57:191370.02:1299.41:1107.86:32552.94|191370.02:191177.37:1299.41:1106.76:33659.70|191177.37:190983.60:1299.41:1105.64:34765.34|190983.60:190788.71:1299.41:1104.52:35869.86|190788.71:190592.69:1299.41:1103.39:36973.25|190592.69:190395.54:1299.41:1102.26:38075.52|190395.54:190197.25:1299.41:1101.12:39176.64|190197.25:189997.82:1299.41:1099.97:40276.61|189997.82:189797.23:1299.41:1098.82:41375.43|189797.23:189595.48:1299.41:1097.66:42473.09|189595.48:189392.56:1299.41:1096.49:43569.59|189392.56:189188.47:1299.41:1095.32:44664.91|189188.47:188983.20:1299.41:1094.14:45759.05|188983.20:188776.74:1299.41:1092.95:46852.00|188776.74:188569.09:1299.41:1091.76:47943.76|188569.09:188360.24:1299.41:1090.56:49034.32|188360.24:188150.18:1299.41:1089.35:50123.67|188150.18:187938.90:1299.41:1088.14:51211.80|187938.90:187726.40:1299.41:1086.91:52298.71|187726.40:187512.68:1299.41:1085.68:53384.40|187512.68:187297.71:1299.41:1084.45:54468.85|187297.71:187081.51:1299.41:1083.21:55552.05|187081.51:186864.05:1299.41:1081.95:56634.01|186864.05:186645.34:1299.41:1080.70:57714.70|186645.34:186425.36:1299.41:1079.43:58794.14|186425.36:186204.11:1299.41:1078.16:59872.30|186204.11:185981.58:1299.41:1076.88:60949.18|185981.58:185757.76:1299.41:1075.59:62024.77|185757.76:185532.65:1299.41:1074.30:63099.07|185532.65:185306.23:1299.41:1073.00:64172.07|185306.23:185078.51:1299.41:1071.69:65243.75|185078.51:184849.47:1299.41:1070.37:66314.12|184849.47:184619.11:1299.41:1069.05:67383.17|184619.11:184387.41:1299.41:1067.71:68450.88|184387.41:184154.37:1299.41:1066.37:69517.26|184154.37:183919.99:1299.41:1065.03:70582.28|183919.99:183684.25:1299.41:1063.67:71645.95|183684.25:183447.14:1299.41:1062.31:72708.26|183447.14:183208.67:1299.41:1060.94:73769.20|183208.67:182968.81:1299.41:1059.56:74828.75|182968.81:182727.57:1299.41:1058.17:75886.92|182727.57:182484.94:1299.41:1056.77:76943.70|182484.94:182240.90:1299.41:1055.37:77999.07|182240.90:181995.45:1299.41:1053.96:79053.03|181995.45:181748.58:1299.41:1052.54:80105.57|181748.58:181500.28:1299.41:1051.11:81156.68|181500.28:181250.54:1299.41:1049.68:82206.36|181250.54:180999.36:1299.41:1048.23:83254.59|180999.36:180746.73:1299.41:1046.78:84301.37|180746.73:180492.64:1299.41:1045.32:85346.69|180492.64:180237.08:1299.41:1043.85:86390.54|180237.08:179980.04:1299.41:1042.37:87432.91|179980.04:179721.51:1299.41:1040.88:88473.79|179721.51:179461.49:1299.41:1039.39:89513.18|179461.49:179199.97:1299.41:1037.89:90551.07|179199.97:178936.93:1299.41:1036.37:91587.44|178936.93:178672.37:1299.41:1034.85:92622.29|178672.37:178406.28:1299.41:1033.32:93655.62|178406.28:178138.65:1299.41:1031.78:94687.40|178138.65:177869.48:1299.41:1030.24:95717.63|177869.48:177598.74:1299.41:1028.68:96746.31|177598.74:177326.45:1299.41:1027.11:97773.43|177326.45:177052.57:1299.41:1025.54:98798.96|177052.57:176777.12:1299.41:1023.95:99822.92|176777.12:176500.07:1299.41:1022.36:100845.28|176500.07:176221.41:1299.41:1020.76:101866.04|176221.41:175941.15:1299.41:1019.15:102885.18|175941.15:175659.27:1299.41:1017.53:103902.71|175659.27:175375.75:1299.41:1015.90:104918.61|175375.75:175090.60:1299.41:1014.26:105932.86|175090.60:174803.79:1299.41:1012.61:106945.47|174803.79:174515.33:1299.41:1010.95:107956.42|174515.33:174225.20:1299.41:1009.28:108965.70|174225.20:173933.39:1299.41:1007.60:109973.30|173933.39:173639.90:1299.41:1005.91:110979.22|173639.90:173344.70:1299.41:1004.22:111983.43|173344.70:173047.80:1299.41:1002.51:112985.94|173047.80:172749.18:1299.41:1000.79:113986.74|172749.18:172448.84:1299.41:999.07:114985.80|172448.84:172146.76:1299.41:997.33:115983.13|172146.76:171842.93:1299.41:995.58:116978.71|171842.93:171537.34:1299.41:993.82:117972.54|171537.34:171229.99:1299.41:992.06:118964.60|171229.99:170920.86:1299.41:990.28:119954.88|170920.86:170609.94:1299.41:988.49:120943.37|170609.94:170297.22:1299.41:986.69:121930.06|170297.22:169982.70:1299.41:984.89:122914.95|169982.70:169666.35:1299.41:983.07:123898.02|169666.35:169348.18:1299.41:981.24:124879.25|169348.18:169028.17:1299.41:979.40:125858.65|169028.17:168706.30:1299.41:977.55:126836.20|168706.30:168382.57:1299.41:975.68:127811.88|168382.57:168056.98:1299.41:973.81:128785.69|168056.98:167729.50:1299.41:971.93:129757.62|167729.50:167400.12:1299.41:970.04:130727.66|167400.12:167068.84:1299.41:968.13:131695.79|167068.84:166735.64:1299.41:966.21:132662.00|166735.64:166400.52:1299.41:964.29:133626.29|166400.52:166063.46:1299.41:962.35:134588.64|166063.46:165724.45:1299.41:960.40:135549.04|165724.45:165383.48:1299.41:958.44:136507.48|165383.48:165040.53:1299.41:956.47:137463.95|165040.53:164695.61:1299.41:954.48:138418.43|164695.61:164348.69:1299.41:952.49:139370.92|164348.69:163999.76:1299.41:950.48:140321.41|163999.76:163648.81:1299.41:948.47:141269.87|163648.81:163295.84:1299.41:946.44:142216.31|163295.84:162940.82:1299.41:944.39:143160.70|162940.82:162583.75:1299.41:942.34:144103.04|162583.75:162224.62:1299.41:940.28:145043.32|162224.62:161863.41:1299.41:938.20:145981.52|161863.41:161500.10:1299.41:936.11:146917.63|161500.10:161134.70:1299.41:934.01:147851.64|161134.70:160767.19:1299.41:931.90:148783.53|160767.19:160397.55:1299.41:929.77:149713.30|160397.55:160025.77:1299.41:927.63:150640.94|160025.77:159651.84:1299.41:925.48:151566.42|159651.84:159275.75:1299.41:923.32:152489.74|159275.75:158897.48:1299.41:921.14:153410.88|158897.48:158517.03:1299.41:918.96:154329.84|158517.03:158134.37:1299.41:916.76:155246.60|158134.37:157749.51:1299.41:914.54:156161.14|157749.51:157362.41:1299.41:912.32:157073.46|157362.41:156973.08:1299.41:910.08:157983.54|156973.08:156581.50:1299.41:907.83:158891.37|156581.50:156187.65:1299.41:905.56:159796.93|156187.65:155791.53:1299.41:903.29:160700.21|155791.53:155393.11:1299.41:900.99:161601.21|155393.11:154992.39:1299.41:898.69:162499.90|154992.39:154589.35:1299.41:896.37:163396.27|154589.35:154183.98:1299.41:894.04:164290.31|154183.98:153776.27:1299.41:891.70:165182.01|153776.27:153366.20:1299.41:889.34:166071.35|153366.20:152953.75:1299.41:886.97:166958.32|152953.75:152538.92:1299.41:884.58:167842.90|152538.92:152121.70:1299.41:882.18:168725.08|152121.70:151702.06:1299.41:879.77:169604.85|151702.06:151279.99:1299.41:877.34:170482.20|151279.99:150855.48:1299.41:874.90:171357.10|150855.48:150428.52:1299.41:872.45:172229.55|150428.52:149999.09:1299.41:869.98:173099.53|149999.09:149567.17:1299.41:867.49:173967.02|149567.17:149132.76:1299.41:865.00:174832.02|149132.76:148695.83:1299.41:862.48:175694.50|148695.83:148256.38:1299.41:859.96:176554.46|148256.38:147814.38:1299.41:857.42:177411.88|147814.38:147369.83:1299.41:854.86:178266.73|147369.83:146922.71:1299.41:852.29:179119.02|146922.71:146473.00:1299.41:849.70:179968.73|146473.00:146020.69:1299.41:847.10:180815.83|146020.69:145565.77:1299.41:844.49:181660.32|145565.77:145108.21:1299.41:841.86:182502.17|145108.21:144648.01:1299.41:839.21:183341.38|144648.01:144185.15:1299.41:836.55:184177.93|144185.15:143719.61:1299.41:833.87:185011.80|143719.61:143251.37:1299.41:831.18:185842.98|143251.37:142780.43:1299.41:828.47:186671.45|142780.43:142306.77:1299.41:825.75:187497.19|142306.77:141830.37:1299.41:823.01:188320.20|141830.37:141351.21:1299.41:820.25:189140.45|141351.21:140869.28:1299.41:817.48:189957.93|140869.28:140384.56:1299.41:814.69:190772.63|140384.56:139897.04:1299.41:811.89:191584.52|139897.04:139406.70:1299.41:809.07:192393.59|139406.70:138913.52:1299.41:806.24:193199.83|138913.52:138417.50:1299.41:803.38:194003.21|138417.50:137918.60:1299.41:800.51:194803.72|137918.60:137416.82:1299.41:797.63:195601.35|137416.82:136912.14:1299.41:794.73:196396.08|136912.14:136404.53:1299.41:791.81:197187.89|136404.53:135894.00:1299.41:788.87:197976.76|135894.00:135380.50:1299.41:785.92:198762.68|135380.50:134864.04:1299.41:782.95:199545.63|134864.04:134344.60:1299.41:779.96:200325.60|134344.60:133822.15:1299.41:776.96:201102.56|133822.15:133296.67:1299.41:773.94:201876.49|133296.67:132768.16:1299.41:770.90:202647.39|132768.16:132236.59:1299.41:767.84:203415.24|132236.59:131701.95:1299.41:764.77:204180.00|131701.95:131164.22:1299.41:761.68:204941.68|131164.22:130623.37:1299.41:758.57:205700.25|130623.37:130079.40:1299.41:755.44:206455.68|130079.40:129532.28:1299.41:752.29:207207.98|129532.28:128982.00:1299.41:749.13:207957.11|128982.00:128428.53:1299.41:745.95:208703.05|128428.53:127871.87:1299.41:742.75:209445.80|127871.87:127311.98:1299.41:739.53:210185.32|127311.98:126748.86:1299.41:736.29:210921.61|126748.86:126182.48:1299.41:733.03:211654.64|126182.48:125612.82:1299.41:729.76:212384.40|125612.82:125039.87:1299.41:726.46:213110.86|125039.87:124463.61:1299.41:723.15:213834.00|124463.61:123884.01:1299.41:719.81:214553.82|123884.01:123301.06:1299.41:716.46:215270.28|123301.06:122714.74:1299.41:713.09:215983.37|122714.74:122125.03:1299.41:709.70:216693.07|122125.03:121531.91:1299.41:706.29:217399.36|121531.91:120935.36:1299.41:702.86:218102.22|120935.36:120335.36:1299.41:699.41:218801.63|120335.36:119731.89:1299.41:695.94:219497.57|119731.89:119124.93:1299.41:692.45:220190.02|119124.93:118514.46:1299.41:688.94:220878.96|118514.46:117900.45:1299.41:685.41:221564.37|117900.45:117282.90:1299.41:681.86:222246.23|117282.90:116661.78:1299.41:678.29:222924.51|116661.78:116037.06:1299.41:674.69:223599.21|116037.06:115408.73:1299.41:671.08:224270.29|115408.73:114776.76:1299.41:667.45:224937.73|114776.76:114141.15:1299.41:663.79:225601.53|114141.15:113501.85:1299.41:660.12:226261.64|113501.85:112858.86:1299.41:656.42:226918.06|112858.86:112212.15:1299.41:652.70:227570.76|112212.15:111561.70:1299.41:648.96:228219.72|111561.70:110907.49:1299.41:645.20:228864.92|110907.49:110249.49:1299.41:641.41:229506.34|110249.49:109587.69:1299.41:637.61:230143.95|109587.69:108922.06:1299.41:633.78:230777.73|108922.06:108252.58:1299.41:629.93:231407.66|108252.58:107579.23:1299.41:626.06:232033.72|107579.23:106901.99:1299.41:622.17:232655.89|106901.99:106220.83:1299.41:618.25:233274.14|106220.83:105535.73:1299.41:614.31:233888.45|105535.73:104846.66:1299.41:610.35:234498.80|104846.66:104153.62:1299.41:606.36:235105.16|104153.62:103456.56:1299.41:602.36:235707.51|103456.56:102755.47:1299.41:598.32:236305.84|102755.47:102050.33:1299.41:594.27:236900.11|102050.33:101341.11:1299.41:590.19:237490.30|101341.11:100627.79:1299.41:586.09:238076.39|100627.79:99910.34:1299.41:581.96:238658.35|99910.34:99188.75:1299.41:577.81:239236.17|99188.75:98462.98:1299.41:573.64:239809.81|98462.98:97733.01:1299.41:569.44:240379.25|97733.01:96998.82:1299.41:565.22:240944.48|96998.82:96260.39:1299.41:560.98:241505.45|96260.39:95517.68:1299.41:556.71:242062.16|95517.68:94770.68:1299.41:552.41:242614.57|94770.68:94019.36:1299.41:548.09:243162.66|94019.36:93263.70:1299.41:543.75:243706.40|93263.70:92503.66:1299.41:539.38:244245.78|92503.66:91739.23:1299.41:534.98:244780.76|91739.23:90970.38:1299.41:530.56:245311.32|90970.38:90197.08:1299.41:526.11:245837.43|90197.08:89419.31:1299.41:521.64:246359.07|89419.31:88637.04:1299.41:517.14:246876.21|88637.04:87850.24:1299.41:512.62:247388.83|87850.24:87058.90:1299.41:508.07:247896.90|87058.90:86262.98:1299.41:503.49:248400.39|86262.98:85462.46:1299.41:498.89:248899.27|85462.46:84657.30:1299.41:494.26:249393.53|84657.30:83847.50:1299.41:489.60:249883.13|83847.50:83033.00:1299.41:484.92:250368.05|83033.00:82213.80:1299.41:480.21:250848.26|82213.80:81389.86:1299.41:475.47:251323.73|81389.86:80561.15:1299.41:470.70:251794.43|80561.15:79727.65:1299.41:465.91:252260.34|79727.65:78889.33:1299.41:461.09:252721.44|78889.33:78046.17:1299.41:456.24:253177.68|78046.17:77198.12:1299.41:451.37:253629.05|77198.12:76345.17:1299.41:446.46:254075.51|76345.17:75487.29:1299.41:441.53:254517.04|75487.29:74624.45:1299.41:436.57:254953.61|74624.45:73756.62:1299.41:431.58:255385.18|73756.62:72883.76:1299.41:426.56:255811.74|72883.76:72005.87:1299.41:421.51:256233.26|72005.87:71122.89:1299.41:416.43:256649.69|71122.89:70234.80:1299.41:411.33:257061.02|70234.80:69341.59:1299.41:406.19:257467.21|69341.59:68443.20:1299.41:401.03:257868.23|68443.20:67539.62:1299.41:395.83:258264.06|67539.62:66630.81:1299.41:390.60:258654.67|66630.81:65716.75:1299.41:385.35:259040.02|65716.75:64797.40:1299.41:380.06:259420.08|64797.40:63872.73:1299.41:374.74:259794.82|63872.73:62942.72:1299.41:369.40:260164.22|62942.72:62007.33:1299.41:364.02:260528.24|62007.33:61066.53:1299.41:358.61:260886.85|61066.53:60120.28:1299.41:353.17:261240.02|60120.28:59168.57:1299.41:347.70:261587.71|59168.57:58211.35:1299.41:342.19:261929.90|58211.35:57248.59:1299.41:336.66:262266.56|57248.59:56280.27:1299.41:331.09:262597.65|56280.27:55306.35:1299.41:325.49:262923.13|55306.35:54326.79:1299.41:319.86:263242.99|54326.79:53341.57:1299.41:314.19:263557.18|53341.57:52350.65:1299.41:308.49:263865.67|52350.65:51354.00:1299.41:302.76:264168.43|51354.00:50351.59:1299.41:297.00:264465.43|50351.59:49343.38:1299.41:291.20:264756.63|49343.38:48329.34:1299.41:285.37:265042.00|48329.34:47309.43:1299.41:279.50:265321.50|47309.43:46283.63:1299.41:273.61:265595.11|46283.63:45251.89:1299.41:267.67:265862.78|45251.89:44214.18:1299.41:261.71:266124.49|44214.18:43170.48:1299.41:255.71:266380.19|43170.48:42120.74:1299.41:249.67:266629.86|42120.74:41064.92:1299.41:243.60:266873.46|41064.92:40003.01:1299.41:237.49:267110.95|40003.01:38934.95:1299.41:231.35:267342.31|38934.95:37860.71:1299.41:225.17:267567.48|37860.71:36780.26:1299.41:218.96:267786.44|36780.26:35693.56:1299.41:212.71:267999.15|35693.56:34600.58:1299.41:206.43:268205.58|34600.58:33501.27:1299.41:200.11:268405.69|33501.27:32395.61:1299.41:193.75:268599.44|32395.61:31283.55:1299.41:187.35:268786.79|31283.55:30165.07:1299.41:180.92:268967.71|30165.07:29040.11:1299.41:174.45:269142.17|29040.11:27908.65:1299.41:167.95:269310.12|27908.65:26770.64:1299.41:161.41:269471.52|26770.64:25626.06:1299.41:154.82:269626.35|25626.06:24474.85:1299.41:148.20:269774.55|24474.85:23316.98:1299.41:141.55:269916.10|23316.98:22152.42:1299.41:134.85:270050.95|22152.42:20981.13:1299.41:128.11:270179.06|20981.13:19803.06:1299.41:121.34:270300.40|19803.06:18618.17:1299.41:114.53:270414.93|18618.17:17426.44:1299.41:107.68:270522.60|17426.44:16227.81:1299.41:100.78:270623.39|16227.81:15022.25:1299.41:93.85:270717.24|15022.25:13809.72:1299.41:86.88:270804.12|13809.72:12590.17:1299.41:79.87:270883.98|12590.17:11363.57:1299.41:72.81:270956.80|11363.57:10129.88:1299.41:65.72:271022.52|10129.88:8889.06:1299.41:58.58:271081.10|8889.06:7641.05:1299.41:51.41:271132.51|7641.05:6385.83:1299.41:44.19:271176.70|6385.83:5123.35:1299.41:36.93:271213.63|5123.35:3853.57:1299.41:29.63:271243.26|3853.57:2576.45:1299.41:22.29:271265.55|2576.45:1291.94:1299.41:14.90:271280.45|1291.94:-0.00:1299.41:7.47:271287.92|";cstartmonth=02;cstartyear=2023;monthlypayment=1299.41088713;cloanterm=30;cloanamount=196500;remainingTerm=0;biggestItem=359;
+var chartStrBuilderPayment = [];
+var chartStrBuilderBalance = [];
+var chartStrBuilderInterest = [];
+xmax = cloanterm;
+chartSep = 12;
+if (cloanterm<=5){
+	chartSep = 1;
+	xmax = cloanterm*12;
+
+	chartStrBuilderPayment.push(0);
+	chartStrBuilderBalance.push(cloanamount);
+	chartStrBuilderInterest.push(0);
+}
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+
+		if (((i%chartSep)==0)||((i+2)==allDataArray.length)){
+			chartStrBuilderPayment.push((i+1)*monthlypayment);
+			chartStrBuilderBalance.push(outPutData[i][1]);
+			chartStrBuilderInterest.push(outPutData[i][4]);
+		}
+	}
+}
+hideDate = 0;
+if (cloanterm>5){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			itemMarginTop: -1,itemMarginBottom: -2,y:0,padding:5,			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',196500],['Interest',271288],['Property Taxes',72000],['Annual MIP',49215],['Other Cost',90000],['Home Insurance',36000]]
+		}]
+	});
+});
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cloanterm<=5){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Balance',data: chartStrBuilderBalance},
+			{name: 'Interest',data: chartStrBuilderInterest},
+			{name: 'Payment',data: chartStrBuilderPayment}
+		]
+	});
+});
+
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/fha-loan-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/fha-loan-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

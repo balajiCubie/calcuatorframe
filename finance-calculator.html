@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/finance-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Finance Calculator</title>
+	<meta name="description" content="Free online finance calculator to find the future value (FV), compounding periods (N), interest rate (I/Y), periodic payment (PMT), and present value (PV)." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="finance-calculator.html" itemprop="item"><span itemprop="name">finance calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Finance Calculator</h1>
+<p>This finance calculator can be used to calculate the future value (FV), periodic payment (PMT), interest rate (I/Y), number of compounding periods (N), and PV (Present Value). Each of the following tabs represents the parameters to be calculated. It works the same way as the 5-key time value of money calculators, such as BA II Plus or HP 12CP calculator.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><a name="cr"></a><br><div class="leftinput"><div id="topmenu"><ul><li><a href="#" onclick="popMenu('endamount');">FV</a></li><li id='menuon'><a href="#" onclick="popMenu('contributeamount');">PMT</a></li><li><a href="#" onclick="popMenu('returnrate');">I/Y</a></li><li><a href="#" onclick="popMenu('investlength');">N</a></li><li><a href="#" onclick="popMenu('startingamount');">PV</a></li></ul></div>
+<table width="310" class="panel2">
+<form name="calform" action="https://www.calculator.net/finance-calculator.html#cr"><input type="hidden" name="ctype" id="ctype" value="endamount">
+<tr><td>
+<table id="cinvestlength" width="310">
+<tr><td width="190" align="right">N (# of periods)</td><td width="120"><input type="text" name="cyearsv" id="cyearsv" value="10" class="inhalf"></td></tr>
+</table>
+<table id="creturnrate" width="310">
+<tr><td width="190" align="right">I/Y (Interest per year)</td><td width="120"><input type="text" name="cinterestratev" id="cinterestratev" value="6" class="inhalf inpct"></td></tr>
+</table>
+<table id="cstartingamount" width="310">
+<tr><td width="190" align="right">PV (Present Value)</td><td width="120"><input type="text" name="cstartingprinciplev" id="cstartingprinciplev" value="20000" class="inhalf indollar"></td></tr>
+</table>
+<table id="ccontributeamount" width="310">
+<tr><td width="190" align="right">PMT (Periodic Payment)</td><td width="120"><input type="text" name="ccontributeamountv" id="ccontributeamountv" value="-2000" class="inhalf indollar"></td></tr>
+</table>
+<table id="cendamount" width="310">
+<tr><td width="190" align="right">FV (Future Value)</td><td width="120"><input type="text" name="ctargetamountv" id="ctargetamountv" value="-10000" class="inhalf indollar"></td></tr>
+</table>
+<div style="padding: 5px 0px;">
+<div id="csettingOpen" style="font-weight:bold;text-align:center;"><a href="#" onClick="document.getElementById('csettings').style.display='block';document.getElementById('csettingOpen').style.display='none';return false;">+ Settings</a></div>
+<table id="csettings" width="310" style="background-color:#fff;display:none;">
+<tr><td align="center" colspan="2" id="sectitle">Settings <img src="../d26tpo4cm8sb6k.cloudfront.net/img/close.png" width="18" height="18" align="right" onClick="document.getElementById('csettings').style.display='none';document.getElementById('csettingOpen').style.display='block';return false;"></td></tr>
+<tr><td>P/Y (# of periods per year)</td><td><input type="text" name="cpy" value="1" class="in4char"></td></tr>
+<tr><td>C/Y (# of times interest compound per year)</td><td><input type="text" name="ccy" value="1" class="in4char"></td></tr>
+<tr><td colspan="2" style="padding:10px 0px;">PMT made at the
+	 <label for="ciadditionat1" class="cbcontainer"><input name="ciadditionat1" id="ciadditionat1" value="beginning" type="radio" ><span class="rbmark"></span>beginning</label> &nbsp;
+	 <label for="ciadditionat2" class="cbcontainer"><input name="ciadditionat1" id="ciadditionat2" value="end" type="radio" checked><span class="rbmark"></span>end</label><br />of each period
+</td></tr>
+</table>
+</div>
+<table width="310">
+<tr><td align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"> <img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/clear.svg" onClick="clearForm(document.calform);" class="clearbtn"></td></tr>
+</table>
+</td></tr></form></table>
+</div>
+<div class="rightresult">
+<h2 class="h2result">Results</h2><p class="bigtext" style="padding:8px 0px;">FV = <font color='green'><b>$-9,455.36</b></font></p><table cellpadding='2' width='100%'><tr bgcolor='#eeeeee'><td>Sum of all periodic payments</td><td align=right>$-20,000.00</td></tr><tr bgcolor='#eeeeee'><td>Total Interest</td><td align=right>$9,455.36</td></tr></table></div>
+<div id="clear"></div>
+<div class="bigtext" style="text-align:center;padding-top:10px;"><b>Value changes over time</b></div>
+<div id="cchartdiv" style="min-width: 320px; height: 250px; margin: 0 auto"></div>
+<h2>Schedule</h2><table class="cinfoT"><tr align="center"><td class="cinfoHd">Period</td><td class="cinfoHdL">PV</td><td class="cinfoHdL">PMT</td><td class="cinfoHdL">Interest</td><td class="cinfoHdL">FV</td></tr><tr><td>1</td><td align="right">$20,000.00</td><td align="right">$-2,000.00</td><td align="right">$1,200.00</td><td align="right">$-19,200.00</td></tr><tr><td>2</td><td align="right">$19,200.00</td><td align="right">$-2,000.00</td><td align="right">$1,152.00</td><td align="right">$-18,352.00</td></tr><tr><td>3</td><td align="right">$18,352.00</td><td align="right">$-2,000.00</td><td align="right">$1,101.12</td><td align="right">$-17,453.12</td></tr><tr><td>4</td><td align="right">$17,453.12</td><td align="right">$-2,000.00</td><td align="right">$1,047.19</td><td align="right">$-16,500.31</td></tr><tr><td>5</td><td align="right">$16,500.31</td><td align="right">$-2,000.00</td><td align="right">$990.02</td><td align="right">$-15,490.33</td></tr><tr><td>6</td><td align="right">$15,490.33</td><td align="right">$-2,000.00</td><td align="right">$929.42</td><td align="right">$-14,419.75</td></tr><tr><td>7</td><td align="right">$14,419.75</td><td align="right">$-2,000.00</td><td align="right">$865.18</td><td align="right">$-13,284.93</td></tr><tr><td>8</td><td align="right">$13,284.93</td><td align="right">$-2,000.00</td><td align="right">$797.10</td><td align="right">$-12,082.03</td></tr><tr><td>9</td><td align="right">$12,082.03</td><td align="right">$-2,000.00</td><td align="right">$724.92</td><td align="right">$-10,806.95</td></tr><tr><td>10</td><td align="right">$10,806.95</td><td align="right">$-2,000.00</td><td align="right">$648.42</td><td align="right">$-9,455.36</td></tr></table><br>
+<p><fieldset><legend>Related</legend><a href="loan-calculator.html">Loan Calculator</a> | <a href="interest-calculator.html">Interest Calculator</a> | <a href="investment-calculator.html">Investment Calculator</a></fieldset></p>
+
+<br><p>In basic finance courses, lots of time is spent on the computation of the time value of money, which can involve 4 or 5 different elements, including Present Value (PV), Future Value (FV), Interest Rate (I/Y), and Number of Periods (N). Periodic Payment (PMT) can be included but is not a required element.</p>
+
+<h3>The Time Value of Money (TVM)</h3>
+<p>Suppose someone owes you $500. Would you rather have this money repaid to you right away in one payment or spread out over a year in four installment payments? How would you feel if you had to wait to get the full payment instead of getting it all at once? Wouldn't you feel that the delay in the payment cost you something?</p>
+<p>According to a concept that economists call the "time value of money," you will probably want all the money right away because it can immediately be deployed for many different uses: spent on the lavish dream vacation, invested to earn interest, or used to pay off all or part of a loan. The "time value of money" refers to the fact that a dollar in hand today is worth more than a dollar promised at some future time.</p>
+<p>This is the basis of the concept of interest payments; a good example is when money is deposited in a savings account, small dividends are received for leaving the money with the bank; the financial institution pays a small price for having that money at hand. This is also why the bank will pay more for keeping the money in long and for committing it there for fixed periods.</p>
+<p>This increased value in money at the end of a period of collecting interest is called future value  in finance. Here is how it works.</p>
+<p>Suppose $100 (PV) is invested in a savings account that pays 10% interest (I/Y) per year. How much will there be in one year? The answer is $110 (FV). This $110 is equal to the original principal of $100 plus $10 in interest. $110 is the future value of $100 invested for one year at 10%, meaning that $100 today is worth $110 in one year, given that the interest rate is 10%.</p>
+<p>In general, investing for one period at an interest rate r will grow to (1 + r) per dollar invested. In our example, r is 10%, so the investment grows to: </p>
+<p align="center">1 + 0.10 = 1.10</p>
+<p>$1.10 dollars per dollar invested. Because $100 was invested in this case, the result, or FV, is: </p>
+<p align="center">$100 &#215; 1.10 = $110</p>
+<p>The original $100 investment is now $110. However, if that money is kept in the savings account further, what will be the resulting FV after two years, assuming the interest rate remains the same? </p>
+<p align="center">$110 &#215; 0.10 = $11</p>
+<p>$11 will be earned in interest after the second year, making a total of: </p>
+<p align="center">$110 + $11 = $121</p>
+<p>$121 is the future value of $100 in two years at 10%. </p>
+<p>Also, the PV in finance is what the FV will be worth given a discount rate, which carries the same meaning as interest rate except applied inversely with respect to time (backward rather than forward. In the example, the PV of an FV of $121 with a 10% discount rate after 2 compounding periods (N) is $100.</p>
+<p>This $121 FV has several different parts in terms of its money structure:</p>
+<ul>
+	<li>The first part is the first $100 original principal, or its Present Value (PV)</li>
+	<li>The second part is the $10 in interest earned in the first year.</li>
+	<li>The third part is the other $10 interest earned in the second year. </li>
+	<li>The fourth part is $1, which is interest earned in the second year on the interest paid in the first year: ($10 &#215; 0.10 = $1)</li>
+</ul>
+
+<h3>PMT</h3>
+<p>PMT or periodic payment is an inflow or outflow amount that occurs at each period of a financial stream. Take, for instance, a <a href="rental-property-calculator.html">rental property</a> that brings in rental income of $1,000 per month, a recurring cash flow. Investors may wonder what the cash flow of $1,000 per month for 10 years is worth. Otherwise, they have no conclusive evidence that suggests they should invest so much money into a rental property. As another example, what about the evaluation of a business that generates $100 in income every year? What about the payment of a down payment of $30,000 and a monthly mortgage of $1,000? For these questions, the payment formula is quite complex, so it is best left in the hands of our Finance Calculator, which can help evaluate all these situations with the inclusion of the PMT function. Don't forget to choose the correct input for whether payments are made at the beginning or end of compounding periods; the choice has large ramifications on the final amount of interest incurred.</p>
+
+<h3>Finance Class</h3>
+<p>For any  business student, it is an immensely difficult task to navigate finance courses without a handy financial calculator. While most basic financial calculations can technically be done by hand, professors generally allow students to use financial calculators, even during exams. It's not the ability to perform  calculations by hand that's important; it's the understanding of financial concepts and how to apply them using these handy calculating tools that were invented. Our web-based financial calculator  can serve as a good tool to have during lectures or homework, and because it is web-based, it is never out of reach, as long as a smartphone is nearby. The inclusion of a graph and a schedule, two things missing from physical calculators, can be more visually helpful for learning purposes.</p>
+
+<h3>The Importance of the Finance Calculator</h3>
+<p>In essence, our Finance Calculator is the foundation for most of our <a href="financial-calculator.html">Financial Calculators</a>. It helps to think of it as an equivalent to the steam engine that was eventually used to power a wide variety of things such as the steamboat, railway locomotives, factories, and road vehicles. There can be no <a href="mortgage-calculator.html">Mortgage Calculator</a>, or <a href="credit-card-calculator.html">Credit Card Calculator</a>, or <a href="auto-loan-calculator.html">Auto Loan Calculator</a> without the concept of the time value of money as explained by the Finance Calculator. As a matter of fact, our <a href="investment-calculator.html">Investment Calculator</a> is simply a rebranding of the Finance Calculator while everything underneath the hood is essentially the same.</p>
+
+
+<script>
+function popMenu(inval, insubmit){
+	htmlVal = "";
+	document.getElementById("cendamount").style.display = 'block';
+	document.getElementById("cinvestlength").style.display = 'block';
+	document.getElementById("cstartingamount").style.display = 'block';
+	document.getElementById("creturnrate").style.display = 'block';
+	document.getElementById("ccontributeamount").style.display = 'block';
+	document.getElementById("ctype").value=inval;
+
+	if (inval == "endamount"){
+		htmlVal = htmlVal + "<li id='menuon'><a href=\"#\" onclick=\"popMenu('endamount',1);return false;\">FV</a></li> <li><a href=\"#\" onclick=\"popMenu('contributeamount',1);return false;\">PMT</a></li> <li><a href=\"#\" onclick=\"popMenu('returnrate',1);return false;\">I/Y</a></li> <li><a href=\"#\" onclick=\"popMenu('investlength',1);return false;return false;\">N</a></li> <li><a href=\"#\" onclick=\"popMenu('startingamount',1);return false;\">PV</a></li>";
+		document.getElementById("cendamount").style.display = 'none';
+	}else if (inval == "investlength") {
+		htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('endamount',1);return false;\">FV</a></li> <li><a href=\"#\" onclick=\"popMenu('contributeamount',1);return false;\">PMT</a></li> <li><a href=\"#\" onclick=\"popMenu('returnrate',1);return false;\">I/Y</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('investlength',1);return false;\">N</a></li> <li><a href=\"#\" onclick=\"popMenu('startingamount',1);return false;\">PV</a></li>";
+		document.getElementById("cinvestlength").style.display = 'none';
+	}else if (inval == "startingamount") {
+		htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('endamount',1);return false;\">FV</a></li> <li><a href=\"#\" onclick=\"popMenu('contributeamount',1);return false;\">PMT</a></li> <li><a href=\"#\" onclick=\"popMenu('returnrate',1);return false;\">I/Y</a></li> <li><a href=\"#\" onclick=\"popMenu('investlength',1);return false;\">N</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('startingamount',1);return false;\">PV</a></li>";
+		document.getElementById("cstartingamount").style.display = 'none';
+	}else if (inval == "returnrate") {
+		htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('endamount',1);return false;\">FV</a></li> <li><a href=\"#\" onclick=\"popMenu('contributeamount',1);return false;\">PMT</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('returnrate',1);return false;\">I/Y</a></li> <li><a href=\"#\" onclick=\"popMenu('investlength',1);return false;\">N</a></li> <li><a href=\"#\" onclick=\"popMenu('startingamount',1);return false;\">PV</a></li>";
+		document.getElementById("creturnrate").style.display = 'none';
+	}else if (inval == "contributeamount") {
+		htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('endamount',1);return false;\">FV</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('contributeamount',1);return false;\">PMT</a></li> <li><a href=\"#\" onclick=\"popMenu('returnrate',1);return false;\">I/Y</a></li> <li><a href=\"#\" onclick=\"popMenu('investlength',1);return false;\">N</a></li> <li><a href=\"#\" onclick=\"popMenu('startingamount',1);return false;\">PV</a></li>";
+		document.getElementById("ccontributeamount").style.display = 'none';
+	}
+	//if (insubmit==1) document.calform.submit();
+	htmlVal = "<ul>" + htmlVal + "</ul>";
+	document.getElementById("topmenu").innerHTML = htmlVal;
+}
+popMenu('endamount',0);
+</script>
+<script>
+allData = "1:20000.00:1200.00:-19200.00:-2000.00|2:19200.00:1152.00:-18352.00:-2000.00|3:18352.00:1101.12:-17453.12:-2000.00|4:17453.12:1047.19:-16500.31:-2000.00|5:16500.31:990.02:-15490.33:-2000.00|6:15490.33:929.42:-14419.75:-2000.00|7:14419.75:865.18:-13284.93:-2000.00|8:13284.93:797.10:-12082.03:-2000.00|9:12082.03:724.92:-10806.95:-2000.00|10:10806.95:648.42:-9455.36:-2000.00|";cyears=10;remainingTerm=0;biggestItem=10;var chartStrBuilderPV = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderFV = [];
+var chartStrBuilderPMT = [];
+xmax = cyears;
+ymax = 0;
+ymin = 0;
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+totalInterest = 0;
+totalPMT = 0;
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		totalInterest += parseFloat(tempArray[2]);
+		outPutData[i][2] = totalInterest;
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		totalPMT += parseFloat(tempArray[4]);
+		outPutData[i][4] = totalPMT;
+		if (outPutData[i][1]<ymin) ymin = outPutData[i][1];
+		if (outPutData[i][2]<ymin) ymin = outPutData[i][2];
+		if (outPutData[i][3]<ymin) ymin = outPutData[i][3];
+		if (outPutData[i][4]<ymin) ymin = outPutData[i][4];
+		if (outPutData[i][1]>ymax) ymax = outPutData[i][1];
+		if (outPutData[i][2]>ymax) ymax = outPutData[i][2];
+		if (outPutData[i][3]>ymax) ymax = outPutData[i][3];
+		if (outPutData[i][4]>ymax) ymax = outPutData[i][4];
+		chartStrBuilderPV.push([Math.ceil(outPutData[i][0]-1), outPutData[i][1]]);
+		chartStrBuilderInterest.push([outPutData[i][0], outPutData[i][2]]);
+		chartStrBuilderFV.push([outPutData[i][0], outPutData[i][3]]);
+				chartStrBuilderPMT.push([outPutData[i][0], outPutData[i][4]]);
+			}
+}
+ymax = ymax*1.05;
+ymin = ymin*1.05;
+
+var tempVal = 45;
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1},
+		yAxis: {
+			min: ymin, max:ymax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (Math.abs(this.value)>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (Math.abs(this.value)>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: true,formatter: function() {return this.series.name+': $' + this.y.toFixed(2);}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		series: [
+			{name: 'PV',data: chartStrBuilderPV},
+			{name: 'FV',data: chartStrBuilderFV},
+			{name: 'Sum of PMT',data: chartStrBuilderPMT},
+			{name: 'Accumulated Interest',data: chartStrBuilderInterest}
+		]
+	});
+});
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/finance-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/finance-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:22 GMT -->
+</html>

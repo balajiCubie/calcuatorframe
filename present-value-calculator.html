@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/present-value-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Present Value Calculator</title>
+	<meta name="description" content="Free financial calculator to find the present value of a future amount or a stream of annuity payments." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="present-value-calculator.html" itemprop="item"><span itemprop="name">present value calculator</span></a><meta itemprop="position" content="3" /></span></div><h1>Present Value Calculator</h1><p>This present value calculator can be used to calculate the present value of a certain amount of money in the future or periodical annuity payments.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><h2>Present Value of Future Money</h2>
+<table width="100%"><tr><td valign="top"><form action="https://www.calculator.net/present-value-calculator.html#future-money">
+<div class="panel">
+<table align="center">
+<tr><td>Future Value (FV)</td><td><input type="text" name="c1futurevalue" value="1000" class="inhalf indollar"></td></tr>
+<tr><td>Number of Periods (N)</td><td><input type="text" name="c1yearsv" value="10" class="inhalf"></td></tr>
+<tr><td>Interest Rate (I/Y)</td><td><input type="text" name="c1interestratev" value="6" class="inhalf inpct"></td></tr>
+<tr><td align="center" colspan="2"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</table>
+</div></form>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign="top"><a name="future-money"></a><h2 class="h2result">Results</h2><p class="verybigtext">Present Value: <font color='green'><b>$558.39</b></font></p><p class="verybigtext">Total Interest: $441.61</p></td></tr></table>
+
+<br><h2>Present Value of Periodical Deposits</h2>
+<table width="100%"><tr><td valign="top">
+<form action="https://www.calculator.net/present-value-calculator.html#periodical-deposits"><div class="panel">
+<table align="center">
+<tr><td>Number of Periods (N)</td><td><input type="text" name="cyearsv" id="cyearsv" value="10" class="innormal"></td><td>&nbsp;</td></tr>
+<tr><td>Interest Rate (I/Y)</td><td><input type="text" name="cinterestratev" id="cinterestratev" value="6" class="innormal inpct"></td><td>&nbsp;</td></tr>
+<tr><td>Periodic Deposit (PMT)</td><td><input type="text" name="ccontributeamountv" id="ccontributeamountv" value="100" class="innormal indollar"></td><td>/period</td></tr>
+<tr><td colspan="3" style="padding: 10px 0px;">PMT made at the
+	 <label for="ciadditionat1" class="cbcontainer"><input name="ciadditionat1" id="ciadditionat1" value="beginning" type="radio" ><span class="rbmark"></span>beginning</label> &nbsp;
+	 <label for="ciadditionat2" class="cbcontainer"><input name="ciadditionat1" id="ciadditionat2" value="end" type="radio" checked><span class="rbmark"></span>end</label><br />of each compound period
+</td></tr>
+<tr><td align="center" colspan="3"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td></tr>
+</table>
+</div></form>
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign="top">
+<a name="periodical-deposits"></a><h2 class="h2result">Results</h2><p class="verybigtext">Present Value: <font color='green'><b>$736.01</b></font></p><table cellpadding='2' width='100%'><tr bgcolor='#eeeeee'><td>FV (Future Value)</td><td align=right>$1,318.08</td></tr><tr bgcolor='#eeeeee'><td>Total Principal</td><td align=right>$1,000.00</td></tr><tr bgcolor='#eeeeee'><td>Total Interest</td><td align=right>$318.08</td></tr></table></td></tr></table>
+<div id="mRateData"></div>
+<div class="leftchart">
+	<div class="bigtext" style="text-align:center;"><b>Balance Accumulation Graph</b></div>
+	<div id="cchartdiv" style="min-width: 320px; height: 250px; margin: 0 auto"></div>
+</div>
+<div class="rightpie">
+	<div class="bigtext" style="text-align:center;"><b>Breakdown</b></div>
+	<div id="cpiechartdiv" style="min-width: 155px; max-width: 155px; height: 250px; margin: 0 auto"></div>
+</div>
+<div id="clear"></div>
+<div id="camortizationschdis"></div>
+<h2>Schedule</h2><table border='0' cellpadding='3' width='100%'><tr align='right' bgcolor='#E0F0FE'><td>&nbsp;</td><td><b>start principal</b></td><td><b>start balance</b></td><td><b>interest</b></td><td><b>end balance</b></td><td><b>end principal</b></td></tr><tr align='right' bgcolor='#dddddd'><td>1</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$100.00</td><td>$100.00</td></tr><tr align='right'><td>2</td><td>$100.00</td><td>$100.00</td><td>$6.00</td><td>$206.00</td><td>$200.00</td></tr><tr align='right' bgcolor='#dddddd'><td>3</td><td>$200.00</td><td>$206.00</td><td>$12.36</td><td>$318.36</td><td>$300.00</td></tr><tr align='right'><td>4</td><td>$300.00</td><td>$318.36</td><td>$19.10</td><td>$437.46</td><td>$400.00</td></tr><tr align='right' bgcolor='#dddddd'><td>5</td><td>$400.00</td><td>$437.46</td><td>$26.25</td><td>$563.71</td><td>$500.00</td></tr><tr align='right'><td>6</td><td>$500.00</td><td>$563.71</td><td>$33.82</td><td>$697.53</td><td>$600.00</td></tr><tr align='right' bgcolor='#dddddd'><td>7</td><td>$600.00</td><td>$697.53</td><td>$41.85</td><td>$839.38</td><td>$700.00</td></tr><tr align='right'><td>8</td><td>$700.00</td><td>$839.38</td><td>$50.36</td><td>$989.75</td><td>$800.00</td></tr><tr align='right' bgcolor='#dddddd'><td>9</td><td>$800.00</td><td>$989.75</td><td>$59.38</td><td>$1,149.13</td><td>$900.00</td></tr><tr align='right'><td>10</td><td>$900.00</td><td>$1,149.13</td><td>$68.95</td><td>$1,318.08</td><td>$1,000.00</td></tr></table><br>
+<p><fieldset><legend>Related</legend><a href="investment-calculator.html">Investment Calculator</a> | <a href="future-value-calculator.html">Future Value Calculator</a></fieldset></p>
+<script>
+allData = "0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:0.00:0.00:0.00:0.00:0.00:0.00|0.00:0.00:100.00:0.00:100.00:0.00:0.00:0.00|100.00:100.00:100.49:0.49:100.00:0.49:0.00:0.00|100.00:100.49:100.98:0.49:100.00:0.98:0.00:0.00|100.00:100.98:101.47:0.49:100.00:1.47:0.00:0.00|100.00:101.47:101.96:0.49:100.00:1.96:0.00:0.00|100.00:101.96:102.46:0.50:100.00:2.46:0.00:0.00|100.00:102.46:102.96:0.50:100.00:2.96:0.00:0.00|100.00:102.96:103.46:0.50:100.00:3.46:0.00:0.00|100.00:103.46:103.96:0.50:100.00:3.96:0.00:0.00|100.00:103.96:104.47:0.51:100.00:4.47:0.00:0.00|100.00:104.47:104.98:0.51:100.00:4.98:0.00:0.00|100.00:104.98:105.49:0.51:100.00:5.49:0.00:0.00|100.00:105.49:206.00:0.51:200.00:6.00:0.00:0.00|200.00:206.00:207.00:1.00:200.00:7.00:0.00:0.00|200.00:207.00:208.01:1.01:200.00:8.01:0.00:0.00|200.00:208.01:209.02:1.01:200.00:9.02:0.00:0.00|200.00:209.02:210.04:1.02:200.00:10.04:0.00:0.00|200.00:210.04:211.06:1.02:200.00:11.06:0.00:0.00|200.00:211.06:212.09:1.03:200.00:12.09:0.00:0.00|200.00:212.09:213.12:1.03:200.00:13.12:0.00:0.00|200.00:213.12:214.16:1.04:200.00:14.16:0.00:0.00|200.00:214.16:215.20:1.04:200.00:15.20:0.00:0.00|200.00:215.20:216.25:1.05:200.00:16.25:0.00:0.00|200.00:216.25:217.30:1.05:200.00:17.30:0.00:0.00|200.00:217.30:318.36:1.06:300.00:18.36:0.00:0.00|300.00:318.36:319.91:1.55:300.00:19.91:0.00:0.00|300.00:319.91:321.47:1.56:300.00:21.47:0.00:0.00|300.00:321.47:323.03:1.56:300.00:23.03:0.00:0.00|300.00:323.03:324.60:1.57:300.00:24.60:0.00:0.00|300.00:324.60:326.18:1.58:300.00:26.18:0.00:0.00|300.00:326.18:327.77:1.59:300.00:27.77:0.00:0.00|300.00:327.77:329.37:1.60:300.00:29.37:0.00:0.00|300.00:329.37:330.97:1.60:300.00:30.97:0.00:0.00|300.00:330.97:332.58:1.61:300.00:32.58:0.00:0.00|300.00:332.58:334.20:1.62:300.00:34.20:0.00:0.00|300.00:334.20:335.83:1.63:300.00:35.83:0.00:0.00|300.00:335.83:437.46:1.63:400.00:37.46:0.00:0.00|400.00:437.46:439.59:2.13:400.00:39.59:0.00:0.00|400.00:439.59:441.73:2.14:400.00:41.73:0.00:0.00|400.00:441.73:443.88:2.15:400.00:43.88:0.00:0.00|400.00:443.88:446.04:2.16:400.00:46.04:0.00:0.00|400.00:446.04:448.21:2.17:400.00:48.21:0.00:0.00|400.00:448.21:450.39:2.18:400.00:50.39:0.00:0.00|400.00:450.39:452.59:2.19:400.00:52.59:0.00:0.00|400.00:452.59:454.79:2.20:400.00:54.79:0.00:0.00|400.00:454.79:457.00:2.21:400.00:57.00:0.00:0.00|400.00:457.00:459.23:2.22:400.00:59.23:0.00:0.00|400.00:459.23:461.46:2.24:400.00:61.46:0.00:0.00|400.00:461.46:563.71:2.25:500.00:63.71:0.00:0.00|500.00:563.71:566.45:2.74:500.00:66.45:0.00:0.00|500.00:566.45:569.21:2.76:500.00:69.21:0.00:0.00|500.00:569.21:571.98:2.77:500.00:71.98:0.00:0.00|500.00:571.98:574.77:2.78:500.00:74.77:0.00:0.00|500.00:574.77:577.56:2.80:500.00:77.56:0.00:0.00|500.00:577.56:580.37:2.81:500.00:80.37:0.00:0.00|500.00:580.37:583.20:2.83:500.00:83.20:0.00:0.00|500.00:583.20:586.04:2.84:500.00:86.04:0.00:0.00|500.00:586.04:588.89:2.85:500.00:88.89:0.00:0.00|500.00:588.89:591.76:2.87:500.00:91.76:0.00:0.00|500.00:591.76:594.64:2.88:500.00:94.64:0.00:0.00|500.00:594.64:697.53:2.89:600.00:97.53:0.00:0.00|600.00:697.53:700.93:3.40:600.00:100.93:0.00:0.00|600.00:700.93:704.34:3.41:600.00:104.34:0.00:0.00|600.00:704.34:707.77:3.43:600.00:107.77:0.00:0.00|600.00:707.77:711.21:3.45:600.00:111.21:0.00:0.00|600.00:711.21:714.67:3.46:600.00:114.67:0.00:0.00|600.00:714.67:718.15:3.48:600.00:118.15:0.00:0.00|600.00:718.15:721.65:3.50:600.00:121.65:0.00:0.00|600.00:721.65:725.16:3.51:600.00:125.16:0.00:0.00|600.00:725.16:728.69:3.53:600.00:128.69:0.00:0.00|600.00:728.69:732.24:3.55:600.00:132.24:0.00:0.00|600.00:732.24:735.80:3.56:600.00:135.80:0.00:0.00|600.00:735.80:839.38:3.58:700.00:139.38:0.00:0.00|700.00:839.38:843.47:4.09:700.00:143.47:0.00:0.00|700.00:843.47:847.58:4.11:700.00:147.58:0.00:0.00|700.00:847.58:851.70:4.13:700.00:151.70:0.00:0.00|700.00:851.70:855.85:4.15:700.00:155.85:0.00:0.00|700.00:855.85:860.01:4.17:700.00:160.01:0.00:0.00|700.00:860.01:864.20:4.19:700.00:164.20:0.00:0.00|700.00:864.20:868.41:4.21:700.00:168.41:0.00:0.00|700.00:868.41:872.63:4.23:700.00:172.63:0.00:0.00|700.00:872.63:876.88:4.25:700.00:176.88:0.00:0.00|700.00:876.88:881.15:4.27:700.00:181.15:0.00:0.00|700.00:881.15:885.44:4.29:700.00:185.44:0.00:0.00|700.00:885.44:989.75:4.31:800.00:189.75:0.00:0.00|800.00:989.75:994.56:4.82:800.00:194.56:0.00:0.00|800.00:994.56:999.41:4.84:800.00:199.41:0.00:0.00|800.00:999.41:1004.27:4.86:800.00:204.27:0.00:0.00|800.00:1004.27:1009.16:4.89:800.00:209.16:0.00:0.00|800.00:1009.16:1014.07:4.91:800.00:214.07:0.00:0.00|800.00:1014.07:1019.01:4.94:800.00:219.01:0.00:0.00|800.00:1019.01:1023.97:4.96:800.00:223.97:0.00:0.00|800.00:1023.97:1028.95:4.98:800.00:228.95:0.00:0.00|800.00:1028.95:1033.96:5.01:800.00:233.96:0.00:0.00|800.00:1033.96:1038.99:5.03:800.00:238.99:0.00:0.00|800.00:1038.99:1044.05:5.06:800.00:244.05:0.00:0.00|800.00:1044.05:1149.13:5.08:900.00:249.13:0.00:0.00|900.00:1149.13:1154.73:5.59:900.00:254.73:0.00:0.00|900.00:1154.73:1160.35:5.62:900.00:260.35:0.00:0.00|900.00:1160.35:1165.99:5.65:900.00:265.99:0.00:0.00|900.00:1165.99:1171.67:5.68:900.00:271.67:0.00:0.00|900.00:1171.67:1177.37:5.70:900.00:277.37:0.00:0.00|900.00:1177.37:1183.10:5.73:900.00:283.10:0.00:0.00|900.00:1183.10:1188.86:5.76:900.00:288.86:0.00:0.00|900.00:1188.86:1194.65:5.79:900.00:294.65:0.00:0.00|900.00:1194.65:1200.46:5.82:900.00:300.46:0.00:0.00|900.00:1200.46:1206.31:5.84:900.00:306.31:0.00:0.00|900.00:1206.31:1212.18:5.87:900.00:312.18:0.00:0.00|900.00:1212.18:1318.08:5.90:1000.00:318.08:0.00:0.00|";cyears=10;remainingTerm=0;biggestItem=120;var chartStrBuilderBalance = [];
+var chartStrBuilderPrincipal = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderTax = [];
+xmax = cyears;
+chartStrBuilderBalance.push([0,0]);
+chartStrBuilderPrincipal.push([0,0]);
+chartStrBuilderInterest.push([0,0]);
+chartStrBuilderTax.push([0,0]);
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+		outPutData[i][5] = parseFloat(tempArray[5]);
+		outPutData[i][6] = parseFloat(tempArray[6]);
+		outPutData[i][7] = parseFloat(tempArray[7]);
+
+		tempVal = (i+1)/12;
+		chartStrBuilderBalance.push([tempVal,outPutData[i][2]]);
+		chartStrBuilderPrincipal.push([tempVal,outPutData[i][4]]);
+		chartStrBuilderInterest.push([tempVal,outPutData[i][5]]);
+		chartStrBuilderTax.push([tempVal,outPutData[i][7]]);
+	}
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-28,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',1000],['Interest',318]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Principal',data: chartStrBuilderPrincipal},
+			{name: 'Interest',data: chartStrBuilderInterest},
+			{name: 'Balance',data: chartStrBuilderBalance}
+		]
+	});
+});
+</script>
+<br>
+<h3>Present Value</h3>
+<p>Present Value, or PV, is defined as the value in the present of a sum of money, in contrast to a different value it will have in the future due to it being invested and compound at a certain rate. </p>
+
+<h3>Net Present Value</h3>
+<p>A popular concept in finance is the idea of net present value, more commonly known as NPV. It is important to make the distinction between PV and NPV; while the former is usually associated with learning broad financial concepts and financial calculators, the latter generally has more practical uses in everyday life. NPV is a common metric used in financial analysis and accounting; examples include the calculation of capital expenditure or depreciation. The difference between the two is that while PV represents the present value of a sum of money or cash flow, NPV represents the net of all cash inflows and all cash outflows, similar to how the net income of a business after revenue and expenses, or how net benefit is found after evaluating the pros and cons to doing something. The inclusion of the word 'net' denotes the combination of positive and negative values for a figure.</p>
+
+<h3>The Time Value of Money</h3>
+<p>PV (along with FV, I/Y, N, and PMT) is an important element in the time value of money, which forms the backbone of finance. There can be no such things as <a href="mortgage-calculator.html">mortgages</a>, <a href="auto-loan-calculator.html">auto loans</a>, or <a href="credit-card-calculator.html">credit cards</a> without PV.</p>
+<p>To learn more about or do calculations on future value instead, feel free to pop on over to our <a href="future-value-calculator.html">Future Value Calculator</a>. For a brief, educational introduction to finance and the time value of money, please visit our <a href="finance-calculator.html">Finance Calculator</a>.</p>
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/present-value-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/present-value-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

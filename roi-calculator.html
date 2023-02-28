@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/roi-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Return on Investment (ROI) Calculator</title>
+	<meta name="description" content="Free return on investment (ROI) calculator that returns total ROI rate and annualized ROI using either actual dates of investment or simply investment length." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json">	<script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js"></script>
+	<script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+	<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head><body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="roi-calculator.html" itemprop="item"><span itemprop="name">roi calculator</span></a><meta itemprop="position" content="3" /></span></div><h1>Return on Investment (ROI) Calculator</h1><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><div class="leftinput">
+<form>
+<div class="panel">
+<table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td>
+<table>
+<tr><td>Amount Invested</td><td align="right"><input type="text" name="beginbalance" id="beginbalance" value="1000" class="inlonger indollar" onKeyUp="iptfieldCheck(this, 'r', 'pn');"></td></tr>
+<tr><td>Amount Returned</td><td align="right"><input type="text" name="endbalance" id="endbalance" value="2000" class="inlonger indollar" onKeyUp="iptfieldCheck(this, 'r', 'pn');"></td></tr>
+</table>
+<p style="padding-left:3px;">
+Investment Time:<br> &nbsp; &nbsp;
+	<label for="investmenttime1" class="cbcontainer"><input name="investmenttime" id="investmenttime1" value="date" checked type="radio" onclick="shIlength('date');"><span class="rbmark"></span>Use Dates</label> &nbsp; <label for="investmenttime2" class="cbcontainer"><input name="investmenttime" id="investmenttime2" value="length" type="radio"  onclick="shIlength('length');"><span class="rbmark"></span>Use Length</label>
+</p>
+<table id='shIlengthlength'>
+<tr><td>Investment Length</td><td align="right"><input type="text" name="investmentlength" size="12" id="investmentlength" value="2.5" class="inlonger inuiyear" onKeyUp="iptfieldCheck(this, 'r', 'pn');"><span class="inuiyearspan" onClick="document.getElementById('investmentlength').select();">years</span></td></tr>
+</table>
+<table id="shIlengthdate">
+<tr><td>From</td><td align="right">
+<script>DateInput('beginbalanceday', true, 'MM/DD/YYYY', '02/23/2023');</script></td></tr>
+<tr><td>To</td><td align="right">
+<script>DateInput('endbalanceday', true, 'MM/DD/YYYY', '12/31/2027');</script></td></tr>
+</table><br>
+<div style="padding-left:50px;"><input type="hidden" name="ctype" id="ctype" value="1"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></div>
+</td></tr></table>
+</div>
+</form>
+</div>
+<div class="rightresult">
+<h2 class="h2result">Result</h2><table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td><table class="cinfoT"><tr><td>Investment Gain</td><td align="right"><font color="green"><b>$1,000.00</b></font></td></tr><tr><td>ROI</td><td align="right"><font color="green"><b>100.00%</b></font></td></tr><tr><td>Annualized ROI</td><td align="right"><font color="green"><b>15.36%</b></font></td></tr><tr><td>Investment Length</td><td align="right">4.85 years</td></tr></table><br><div id="mroichartdiv" style="min-width: 250px; height: 120px; margin-bottom: -25px;"></div>
+<script>
+$(function () {
+	$('#mroichartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["20%", "20%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			x:30,
+			y:-38,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Invested',1000],['Profit',1000]]
+		}]
+	});
+});
+
+</script>
+</td></tr></table></div>
+<div id="clear"></div><br>
+
+<p><fieldset><legend>Related:</legend><a href="investment-calculator.html">Investment Calculator</a> | <a href="average-return-calculator.html">Average Return Calculator</a></fieldset></p>
+
+<br>
+<p>In finance, Return on Investment, usually abbreviated as ROI, is a common, widespread metric used to evaluate the forecasted profitability on different investments. Before any serious investment opportunities are even considered, ROI is a solid base from which to go forth. The metric can be applied to anything from stocks, real estate, employees, to even a sheep farm; anything that has a cost with the potential to derive gains from can have an ROI assigned to it. While much more intricate formulas exist to help calculate the rate of return on investments accurately, ROI is lauded and still widely used due to its simplicity and broad usage as a quick-and-dirty method. Many money-making schemes involve several businessmen seated at a table during lunch talking about potential investments until one of them exclaims about one with a very high ROI after doing the calculations on a napkin.</p>
+<p>ROI may be confused with ROR, or rate of return. Sometimes, they can be used interchangeably, but there is a big difference: ROR can denote a period of time, often annually, while ROI doesn't.</p>
+
+<p>The basic formula for ROI is:</p>
+
+<table align="center"><tr>
+<td>ROI =&nbsp;</td>
+<td><table cellpadding="0"><tr><td>Gain from Investment - Cost of Investment</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td align="center">Cost of Investment</td></tr></table></td>
+</tr></table>
+
+<p>As a most basic example, Bob wants to calculate the ROI on his sheep farming operation. From the beginning until the present, he invested a total of $50,000 into the project, and his total profits to date sum up to $70,000.</p>
+
+<table align="center"><tr>
+<td><table cellpadding="0"><tr><td>$70,000 - $50,000</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td align="center">$50,000</td></tr></table></td>
+<td>&nbsp;= 40%</td>
+</tr></table>
+<p>Bob's ROI on his sheep farming operation is 40%. Conversely, the formula can be used to compute either gain from or cost of investment, given a desired ROI. If Bob wanted an ROI of 40% and knew his initial cost of investment was $50,000, $70,000 is the gain he must make from the initial investment to realize his desired ROI.</p>
+
+<h3>Difficulty in Usage</h3>
+<p>It is true that ROI as a metric can be utilized to gauge the profitability of almost anything. However, its universal applicability is also the reason why it tends to be difficult to use properly. While the ROI formula itself may be simple, the real problem comes from people not understanding how to arrive at the correct definition for 'cost' and/or 'gain', or the variability involved. For instance, for a potential real estate property, investor A might calculate the ROI involving capital expenditure, taxes, and insurance, while investor B might only use the purchase price. For a potential stock, investor A might calculate ROI including taxes on capital gains, while investor B may not. Also, does an ROI calculation involve every cash flow in the middle other than the first and the last? Different investors use ROI differently.</p>
+<p>However, the biggest nuance with ROI is that there is no timeframe involved. Take, for instance, an investor with an investment decision between a diamond with an ROI of 1,000% or a piece of land with an ROI of 50%. Right off the bat, the diamond seems like the no-brainer, but is it true if the ROI is calculated over 50 years for the diamond as opposed to the land's ROI calculated over several months? This is why ROI does its job well as a base for evaluating investments, but it is essential to supplement it further with other, more accurate measures.</p>
+
+<h3>Annualized ROI</h3>
+<p>The ROI Calculator includes an Investment Time input to hurdle this weakness by using something called the annualized ROI, which is a rate normally more meaningful for comparison. When comparing the results of two calculations computed with the calculator, oftentimes, the annualized ROI figure is more useful than the ROI figure; the diamond versus land comparison above is a good example of why.</p>
+<p>In real life, the investment risk and other situations are not reflected in the ROI rate, so even though higher annualized ROI is preferred, it is not uncommon to see lower ROI investments are favored for their lower risk or other favorable conditions. Many times, ROI cannot be directly measured, such as the investment of advertising a product. The ROI in such situations is normally estimated via the marginal sales benefit or brand recognition.</p>
+
+
+<script>
+function shIlength(shmfValue){
+	if (shmfValue=='date'){
+		document.getElementById('shIlengthdate').style.display = 'block';
+		document.getElementById('shIlengthlength').style.display = 'none';
+	}else{
+		document.getElementById('shIlengthdate').style.display = 'none';
+		document.getElementById('shIlengthlength').style.display = 'block';
+	}
+	return false;
+}
+
+shIlength("date");</script>
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/roi-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/roi-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

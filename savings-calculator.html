@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/savings-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Savings Calculator</title>
+	<meta name="description" content="Free calculator to find out the balance and interest of a savings account while accounting for tax, inflation, periodic contributions, compounding frequency." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="savings-calculator.html" itemprop="item"><span itemprop="name">savings calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Savings Calculator</h1>
+
+<p>The savings calculator can be used to estimate the end balance and interest of savings accounts. It considers many different factors such as tax, inflation, and various periodic contributions. Negative starting balances or contribution values can be used.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top"><table id="calinputtable" class="panel"><form name="calform" action="https://www.calculator.net/savings-calculator.html#savingresult">
+<tr><td>Starting Amount</td><td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="20000" class="inhalf indollar"></td></tr>
+<tr><td>Annual Contribution</td><td><input type="text" name="cannualaddition" id="cannualaddition" value="5000" class="inhalf indollar"></td></tr>
+<tr><td align="right">for</td><td><input type="text" name="cannualadditionyears" id="cannualadditionyears" value="5" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td align="right">increase</td><td><input type="text" name="cannualadditionincrease" id="cannualadditionincrease" value="3" class="inhalf inuipound"><span class="inuipoundspan">% /year</span></td></tr>
+
+<tr><td>Monthly Contribution</td><td><input type="text" name="cmonthlyaddition" id="cmonthlyaddition" value="0" class="inhalf indollar"></td></tr>
+<tr><td align="right">for</td><td><input type="text" name="cmonthlyadditionmonths" id="cmonthlyadditionmonths" value="0" class="inhalf inuipound"><span class="inuipoundspan">months</span></td></tr>
+<tr><td>increase</td><td><input type="text" name="cmonthlyadditionincrease" id="cmonthlyadditionincrease" value="0" class="inhalf inuipound"><span class="inuipoundspan">% /year</span></td></tr>
+
+<tr><td colspan="2" align="right">Contribute at the <label for="cadditionat1" class="cbcontainer"><input name="cadditionat1" id="cadditionat1" value="beginning" type="radio" checked><span class="rbmark"></span>beginning</label>
+	 <label for="cadditionat2" class="cbcontainer"><input name="cadditionat1" id="cadditionat2" value="end" type="radio" ><span class="rbmark"></span>end</label><br />
+		of each compounding period</td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="1" class="inhalf inpct"></td></tr>
+<tr><td>Compound</td><td>
+	<select id="ccompound" name="ccompound">
+		<option value="annually" selected>annually</option>
+		<option value="semiannually" >semiannually</option>
+		<option value="quarterly" >quarterly</option>
+		<option value="monthly" >monthly</option>
+		<option value="semimonthly" >semimonthly</option>
+		<option value="biweekly" >biweekly</option>
+		<option value="weekly" >weekly</option>
+		<option value="daily" >daily</option>
+		<option value="continuously" >continuously</option>
+	</select>
+</td></tr>
+<tr><td>After</td><td><input type="text" name="cyears" id="cyears" value="10" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+
+<tr><td>Tax Rate</td><td><input type="text" name="ctaxtrate" id="ctaxtrate" value="0" class="inhalf inpct"></td></tr>
+<tr><td>Inflation Rate</td><td><input type="text" name="cinflationrate" id="cinflationrate" value="3" class="inhalf inpct"></td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</td><td valign="top"><a name="savingresult"></a><h2 class="h2result">Results</h2><table cellpadding='3' width='100%'><tr><td><b>End Balance</b></td><td align=right><b>$50,823.55</b></td></tr><tr><td>After Inflation Adjustment</td><td align=right>$37,817.50</td></tr><tr><td>Total Principal</td><td align=right>$46,545.68</td></tr><tr><td>Total Interest</td><td align=right>$4,277.87</td></tr></table><br><div class="bigtext" style="text-align:center;"><b>Breakdown</b></div><div id="cpiechartdiv" style="min-width: 155px; max-width: 170px; height: 255px; margin: 0 auto"></div></td></tr></table>
+
+<div class="bigtext" style="text-align:center;"><b>Balance Accumulation Graph</b></div>
+<div id="cchartdiv" style="min-width: 320px; height: 220px; margin: 0 auto"></div>
+
+<div id="camortizationschdis"></div>
+
+<fieldset><legend>Related</legend><a href="investment-calculator.html">Investment Calculator</a> | <a href="average-return-calculator.html">Average Return Calculator</a> | <a href="roi-calculator.html">ROI Calculator</a></fieldset>
+
+<br><br>
+<p>People save for various reasons such as for big purchases, including homes and new cars. Also, saving can help prepare for things in the future, such as college tuition, marriages, vacations, or retirement. Whatever the reason for saving, not planning for these events beforehand can result in poor financial outcomes.</p>
+
+<h3>Savings Accounts</h3>
+<p>In the U.S., savings accounts are bank accounts mostly insured by the Federal Deposit Insurance Corporation (FDIC) with the ability to earn interest on deposited funds (savings). They can be opened at most banks, credit unions, or other financial institutions, but will vary in traits such as synergy with checking accounts of the same institution, annual percentage yield (APY), and minimum balance requirements. Regarding the first, financial institutions generally offer incentives, such as waiving monthly fees, for opening savings and checking accounts.</p>
+<p>While savings accounts are often linked to checking accounts, there are some key differences. Checking accounts are deposit accounts through financial institutions that allow the withdrawal or depositing of funds. They are highly liquid, and, for the most part, funds can be withdrawn without penalties. Also, they tend not to pay interest, and those that do, have some of the lowest interest rates. On the other hand, savings accounts have limitations on withdrawals and may require maintenance of a minimum balance in order to avoid penalties.</p>
+<p>A key characteristic of savings accounts is their ability to earn interest at rates generally higher than those offered by checking accounts. However, a major drawback is that a federal limit in the U.S. only allows for no more than six outgoing transactions (withdrawals) a month. Due to this, savings accounts are most useful as a means to store funds that a person does not immediately require, such as savings or emergency funds. Although savings accounts are not as liquid as checking accounts, it is still one of their beneficial aspects. When compared to the relative liquidity of cashing bonds, withdrawing from retirement accounts, or selling stocks or other assets, savings accounts are much easier to access when cash is needed.</p>
+<p>It can be a good idea to have both at the same time; a checking account can be used to store cash for immediate needs, and a secondary savings account can be used to hold any excess cash that can earn interest in the meantime. With that said, savings accounts aren't the only way to save and earn passive income. There are alternative investments with similar risk levels that can offer higher returns, such as <a href="cd-calculator.html">Certificates of Deposit (CD)</a> and Treasury bills. Investors with excess funds who want to stretch their dollars may also want to explore other passive income options.</p>
+
+<h3>Money Market Accounts</h3>
+<p>Another form of savings account, called money market accounts (MMA), is also available through many financial institutions. MMAs generally earn interest at rates greater than savings accounts because deposits are invested into securities rather than loans or assets earning low interest. Due to this, MMAs are exposed to risks associated with financial markets. Certain MMAs may also offer ATM and debit card services, which are generally not associated with traditional savings accounts. Accounts with such features may come with lower interest rates.</p>
+
+<h3>Contributions</h3>
+<p>When deciding how much to contribute towards savings accounts, there are several general guidelines that can help:</p>
+<ol>
+	<li>Emergency Fund Rule&mdash;Have enough in savings to cover at least three to six months' worth of living expenses, which can also double as insurance for emergency spending such as medical bills. In the case of sudden unemployment, there are enough savings to draw from for a period long enough for the chance to find new employment.</li>
+	<li>10% Rule&mdash;Set aside 10% of each paycheck to place into savings.</li>
+	<li>50-30-20 Rule&mdash;This rule states that 50% of income should go towards necessities like house/rent, food, and bills, 30% can be allocated for luxuries like dining and entertainment, while the last 20% should go towards paying off debt or savings.</li>
+	<li>The Federal Reserve Bank determined that the average amount a consumer needs to resolve emergencies is about $2,000. This may be a good figure for some to aim for.</li>
+</ol>
+<p>While these guidelines are helpful, there are simply too many varying factors to consider for each individual, such as how much they currently have in savings, how much they make relative to how much they spend, the future forecast of their short and long-term spending, among other things. As a result, these guidelines should be taken with a grain of salt.</p>
+
+<h3>Saving Too Much?</h3>
+<p>There are generally no limits as to how much can be deposited into savings accounts. Just keep in mind that for any accounts within the same financial institutions, only amounts that are $250,000 or less are insured by the FDIC. However, just because there is no limit to how much savings accounts can be funded does not mean that it is a good idea to perpetually do so. There are many other opportunities that exist to earn higher passive income. Investments in stocks, bonds, or real estate are good examples and generally offer higher return rates than savings accounts in the long run. Also, the inflation rate in the U.S. is generally higher than the savings account returns. This means the money in the savings account will not preserve the purchasing power, let alone earn income. If liquid savings accounts are generously funded, and excess cash still remains, it may be worthwhile to look to other investment options that offer greater returns.</p>
+
+
+
+<script type="text/javascript">
+allData = "25000.00:25000.00:25020.74:20.74:25000.00:20.74:0.00:0.00|25000.00:25020.74:25041.49:20.76:25000.00:41.49:0.00:0.00|25000.00:25041.49:25062.27:20.77:25000.00:62.27:0.00:0.00|25000.00:25062.27:25083.06:20.79:25000.00:83.06:0.00:0.00|25000.00:25083.06:25103.86:20.81:25000.00:103.86:0.00:0.00|25000.00:25103.86:25124.69:20.82:25000.00:124.69:0.00:0.00|25000.00:25124.69:25145.53:20.84:25000.00:145.53:0.00:0.00|25000.00:25145.53:25166.39:20.86:25000.00:166.39:0.00:0.00|25000.00:25166.39:25187.27:20.88:25000.00:187.27:0.00:0.00|25000.00:25187.27:25208.16:20.89:25000.00:208.16:0.00:0.00|25000.00:25208.16:25229.07:20.91:25000.00:229.07:0.00:0.00|25000.00:25229.07:25250.00:20.93:25000.00:250.00:0.00:0.00|30150.00:30400.00:30425.22:25.22:30150.00:275.22:0.00:0.00|30150.00:30425.22:30450.46:25.24:30150.00:300.46:0.00:0.00|30150.00:30450.46:30475.72:25.26:30150.00:325.72:0.00:0.00|30150.00:30475.72:30501.00:25.28:30150.00:351.00:0.00:0.00|30150.00:30501.00:30526.30:25.30:30150.00:376.30:0.00:0.00|30150.00:30526.30:30551.62:25.32:30150.00:401.62:0.00:0.00|30150.00:30551.62:30576.97:25.34:30150.00:426.97:0.00:0.00|30150.00:30576.97:30602.33:25.36:30150.00:452.33:0.00:0.00|30150.00:30602.33:30627.72:25.39:30150.00:477.72:0.00:0.00|30150.00:30627.72:30653.12:25.41:30150.00:503.12:0.00:0.00|30150.00:30653.12:30678.55:25.43:30150.00:528.55:0.00:0.00|30150.00:30678.55:30704.00:25.45:30150.00:554.00:0.00:0.00|35454.50:36008.50:36038.37:29.87:35454.50:583.87:0.00:0.00|35454.50:36038.37:36068.27:29.90:35454.50:613.77:0.00:0.00|35454.50:36068.27:36098.19:29.92:35454.50:643.69:0.00:0.00|35454.50:36098.19:36128.13:29.94:35454.50:673.63:0.00:0.00|35454.50:36128.13:36158.10:29.97:35454.50:703.60:0.00:0.00|35454.50:36158.10:36188.09:29.99:35454.50:733.59:0.00:0.00|35454.50:36188.09:36218.11:30.02:35454.50:763.61:0.00:0.00|35454.50:36218.11:36248.16:30.04:35454.50:793.66:0.00:0.00|35454.50:36248.16:36278.23:30.07:35454.50:823.73:0.00:0.00|35454.50:36278.23:36308.32:30.09:35454.50:853.82:0.00:0.00|35454.50:36308.32:36338.44:30.12:35454.50:883.94:0.00:0.00|35454.50:36338.44:36368.58:30.14:35454.50:914.08:0.00:0.00|40918.14:41832.22:41866.92:34.70:40918.14:948.79:0.00:0.00|40918.14:41866.92:41901.65:34.73:40918.14:983.52:0.00:0.00|40918.14:41901.65:41936.41:34.76:40918.14:1018.28:0.00:0.00|40918.14:41936.41:41971.20:34.79:40918.14:1053.06:0.00:0.00|40918.14:41971.20:42006.02:34.82:40918.14:1087.88:0.00:0.00|40918.14:42006.02:42040.86:34.85:40918.14:1122.73:0.00:0.00|40918.14:42040.86:42075.74:34.87:40918.14:1157.60:0.00:0.00|40918.14:42075.74:42110.64:34.90:40918.14:1192.50:0.00:0.00|40918.14:42110.64:42145.57:34.93:40918.14:1227.44:0.00:0.00|40918.14:42145.57:42180.53:34.96:40918.14:1262.40:0.00:0.00|40918.14:42180.53:42215.52:34.99:40918.14:1297.39:0.00:0.00|40918.14:42215.52:42250.54:35.02:40918.14:1332.41:0.00:0.00|46545.68:47878.09:47917.80:39.72:46545.68:1372.12:0.00:0.00|46545.68:47917.80:47957.55:39.75:46545.68:1411.87:0.00:0.00|46545.68:47957.55:47997.34:39.78:46545.68:1451.66:0.00:0.00|46545.68:47997.34:48037.15:39.82:46545.68:1491.47:0.00:0.00|46545.68:48037.15:48077.00:39.85:46545.68:1531.32:0.00:0.00|46545.68:48077.00:48116.88:39.88:46545.68:1571.20:0.00:0.00|46545.68:48116.88:48156.80:39.91:46545.68:1611.12:0.00:0.00|46545.68:48156.80:48196.74:39.95:46545.68:1651.06:0.00:0.00|46545.68:48196.74:48236.72:39.98:46545.68:1691.05:0.00:0.00|46545.68:48236.72:48276.74:40.01:46545.68:1731.06:0.00:0.00|46545.68:48276.74:48316.79:40.05:46545.68:1771.11:0.00:0.00|46545.68:48316.79:48356.87:40.08:46545.68:1811.19:0.00:0.00|46545.68:48356.87:48396.98:40.11:46545.68:1851.30:0.00:0.00|46545.68:48396.98:48437.13:40.15:46545.68:1891.45:0.00:0.00|46545.68:48437.13:48477.31:40.18:46545.68:1931.63:0.00:0.00|46545.68:48477.31:48517.52:40.21:46545.68:1971.84:0.00:0.00|46545.68:48517.52:48557.77:40.25:46545.68:2012.09:0.00:0.00|46545.68:48557.77:48598.05:40.28:46545.68:2052.37:0.00:0.00|46545.68:48598.05:48638.36:40.31:46545.68:2092.68:0.00:0.00|46545.68:48638.36:48678.71:40.35:46545.68:2133.03:0.00:0.00|46545.68:48678.71:48719.09:40.38:46545.68:2173.41:0.00:0.00|46545.68:48719.09:48759.51:40.41:46545.68:2213.83:0.00:0.00|46545.68:48759.51:48799.95:40.45:46545.68:2254.28:0.00:0.00|46545.68:48799.95:48840.44:40.48:46545.68:2294.76:0.00:0.00|46545.68:48840.44:48880.95:40.52:46545.68:2335.27:0.00:0.00|46545.68:48880.95:48921.50:40.55:46545.68:2375.82:0.00:0.00|46545.68:48921.50:48962.08:40.58:46545.68:2416.40:0.00:0.00|46545.68:48962.08:49002.70:40.62:46545.68:2457.02:0.00:0.00|46545.68:49002.70:49043.35:40.65:46545.68:2497.67:0.00:0.00|46545.68:49043.35:49084.03:40.68:46545.68:2538.35:0.00:0.00|46545.68:49084.03:49124.75:40.72:46545.68:2579.07:0.00:0.00|46545.68:49124.75:49165.50:40.75:46545.68:2619.82:0.00:0.00|46545.68:49165.50:49206.28:40.78:46545.68:2660.60:0.00:0.00|46545.68:49206.28:49247.10:40.82:46545.68:2701.42:0.00:0.00|46545.68:49247.10:49287.95:40.85:46545.68:2742.27:0.00:0.00|46545.68:49287.95:49328.84:40.89:46545.68:2783.16:0.00:0.00|46545.68:49328.84:49369.76:40.92:46545.68:2824.08:0.00:0.00|46545.68:49369.76:49410.71:40.95:46545.68:2865.04:0.00:0.00|46545.68:49410.71:49451.70:40.99:46545.68:2906.02:0.00:0.00|46545.68:49451.70:49492.72:41.02:46545.68:2947.05:0.00:0.00|46545.68:49492.72:49533.78:41.06:46545.68:2988.10:0.00:0.00|46545.68:49533.78:49574.87:41.09:46545.68:3029.19:0.00:0.00|46545.68:49574.87:49616.00:41.12:46545.68:3070.32:0.00:0.00|46545.68:49616.00:49657.15:41.16:46545.68:3111.47:0.00:0.00|46545.68:49657.15:49698.35:41.19:46545.68:3152.67:0.00:0.00|46545.68:49698.35:49739.57:41.23:46545.68:3193.89:0.00:0.00|46545.68:49739.57:49780.83:41.26:46545.68:3235.15:0.00:0.00|46545.68:49780.83:49822.13:41.30:46545.68:3276.45:0.00:0.00|46545.68:49822.13:49863.46:41.33:46545.68:3317.78:0.00:0.00|46545.68:49863.46:49904.82:41.36:46545.68:3359.14:0.00:0.00|46545.68:49904.82:49946.22:41.40:46545.68:3400.54:0.00:0.00|46545.68:49946.22:49987.65:41.43:46545.68:3441.97:0.00:0.00|46545.68:49987.65:50029.12:41.47:46545.68:3483.44:0.00:0.00|46545.68:50029.12:50070.62:41.50:46545.68:3524.94:0.00:0.00|46545.68:50070.62:50112.15:41.54:46545.68:3566.48:0.00:0.00|46545.68:50112.15:50153.72:41.57:46545.68:3608.05:0.00:0.00|46545.68:50153.72:50195.33:41.60:46545.68:3649.65:0.00:0.00|46545.68:50195.33:50236.97:41.64:46545.68:3691.29:0.00:0.00|46545.68:50236.97:50278.64:41.67:46545.68:3732.96:0.00:0.00|46545.68:50278.64:50320.35:41.71:46545.68:3774.67:0.00:0.00|46545.68:50320.35:50362.09:41.74:46545.68:3816.41:0.00:0.00|46545.68:50362.09:50403.87:41.78:46545.68:3858.19:0.00:0.00|46545.68:50403.87:50445.68:41.81:46545.68:3900.00:0.00:0.00|46545.68:50445.68:50487.53:41.85:46545.68:3941.85:0.00:0.00|46545.68:50487.53:50529.41:41.88:46545.68:3983.73:0.00:0.00|46545.68:50529.41:50571.33:41.92:46545.68:4025.65:0.00:0.00|46545.68:50571.33:50613.28:41.95:46545.68:4067.60:0.00:0.00|46545.68:50613.28:50655.26:41.99:46545.68:4109.58:0.00:0.00|46545.68:50655.26:50697.28:42.02:46545.68:4151.60:0.00:0.00|46545.68:50697.28:50739.34:42.06:46545.68:4193.66:0.00:0.00|46545.68:50739.34:50781.43:42.09:46545.68:4235.75:0.00:0.00|46545.68:50781.43:50823.55:42.13:46545.68:4277.87:0.00:0.00|";cyears=10;remainingTerm=0;biggestItem=120;var chartStrBuilderBalance = [];
+var chartStrBuilderPrincipal = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderTax = [];
+xmax = cyears;
+if (cyears<=1) xmax = cyears*12;
+chartStrBuilderBalance.push([0,25000]);
+chartStrBuilderPrincipal.push([0,25000]);
+chartStrBuilderInterest.push([0,0]);
+chartStrBuilderTax.push([0,0]);
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+		outPutData[i][5] = parseFloat(tempArray[5]);
+		outPutData[i][6] = parseFloat(tempArray[6]);
+		outPutData[i][7] = parseFloat(tempArray[7]);
+
+		tempVal = (i+1)/12;
+		if (cyears<=1) tempVal = i+1;
+		chartStrBuilderBalance.push([tempVal,outPutData[i][2]]);
+		chartStrBuilderPrincipal.push([tempVal,outPutData[i][4]]);
+		chartStrBuilderInterest.push([tempVal,outPutData[i][5]]);
+		chartStrBuilderTax.push([tempVal,outPutData[i][7]]);
+	}
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-28,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',46546],['Interest',4278]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cyears<=1){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Principal',data: chartStrBuilderPrincipal},
+			{name: 'Interest',data: chartStrBuilderInterest},
+						{name: 'Balance',data: chartStrBuilderBalance}
+		]
+	});
+});
+function showAmo(showOption){
+	var showCents = 1;
+	
+	var outputStrBuilder = [];
+	outputStrBuilder.push("<table border='0'  cellpadding='3' width='100%'>");
+	outputStrBuilder.push("<tr align='right' bgcolor='#E0F0FE'><td>&nbsp;</td><td><b>start principal</b></td><td><b>start balance</b></td><td><b>interest</b></td><td><b>tax</b></td><td><b>end balance</b></td><td><b>end principal</b></td></tr>");
+	if (showOption==1){
+		for (i=1;i<=(cyears*12);i++){
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + i);
+			}else{
+				outputStrBuilder.push("<tr align=right><td>" + i);
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(outPutData[(i-1)][0],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][1],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][3],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][6],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][2],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][4],showCents) + "</td></tr>");
+			if ((i%12)==0){
+				tempVal = parseInt(i/12);
+				outputStrBuilder.push("<tr bgcolor='#E0F0FE' align='center'><td colspan='7'><b>year " + tempVal + " end</b></td></tr>");
+			}
+		}
+		if (remainingTerm > 0.0001){
+			showLastNum = (biggestItem + remainingTerm).toFixed(3);
+			outputStrBuilder.push("<tr align='right'><td>" + showLastNum + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][0],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][1],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][3],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][6],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][2],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][4],showCents) + "</td></tr>");
+		}
+	}else{
+		for (i=0;i<parseInt(cyears);i++){
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(i*12+11)][2];
+			tData4 = outPutData[(i*12+11)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=0;j<12;j++){
+				idN = i * 12 + j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(tData0,showCents) + "</td><td>" + formatAsMoneyFull(tData1,showCents) + "</td><td>" + formatAsMoneyFull(tData3,showCents) + "</td><td>" + formatAsMoneyFull(tData6,showCents) + "</td><td>" + formatAsMoneyFull(tData2,showCents) + "</td><td>" + formatAsMoneyFull(tData4,showCents) + "</td></tr>");
+		}
+
+		if ((cyears - parseInt(cyears)) > 0.0001){
+			i = parseInt(cyears);
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(biggestItem-1)][2];
+			tData4 = outPutData[(biggestItem-1)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=(i*12);j<biggestItem;j++){
+				idN = j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(tData0,showCents) + "</td><td>" + formatAsMoneyFull(tData1,showCents) + "</td><td>" + formatAsMoneyFull(tData3,showCents) + "</td><td>" + formatAsMoneyFull(tData6,showCents) + "</td><td>" + formatAsMoneyFull(tData2,showCents) + "</td><td>" + formatAsMoneyFull(tData4,showCents) + "</td></tr>");
+		}
+
+	}
+	outputStrBuilder.push("</table>");
+	outPutString = outputStrBuilder.join("");
+	if (showOption==1){
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Monthly Schedule</h2><div id='topmenu'><ul><li><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li id='menuon'><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}else{
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Annual Schedule</h2><div id='topmenu'><ul><li id='menuon'><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}
+}
+if (cyears>2){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/savings-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/savings-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

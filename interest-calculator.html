@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/interest-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Interest Calculator</title>
+	<meta name="description" content="Free interest calculator to find the interest, final balance, and accumulation schedule using either a fixed starting principal and/or periodic contributions." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="interest-calculator.html" itemprop="item"><span itemprop="name">interest calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Interest Calculator</h1>
+
+<p>Our Interest Calculator can help determine the interest payments and final balances on not only fixed principal amounts but also additional periodic contributions. There are also optional factors available for consideration, such as the tax on interest income and inflation. To understand and compare the different ways in which interest can be compounded, please visit our <a href="compound-interest-calculator.html"><i>Compound Interest Calculator</i></a> instead.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top" width="48%"><table id="calinputtable" class="panel" border="0">
+<form name="calform" action="https://www.calculator.net/interest-calculator.html#interestresults">
+<tr><td>Starting Principal</td><td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="20000" class="inhalf indollar"></td></tr>
+<tr><td>Annual Contribution</td><td><input type="text" name="cannualaddition" id="cannualaddition" value="5000"  class="inhalf indollar"></td></tr>
+<tr><td>Monthly Contribution</td><td><input type="text" name="cmonthlyaddition" id="cmonthlyaddition" value="0"  class="inhalf indollar"></td></tr>
+<tr><td colspan="2" align="right">Contribute at the <label for="cadditionat1" class="cbcontainer"><input name="cadditionat1" id="cadditionat1" value="beginning" type="radio" checked><span class="rbmark"></span>beginning</label>
+	 <label for="cadditionat2" class="cbcontainer"><input name="cadditionat1" id="cadditionat2" value="end" type="radio" ><span class="rbmark"></span>end</label><br />
+		of each compounding period</td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="6" class="inhalf inpct"></td></tr>
+<tr><td>Compound</td><td>
+	<select id="ccompound" name="ccompound">
+		<option value="annually" selected>annually</option>
+		<option value="semiannually" >semiannually</option>
+		<option value="quarterly" >quarterly</option>
+		<option value="monthly" >monthly</option>
+		<option value="semimonthly" >semimonthly</option>
+		<option value="biweekly" >biweekly</option>
+		<option value="weekly" >weekly</option>
+		<option value="daily" >daily</option>
+		<option value="continuously" >continuously</option>
+	</select>
+</td></tr>
+<tr><td>After</td><td><input type="text" name="cyears" id="cyears" value="5" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td>Tax Rate</td><td><input type="text" name="ctaxtrate" id="ctaxtrate" value="0" class="inhalf inpct"></td></tr>
+<tr><td>Inflation Rate</td><td><input type="text" name="cinflationrate" id="cinflationrate" value="3" class="inhalf inpct"></td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</td><td valign="top" width="52%"><a name="interestresults"></a><h2 class="h2result">Results</h2><table cellpadding='3' width='100%'><tr><td><b>End Balance</b></td><td align=right><b>$56,641.10</b></td></tr><tr><td>After Inflation Adjustment</td><td align=right>$48,859.11</td></tr><tr><td>Total Principal</td><td align=right>$45,000.00</td></tr><tr><td>Total Interest</td><td align=right>$11,641.10</td></tr></table><div class="bigtext" style="text-align:center;"><b>Breakdown</b></div><div id="cpiechartdiv" style="min-width: 140px; height: 180px; margin: 0 auto"></div></td></tr></table>
+
+<div class="bigtext" style="text-align:center;"><b>Balance Accumulation Graph</b></div>
+<div id="cchartdiv" style="min-width: 320px; height: 220px; margin: 0 auto"></div>
+
+<div id="camortizationschdis"></div>
+
+<fieldset><legend>Related</legend><a href="investment-calculator.html">Investment Calculator</a> | <a href="average-return-calculator.html">Average Return Calculator</a> | <a href="roi-calculator.html">ROI Calculator</a></fieldset>
+
+<p><br><br>
+
+
+<p>Interest is the compensation paid by the borrower to the lender for the use of money as a percent or an amount. The concept of interest is the backbone behind most financial instruments in the world.</p>
+<p>There are two distinct methods of accumulating interest, categorized into simple interest or  compound interest.</p>
+
+<h3>Simple Interest</h3>
+<p>The following is a basic example of how interest works. Derek would like to borrow $100 (usually called the principal) from the bank for one year. The bank wants 10% interest on it. To calculate interest:</p>
+<p class="bigtext" align="center">$100 &#215; 10% = $10</p>
+<p>This interest is added to the principal, and the sum becomes Derek's required repayment to the bank one year later.</p>
+<p class="bigtext" align="center">$100 + $10 = $110</p>
+<p>Derek owes the bank $110 a year later, $100 for the principal and $10 as interest.</p>
+<p>Let's assume that Derek wanted to borrow $100 for two years instead of one, and the bank calculates interest annually. He would simply be charged the interest rate twice, once at the end of each year.</p>
+<p class="bigtext" align="center">$100 + $10(year 1) + $10(year 2) = $120</p>
+<p>Derek owes the bank $120 two years later, $100 for the principal and $20 as interest.</p>
+<p>The formula to calculate simple interest is:</p>
+<p align="center">interest = principal &#215; interest rate &#215; term</p>
+<p>When more complicated frequencies of applying interest are involved, such as monthly or daily, use the formula:</p>
+<table align="center"><tr>
+<td>interest = principal &#215; interest rate &#215;</td>
+<td><table cellpadding="0"><tr><td align="center">term</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td align="center">frequency</td></tr></table></td>
+</tr></table>
+
+<p>However, simple interest is very seldom used in the real world. Even when people use the everyday word 'interest,' they are usually referring to interest that compounds.</p>
+
+<h3>Compound Interest</h3>
+<p>Compounding interest requires more than one period, so let's go back to the example of Derek borrowing $100 from the bank for two years at a 10% interest rate. For the first year, we calculate interest as usual.</p>
+<p class="bigtext" align="center">$100 &#215; 10% = $10</p>
+<p>This interest is added to the principal, and the sum becomes Derek's required repayment to the bank for that present time. </p>
+<p class="bigtext" align="center">$100 + $10 = $110</p>
+<p>However, the year ends, and in comes another period. For compounding interest, rather than the original amount, the principal + any interest accumulated since is used. In Derek's case:</p>
+<p class="bigtext" align="center">$110 &#215; 10% = $11</p>
+<p>Derek's interest charge at the end of year 2 is $11. This is added to what is owed after year 1:</p>
+<p class="bigtext" align="center">$110 + $11 = $121</p>
+<p>When the loan ends, the bank collects $121 from Derek instead of $120 if it were calculated using simple interest instead. This is because interest is also earned on interest.</p>
+<p>The more frequently interest is compounded within a time period, the higher the interest will be earned on an original principal. The following is a graph showing just that, a $1,000 investment at various compounding frequencies earning 20% interest.</p>
+
+<p align="center"><br><img src="../d26tpo4cm8sb6k.cloudfront.net/img/interest/interest-compound.png"></p><p>There is little difference during the beginning between all frequencies, but over time they slowly start to diverge. This is the power of compound interest everyone likes to talk about, illustrated in a concise graph. The continuous compound will always have the highest return due to its use of the mathematical limit of the frequency of compounding that can occur within a specified time period.</p>
+
+<h3>The Rule of 72</h3>
+<p>Anyone who wants to estimate compound interest in their head may find the rule of 72 very useful. Not for exact calculations as given by financial calculators, but to get ideas for ballpark figures. It states that in order to find the number of years (n) required to double a certain amount of money with any interest rate, simply divide 72 by that same rate.</p>
+<p>Example: How long would it take to double $1,000 with an 8% interest rate?</p>
+<table align="center"><tr>
+<td class="bigtext">n = </td>
+<td><table cellpadding="0"><tr><td align="center" class="bigtext">72</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td align="center" class="bigtext">8</td></tr></table></td>
+<td class="bigtext"> = 9</td>
+</tr></table>
+<p>It will take 9 years for the $1,000 to become $2,000 at 8% interest. This formula works best for interest rates between 6 and 10%, but it should also work reasonably well for anything below 20%.</p>
+
+<h3>Fixed vs. Floating Interest Rate</h3>
+<p>The interest rate of a loan or savings can be "fixed" or "floating." Floating rate loans or savings are normally based on some reference rate, such as the U.S. Federal Reserve (Fed) funds rate or the LIBOR (London Interbank Offered Rate). Normally, the loan rate is a little higher, and the savings rate is a little lower than the reference rate. The difference goes to the profit of the bank. Both the Fed rate and LIBOR are short-term inter-bank interest rates, but the Fed rate is the main tool that the Federal Reserve uses to influence the supply of money in the U.S. economy. LIBOR is a commercial rate calculated from prevailing interest rates between highly credit-worthy institutions. Our Interest Calculator deals with fixed interest rates only.</p>
+
+<h3>Contributions</h3>
+<p>Our Interest Calculator above allows periodic deposits/contributions. This is useful for those who have the habit of saving a certain amount periodically. An important distinction to make regarding contributions is whether they occur at the beginning or end of compounding periods. Periodic payments that occur at the end have one less interest period total per contribution.</p>
+
+<h3>Tax Rate</h3>
+<p>Some forms of interest income are subject to taxes, including bonds, savings, and certificate of deposits(CDs). In the U.S., corporate bonds are almost always taxed. Certain types are fully taxed while others are partially taxed; for example, while interest earned on U.S. federal treasury bonds may be taxed at the federal level, they are generally exempt at the state and local level. Taxes can have very big impacts on the end balance. For example, if Derek saves $100 at 6% for 20 years, he will get:</p>
+<p class="bigtext" align="center">$100 &#215; (1 + 6%)<sup>20</sup> = $320.71</p>
+<p>This is tax-free. However, if Derek has a marginal tax rate of 25%, he will end up with $239.78 only because the tax rate of 25% applies to each compounding period.</p>
+
+<h3>Inflation Rate</h3>
+<p>Inflation is defined as a sustained increase in the prices of goods and services over time. As a result, a fixed amount of money will relatively afford less in the future. The average inflation rate in the U.S. in the past 100 years has hovered around 3%. As a tool of comparison, the average annual return rate of the S&P 500 (Standard & Poor's) index in the United States is around 10% in the same period. Please refer to our <a href="inflation-calculator.html">Inflation Calculator</a> for more detailed information about inflation.</p>
+<p>For our Interest Calculator, leave the inflation rate at 0 for quick, generalized results. But for real and accurate numbers, it is possible to input figures in order to account for inflation.</p>
+<p>Tax and inflation combined make it hard to grow the real value of money. For example, in the United States, the middle class has a marginal tax rate of around 25%, and the average inflation rate is 3%. To maintain the value of the money, a stable interest rate or investment return rate of 4% or above needs to be earned, and this is not easy to achieve.</p>
+
+
+
+<script type="text/javascript">
+allData = "25000.00:25000.00:25121.69:121.69:25000.00:121.69:0.00:0.00|25000.00:25121.69:25243.97:122.28:25000.00:243.97:0.00:0.00|25000.00:25243.97:25366.85:122.88:25000.00:366.85:0.00:0.00|25000.00:25366.85:25490.32:123.47:25000.00:490.32:0.00:0.00|25000.00:25490.32:25614.40:124.08:25000.00:614.40:0.00:0.00|25000.00:25614.40:25739.08:124.68:25000.00:739.08:0.00:0.00|25000.00:25739.08:25864.36:125.29:25000.00:864.36:0.00:0.00|25000.00:25864.36:25990.26:125.90:25000.00:990.26:0.00:0.00|25000.00:25990.26:26116.77:126.51:25000.00:1116.77:0.00:0.00|25000.00:26116.77:26243.89:127.12:25000.00:1243.89:0.00:0.00|25000.00:26243.89:26371.63:127.74:25000.00:1371.63:0.00:0.00|25000.00:26371.63:26500.00:128.37:25000.00:1500.00:0.00:0.00|30000.00:31500.00:31653.33:153.33:30000.00:1653.33:0.00:0.00|30000.00:31653.33:31807.40:154.07:30000.00:1807.40:0.00:0.00|30000.00:31807.40:31962.23:154.82:30000.00:1962.23:0.00:0.00|30000.00:31962.23:32117.80:155.58:30000.00:2117.80:0.00:0.00|30000.00:32117.80:32274.14:156.34:30000.00:2274.14:0.00:0.00|30000.00:32274.14:32431.23:157.10:30000.00:2431.23:0.00:0.00|30000.00:32431.23:32589.10:157.86:30000.00:2589.10:0.00:0.00|30000.00:32589.10:32747.72:158.63:30000.00:2747.72:0.00:0.00|30000.00:32747.72:32907.13:159.40:30000.00:2907.13:0.00:0.00|30000.00:32907.13:33067.30:160.18:30000.00:3067.30:0.00:0.00|30000.00:33067.30:33228.26:160.96:30000.00:3228.26:0.00:0.00|30000.00:33228.26:33390.00:161.74:30000.00:3390.00:0.00:0.00|35000.00:38390.00:38576.87:186.87:35000.00:3576.87:0.00:0.00|35000.00:38576.87:38764.64:187.77:35000.00:3764.64:0.00:0.00|35000.00:38764.64:38953.33:188.69:35000.00:3953.33:0.00:0.00|35000.00:38953.33:39142.94:189.61:35000.00:4142.94:0.00:0.00|35000.00:39142.94:39333.47:190.53:35000.00:4333.47:0.00:0.00|35000.00:39333.47:39524.92:191.46:35000.00:4524.92:0.00:0.00|35000.00:39524.92:39717.31:192.39:35000.00:4717.31:0.00:0.00|35000.00:39717.31:39910.64:193.33:35000.00:4910.64:0.00:0.00|35000.00:39910.64:40104.91:194.27:35000.00:5104.91:0.00:0.00|35000.00:40104.91:40300.12:195.21:35000.00:5300.12:0.00:0.00|35000.00:40300.12:40496.28:196.16:35000.00:5496.28:0.00:0.00|35000.00:40496.28:40693.40:197.12:35000.00:5693.40:0.00:0.00|40000.00:45693.40:45915.81:222.41:40000.00:5915.81:0.00:0.00|40000.00:45915.81:46139.31:223.50:40000.00:6139.31:0.00:0.00|40000.00:46139.31:46363.90:224.59:40000.00:6363.90:0.00:0.00|40000.00:46363.90:46589.58:225.68:40000.00:6589.58:0.00:0.00|40000.00:46589.58:46816.35:226.78:40000.00:6816.35:0.00:0.00|40000.00:46816.35:47044.23:227.88:40000.00:7044.23:0.00:0.00|40000.00:47044.23:47273.22:228.99:40000.00:7273.22:0.00:0.00|40000.00:47273.22:47503.33:230.10:40000.00:7503.33:0.00:0.00|40000.00:47503.33:47734.55:231.22:40000.00:7734.55:0.00:0.00|40000.00:47734.55:47966.90:232.35:40000.00:7966.90:0.00:0.00|40000.00:47966.90:48200.39:233.48:40000.00:8200.39:0.00:0.00|40000.00:48200.39:48435.00:234.62:40000.00:8435.00:0.00:0.00|45000.00:53435.00:53695.10:260.10:45000.00:8695.10:0.00:0.00|45000.00:53695.10:53956.47:261.36:45000.00:8956.47:0.00:0.00|45000.00:53956.47:54219.10:262.64:45000.00:9219.10:0.00:0.00|45000.00:54219.10:54483.02:263.91:45000.00:9483.02:0.00:0.00|45000.00:54483.02:54748.21:265.20:45000.00:9748.21:0.00:0.00|45000.00:54748.21:55014.70:266.49:45000.00:10014.70:0.00:0.00|45000.00:55014.70:55282.49:267.79:45000.00:10282.49:0.00:0.00|45000.00:55282.49:55551.58:269.09:45000.00:10551.58:0.00:0.00|45000.00:55551.58:55821.98:270.40:45000.00:10821.98:0.00:0.00|45000.00:55821.98:56093.70:271.72:45000.00:11093.70:0.00:0.00|45000.00:56093.70:56366.74:273.04:45000.00:11366.74:0.00:0.00|45000.00:56366.74:56641.10:274.37:45000.00:11641.10:0.00:0.00|";cyears=5;remainingTerm=0;biggestItem=60;var chartStrBuilderBalance = [];
+var chartStrBuilderPrincipal = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderTax = [];
+xmax = cyears;
+if (cyears<=1) xmax = cyears*12;
+chartStrBuilderBalance.push([0,25000]);
+chartStrBuilderPrincipal.push([0,25000]);
+chartStrBuilderInterest.push([0,0]);
+chartStrBuilderTax.push([0,0]);
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+		outPutData[i][5] = parseFloat(tempArray[5]);
+		outPutData[i][6] = parseFloat(tempArray[6]);
+		outPutData[i][7] = parseFloat(tempArray[7]);
+
+		tempVal = (i+1)/12;
+		if (cyears<=1) tempVal = i+1;
+		chartStrBuilderBalance.push([tempVal,outPutData[i][2]]);
+		chartStrBuilderPrincipal.push([tempVal,outPutData[i][4]]);
+		chartStrBuilderInterest.push([tempVal,outPutData[i][5]]);
+		chartStrBuilderTax.push([tempVal,outPutData[i][7]]);
+	}
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-18,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',45000],['Interest',11641]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cyears<=1){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Principal',data: chartStrBuilderPrincipal},
+			{name: 'Interest',data: chartStrBuilderInterest},
+						{name: 'Balance',data: chartStrBuilderBalance}
+		]
+	});
+});
+function showAmo(showOption){
+	var showCents = 1;
+	
+	var outputStrBuilder = [];
+	outputStrBuilder.push("<table border='0'  cellpadding='3' width='100%'>");
+	outputStrBuilder.push("<tr align='right' bgcolor='#E0F0FE'><td>&nbsp;</td><td><b>start principal</b></td><td><b>start balance</b></td><td><b>interest</b></td><td><b>tax</b></td><td><b>end balance</b></td><td><b>end principal</b></td></tr>");
+	if (showOption==1){
+		for (i=1;i<=(cyears*12);i++){
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align='right' bgcolor='#dddddd'><td>" + i);
+			}else{
+				outputStrBuilder.push("<tr align='right'><td>" + i);
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(outPutData[(i-1)][0],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][1],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][3],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][6],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][2],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[(i-1)][4],showCents) + "</td></tr>");
+			if ((i%12)==0){
+				tempVal = parseInt(i/12);
+				outputStrBuilder.push("<tr bgcolor='#E0F0FE' align='center'><td colspan='7'><b>year " + tempVal + " end</b></td></tr>");
+			}
+		}
+		if (remainingTerm > 0.0001){
+			showLastNum = (biggestItem + remainingTerm).toFixed(3);
+			outputStrBuilder.push("<tr align=right><td>" + showLastNum + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][0],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][1],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][3],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][6],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][2],showCents) + "</td><td>" + formatAsMoneyFull(outPutData[biggestItem][4],showCents) + "</td></tr>");
+		}
+	}else{
+		for (i=0;i<parseInt(cyears);i++){
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(i*12+11)][2];
+			tData4 = outPutData[(i*12+11)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=0;j<12;j++){
+				idN = i * 12 + j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(tData0,showCents) + "</td><td>" + formatAsMoneyFull(tData1,showCents) + "</td><td>" + formatAsMoneyFull(tData3,showCents) + "</td><td>" + formatAsMoneyFull(tData6,showCents) + "</td><td>" + formatAsMoneyFull(tData2,showCents) + "</td><td>" + formatAsMoneyFull(tData4,showCents) + "</td></tr>");
+		}
+
+		if ((cyears - parseInt(cyears)) > 0.0001){
+			i = parseInt(cyears);
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(biggestItem-1)][2];
+			tData4 = outPutData[(biggestItem-1)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=(i*12);j<biggestItem;j++){
+				idN = j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoneyFull(tData0,showCents) + "</td><td>" + formatAsMoneyFull(tData1,showCents) + "</td><td>" + formatAsMoneyFull(tData3,showCents) + "</td><td>" + formatAsMoneyFull(tData6,showCents) + "</td><td>" + formatAsMoneyFull(tData2,showCents) + "</td><td>" + formatAsMoneyFull(tData4,showCents) + "</td></tr>");
+		}
+
+	}
+	outputStrBuilder.push("</table>");
+	outPutString = outputStrBuilder.join("");
+	if (showOption==1){
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Monthly Schedule</h2><div id='topmenu'><ul><li><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li id='menuon'><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}else{
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Annual Schedule</h2><div id='topmenu'><ul><li id='menuon'><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}
+}
+if (cyears>2){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/interest-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/interest-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:21 GMT -->
+</html>

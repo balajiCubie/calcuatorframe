@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/amortization-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Amortization Calculator</title>
+	<meta name="description" content="This amortization calculator returns monthly payment amounts as well as displays a schedule, graph, and pie chart breakdown of an amortized loan." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/amortization-new.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="amortization-calculator.html" itemprop="item"><span itemprop="name">amortization calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Amortization Calculator</h1>
+
+<div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table align="center"><tr><td valign="top" width="310">
+<table id="calinputtable" class="panel">
+<form name="calform">
+<tr><td>Loan Amount</td><td><input type="text" name="cloanamount" id="cloanamount" value="200000" class="inhalf indollar"></td></tr>
+<tr><td>Loan Term</td><td><input type="text" name="cloanterm" id="cloanterm" value="15" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td>Interest Rate (APR)</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="6" class="inhalf inpct"></td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td></tr>
+</form>
+</table>
+</td><td valign="top">
+<h2 class="h2result">Monthly Pay: &nbsp; $1,687.71</h2><table cellpadding='3' width='100%'><tr><td colspan='2'>Total of 180 Loan Payments</td><td align='right'>$303,788.46</td></tr><tr><td colspan='2'>Total Interest</td><td align='right'>$103,788.46</td></tr></table></td></tr></table>
+<div id="mRateData"></div>
+<div class="leftchart">
+	<div class="bigtext" style="text-align:center;"><b>Loan Amortization Graph</b></div>
+	<div id="cchartdiv" style="min-width: 320px; height: 250px; margin: 0 auto"></div>
+</div>
+<div class="rightpie">
+	<div class="bigtext" style="text-align:center;"><b>Payment Breakdown</b></div>
+	<div id="cpiechartdiv" style="min-width: 155px; max-width:165px; height: 250px; margin: 0 auto"></div>
+</div>
+<div id="clear"></div>
+<div id="camortizationschdis"></div>
+
+<br><br>
+<p>While the Amortization Calculator can serve as a basic tool for most, if not all, amortization calculations, there are other calculators available on this website that are more specifically geared for common amortization calculations.</p>
+
+<table width="100%">
+<tr><td><a href="mortgage-calculator.html">Mortgage Calculator</a></td><td><a href="auto-loan-calculator.html">Auto Loan Calculator</a></td></tr>
+<tr><td><a href="investment-calculator.html">Investment Calculator</a></td><td><a href="business-loan-calculator.html">Business Loan Calculator</a></td></tr>
+<tr><td><a href="personal-loan-calculator.html">Personal Loan Calculator</a></td><td><a href="fha-loan-calculator.html">FHA Loan Calculator</a></td></tr>
+<tr><td><a href="va-mortgage-calculator.html">VA Mortgage Calculator</a></td><td><a href="annuity-calculator.html">Annuity Calculator</a></td></tr>
+</table>
+
+<h3>What is Amortization?</h3>
+<p>There are two general definitions of amortization. The first is the systematic repayment of a loan over time. The second is used in the context of business accounting and is the act of spreading the cost of an expensive and long-lived item over many periods. The two are explained in more detail in the sections below.</p>
+
+<h3>Paying Off a Loan Over Time</h3>
+<p>When a borrower takes out a mortgage, car loan, or personal loan, they usually make monthly payments to the lender; these are some of the most common uses of amortization. A part of the payment covers the interest due on the loan, and the remainder of the payment goes toward reducing the principal amount owed. Interest is computed on the current amount owed and thus will become progressively smaller as the principal decreases. It is possible to see this in action on the amortization table.</p>
+<p>Credit cards, on the other hand, are generally not amortized. They are an example of revolving debt, where the outstanding balance can be carried month-to-month, and the amount repaid each month can be varied. Please use our <a href="credit-card-calculator.html">Credit Card Calculator</a> for more information or to do calculations involving credit cards, or our <a href="credit-card-payoff-calculator.html">Credit Cards Payoff Calculator</a> to schedule a financially feasible way to pay off multiple credit cards. Examples of other loans that aren't amortized include interest-only loans and balloon loans. The former includes an interest-only period of payment, and the latter has a large principal payment at loan maturity.</p>
+<p><b>Amortization Schedule</b></p>
+<p>An amortization schedule (sometimes called an amortization table) is a table detailing each periodic payment on an amortizing loan. Each calculation done by the calculator will also come with an annual and monthly amortization schedule above. Each repayment for an amortized loan will contain both an interest payment and payment towards the principal balance, which varies for each pay period. An amortization schedule helps indicate the specific amount that will be paid towards each, along with the interest and principal paid to date, and the remaining principal balance after each pay period.</p>
+<p>Basic amortization schedules do not account for extra payments, but this doesn't mean that borrowers can't pay extra towards their loans. Also, amortization schedules generally do not consider fees. Generally, amortization schedules only work for fixed-rate loans and not adjustable-rate mortgages, variable rate loans, or lines of credit.</p>
+
+<h3>Spreading Costs</h3>
+<p>Certain businesses sometimes purchase expensive items that are used for long periods of time that are classified as investments. Items that are commonly amortized for the purpose of spreading costs include machinery, buildings, and equipment. From an accounting perspective, a sudden purchase of an expensive factory during a quarterly period can skew the financials, so its value is amortized over the expected life of the factory instead. Although it can technically be considered amortizing, this is usually referred to as the depreciation expense of an asset amortized over its expected lifetime. For more information about or to do calculations involving depreciation, please visit the <a href="depreciation-calculator.html">Depreciation Calculator</a>.</p>
+<p>Amortization as a way of spreading business costs in accounting generally refers to intangible assets like a patent or copyright. Under Section 197 of U.S. law, the value of these assets can be deducted month-to-month or year-to-year. Just like with any other amortization, payment schedules can be forecasted by a calculated amortization schedule. The following are intangible assets that are often amortized:</p>
+<ol>
+	<li>Goodwill, which is the reputation of a business regarded as a quantifiable asset</li>
+	<li>Going-concern value, which is the value of a business as an ongoing entity</li>
+	<li>The workforce in place (current employees, including their experience, education, and training)</li>
+	<li>Business books and records, operating systems, or any other information base, including lists or other information concerning current or prospective customers</li>
+	<li>Patents, copyrights, formulas, processes, designs, patterns, know-hows, formats, or similar items</li>
+	<li>Customer-based intangibles, including customer bases and relationships with customers</li>
+	<li>Supplier-based intangibles, including the value of future purchases due to existing relationships with vendors</li>
+	<li>Licenses, permits, or other rights granted by governmental units or agencies (including issuances and renewals)</li>
+	<li>Covenants not to compete or non-compete agreements entered relating to acquisitions of interests in trades or businesses</li>
+	<li>Franchises, trademarks, or trade names</li>
+	<li>Contracts for the use of or term interests in any items on this list</li>
+</ol>
+<p>Some intangible assets, with goodwill being the most common example, that have indefinite useful lives or are "self-created" may not be legally amortized for tax purposes.</p>
+<p>According to the IRS under Section 197, some assets are not considered intangibles, including interest in businesses, contracts, land, most computer software, intangible assets not acquired in connection with the acquiring of a business or trade, interest in an existing lease or sublease of a tangible property or existing debt, rights to service residential mortgages (unless it was acquired in connection with the acquisition of a trade or business), or certain transaction costs incurred by parties in which any part of a gain or loss is not recognized.</p>
+<p><b>Amortizing Startup Costs</b></p>
+<p>In the U.S., business startup costs, defined as costs incurred to investigate the potential of creating or acquiring an active business and costs to create an active business, can only be amortized under certain conditions. They must be expenses that are deducted as business expenses if incurred by an existing active business and must be incurred before the active business begins. Examples of these costs include consulting fees, financial analysis of potential acquisitions, advertising expenditures, and payments to employees, all of which must be incurred before the business is deemed active. According to IRS guidelines, initial startup costs must be amortized.</p>
+
+
+<script type="text/javascript">
+allData = "200000.00:199312.29:1687.71:1000.00:1000.00|199312.29:198621.13:1687.71:996.56:1996.56|198621.13:197926.53:1687.71:993.11:2989.67|197926.53:197228.45:1687.71:989.63:3979.30|197228.45:196526.87:1687.71:986.14:4965.44|196526.87:195821.79:1687.71:982.63:5948.08|195821.79:195113.19:1687.71:979.11:6927.19|195113.19:194401.04:1687.71:975.57:7902.75|194401.04:193685.33:1687.71:972.01:8874.76|193685.33:192966.05:1687.71:968.43:9843.18|192966.05:192243.16:1687.71:964.83:10808.01|192243.16:191516.67:1687.71:961.22:11769.23|191516.67:190786.53:1687.71:957.58:12726.81|190786.53:190052.75:1687.71:953.93:13680.75|190052.75:189315.30:1687.71:950.26:14631.01|189315.30:188574.17:1687.71:946.58:15577.59|188574.17:187829.32:1687.71:942.87:16520.46|187829.32:187080.76:1687.71:939.15:17459.60|187080.76:186328.45:1687.71:935.40:18395.01|186328.45:185572.38:1687.71:931.64:19326.65|185572.38:184812.52:1687.71:927.86:20254.51|184812.52:184048.87:1687.71:924.06:21178.57|184048.87:183281.40:1687.71:920.24:22098.82|183281.40:182510.10:1687.71:916.41:23015.22|182510.10:181734.93:1687.71:912.55:23927.78|181734.93:180955.89:1687.71:908.67:24836.45|180955.89:180172.96:1687.71:904.78:25741.23|180172.96:179386.11:1687.71:900.86:26642.09|179386.11:178595.33:1687.71:896.93:27539.02|178595.33:177800.59:1687.71:892.98:28432.00|177800.59:177001.88:1687.71:889.00:29321.00|177001.88:176199.18:1687.71:885.01:30206.01|176199.18:175392.46:1687.71:881.00:31087.01|175392.46:174581.71:1687.71:876.96:31963.97|174581.71:173766.90:1687.71:872.91:32836.88|173766.90:172948.02:1687.71:868.83:33705.72|172948.02:172125.05:1687.71:864.74:34570.46|172125.05:171297.96:1687.71:860.63:35431.08|171297.96:170466.74:1687.71:856.49:36287.57|170466.74:169631.36:1687.71:852.33:37139.90|169631.36:168791.80:1687.71:848.16:37988.06|168791.80:167948.05:1687.71:843.96:38832.02|167948.05:167100.07:1687.71:839.74:39671.76|167100.07:166247.86:1687.71:835.50:40507.26|166247.86:165391.39:1687.71:831.24:41338.50|165391.39:164530.63:1687.71:826.96:42165.46|164530.63:163665.57:1687.71:822.65:42988.11|163665.57:162796.18:1687.71:818.33:43806.44|162796.18:161922.45:1687.71:813.98:44620.42|161922.45:161044.35:1687.71:809.61:45430.03|161044.35:160161.86:1687.71:805.22:46235.25|160161.86:159274.95:1687.71:800.81:47036.06|159274.95:158383.61:1687.71:796.37:47832.44|158383.61:157487.82:1687.71:791.92:48624.35|157487.82:156587.54:1687.71:787.44:49411.79|156587.54:155682.77:1687.71:782.94:50194.73|155682.77:154773.47:1687.71:778.41:50973.15|154773.47:153859.62:1687.71:773.87:51747.01|153859.62:152941.20:1687.71:769.30:52516.31|152941.20:152018.20:1687.71:764.71:53281.02|152018.20:151090.57:1687.71:760.09:54041.11|151090.57:150158.31:1687.71:755.45:54796.56|150158.31:149221.39:1687.71:750.79:55547.35|149221.39:148279.78:1687.71:746.11:56293.46|148279.78:147333.47:1687.71:741.40:57034.86|147333.47:146382.42:1687.71:736.67:57771.53|146382.42:145426.62:1687.71:731.91:58503.44|145426.62:144466.04:1687.71:727.13:59230.57|144466.04:143500.66:1687.71:722.33:59952.90|143500.66:142530.45:1687.71:717.50:60670.40|142530.45:141555.39:1687.71:712.65:61383.06|141555.39:140575.45:1687.71:707.78:62090.83|140575.45:139590.61:1687.71:702.88:62793.71|139590.61:138600.85:1687.71:697.95:63491.66|138600.85:137606.14:1687.71:693.00:64184.67|137606.14:136606.46:1687.71:688.03:64872.70|136606.46:135601.78:1687.71:683.03:65555.73|135601.78:134592.07:1687.71:678.01:66233.74|134592.07:133577.32:1687.71:672.96:66906.70|133577.32:132557.49:1687.71:667.89:67574.59|132557.49:131532.57:1687.71:662.79:68237.37|131532.57:130502.52:1687.71:657.66:68895.04|130502.52:129467.32:1687.71:652.51:69547.55|129467.32:128426.94:1687.71:647.34:70194.89|128426.94:127381.36:1687.71:642.13:70837.02|127381.36:126330.55:1687.71:636.91:71473.93|126330.55:125274.49:1687.71:631.65:72105.58|125274.49:124213.15:1687.71:626.37:72731.95|124213.15:123146.50:1687.71:621.07:73353.02|123146.50:122074.52:1687.71:615.73:73968.75|122074.52:120997.18:1687.71:610.37:74579.12|120997.18:119914.45:1687.71:604.99:75184.11|119914.45:118826.31:1687.71:599.57:75783.68|118826.31:117732.73:1687.71:594.13:76377.81|117732.73:116633.68:1687.71:588.66:76966.48|116633.68:115529.13:1687.71:583.17:77549.65|115529.13:114419.07:1687.71:577.65:78127.29|114419.07:113303.45:1687.71:572.10:78699.39|113303.45:112182.25:1687.71:566.52:79265.90|112182.25:111055.45:1687.71:560.91:79826.82|111055.45:109923.01:1687.71:555.28:80382.09|109923.01:108784.91:1687.71:549.62:80931.71|108784.91:107641.13:1687.71:543.92:81475.63|107641.13:106491.62:1687.71:538.21:82013.84|106491.62:105336.36:1687.71:532.46:82546.30|105336.36:104175.33:1687.71:526.68:83072.98|104175.33:103008.49:1687.71:520.88:83593.85|103008.49:101835.82:1687.71:515.04:84108.90|101835.82:100657.29:1687.71:509.18:84618.08|100657.29:99472.86:1687.71:503.29:85121.36|99472.86:98282.51:1687.71:497.36:85618.73|98282.51:97086.21:1687.71:491.41:86110.14|97086.21:95883.93:1687.71:485.43:86595.57|95883.93:94675.63:1687.71:479.42:87074.99|94675.63:93461.30:1687.71:473.38:87548.37|93461.30:92240.89:1687.71:467.31:88015.67|92240.89:91014.38:1687.71:461.20:88476.88|91014.38:89781.74:1687.71:455.07:88931.95|89781.74:88542.93:1687.71:448.91:89380.86|88542.93:87297.94:1687.71:442.71:89823.57|87297.94:86046.71:1687.71:436.49:90260.06|86046.71:84789.23:1687.71:430.23:90690.30|84789.23:83525.46:1687.71:423.95:91114.24|83525.46:82255.38:1687.71:417.63:91531.87|82255.38:80978.94:1687.71:411.28:91943.15|80978.94:79696.12:1687.71:404.89:92348.04|79696.12:78406.89:1687.71:398.48:92746.52|78406.89:77111.21:1687.71:392.03:93138.56|77111.21:75809.05:1687.71:385.56:93524.11|75809.05:74500.38:1687.71:379.05:93903.16|74500.38:73185.17:1687.71:372.50:94275.66|73185.17:71863.38:1687.71:365.93:94641.59|71863.38:70534.99:1687.71:359.32:95000.90|70534.99:69199.95:1687.71:352.67:95353.58|69199.95:67858.23:1687.71:346.00:95699.58|67858.23:66509.81:1687.71:339.29:96038.87|66509.81:65154.65:1687.71:332.55:96371.42|65154.65:63792.71:1687.71:325.77:96697.19|63792.71:62423.96:1687.71:318.96:97016.16|62423.96:61048.36:1687.71:312.12:97328.27|61048.36:59665.89:1687.71:305.24:97633.52|59665.89:58276.51:1687.71:298.33:97931.85|58276.51:56880.18:1687.71:291.38:98223.23|56880.18:55476.86:1687.71:284.40:98507.63|55476.86:54066.53:1687.71:277.38:98785.01|54066.53:52649.15:1687.71:270.33:99055.35|52649.15:51224.68:1687.71:263.25:99318.59|51224.68:49793.09:1687.71:256.12:99574.72|49793.09:48354.35:1687.71:248.97:99823.68|48354.35:46908.40:1687.71:241.77:100065.45|46908.40:45455.23:1687.71:234.54:100299.99|45455.23:43994.80:1687.71:227.28:100527.27|43994.80:42527.06:1687.71:219.97:100747.25|42527.06:41051.98:1687.71:212.64:100959.88|41051.98:39569.52:1687.71:205.26:101165.14|39569.52:38079.66:1687.71:197.85:101362.99|38079.66:36582.34:1687.71:190.40:101553.39|36582.34:35077.54:1687.71:182.91:101736.30|35077.54:33565.21:1687.71:175.39:101911.69|33565.21:32045.33:1687.71:167.83:102079.51|32045.33:30517.84:1687.71:160.23:102239.74|30517.84:28982.72:1687.71:152.59:102392.33|28982.72:27439.92:1687.71:144.91:102537.24|27439.92:25889.40:1687.71:137.20:102674.44|25889.40:24331.13:1687.71:129.45:102803.89|24331.13:22765.08:1687.71:121.66:102925.54|22765.08:21191.19:1687.71:113.83:103039.37|21191.19:19609.43:1687.71:105.96:103145.32|19609.43:18019.76:1687.71:98.05:103243.37|18019.76:16422.15:1687.71:90.10:103333.47|16422.15:14816.55:1687.71:82.11:103415.58|14816.55:13202.92:1687.71:74.08:103489.66|13202.92:11581.22:1687.71:66.01:103555.68|11581.22:9951.41:1687.71:57.91:103613.58|9951.41:8313.45:1687.71:49.76:103663.34|8313.45:6667.31:1687.71:41.57:103704.91|6667.31:5012.93:1687.71:33.34:103738.25|5012.93:3350.28:1687.71:25.06:103763.31|3350.28:1679.32:1687.71:16.75:103780.06|1679.32:0.00:1687.71:8.40:103788.46|";monthlypayment=1687.7136560969;cloanterm=15;cloanamount=200000;remainingTerm=0;biggestItem=179;
+var chartStrBuilderPayment = [];
+var chartStrBuilderBalance = [];
+var chartStrBuilderInterest = [];
+xmax = cloanterm;
+chartSep = 12;
+if (cloanterm<=5){
+	chartSep = 1;
+	xmax = cloanterm*12;
+
+	chartStrBuilderPayment.push(0);
+	chartStrBuilderBalance.push(cloanamount);
+	chartStrBuilderInterest.push(0);
+}
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+
+		if (((i%chartSep)==0)||((i+2)==allDataArray.length)){
+			chartStrBuilderPayment.push((i+1)*monthlypayment);
+			chartStrBuilderBalance.push(outPutData[i][1]);
+			chartStrBuilderInterest.push(outPutData[i][4]);
+		}
+	}
+}
+
+if (cloanterm>5){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-28,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',200000],['Interest',103788]]
+		}]
+	});
+});
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cloanterm<=5){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Balance',data: chartStrBuilderBalance},
+			{name: 'Interest',data: chartStrBuilderInterest},
+			{name: 'Payment',data: chartStrBuilderPayment}
+		]
+	});
+});
+
+</script>
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/amortization-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/amortization-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:22 GMT -->
+</html>

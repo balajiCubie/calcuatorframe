@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/cd-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>CD Calculator</title>
+	<meta name="description" content="Free calculator to find the total interest, end balance, and the growth chart of a Certificate of Deposit with the option to consider income tax or inflation." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="cd-calculator.html" itemprop="item"><span itemprop="name">cd calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>CD Calculator</h1>
+
+<p>The Certificate of Deposit (CD) Calculator can help determine accumulated interest earnings on CDs over time. Included are considerations for tax and inflation for more accurate results.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top"><table id="calinputtable" class="panel"><form name="calform" action="https://www.calculator.net/cd-calculator.html#cdresult">
+<tr><td>Initial Deposit</td><td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="5000" class="inhalf indollar"></td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="5" class="inhalf inpct"></td></tr>
+<tr><td>Compound</td><td>
+	<select id="ccompound" name="ccompound">
+		<option value="annually" selected>annually</option>
+		<option value="semiannually" >semiannually</option>
+		<option value="quarterly" >quarterly</option>
+		<option value="monthly" >monthly</option>
+		<option value="continuously" >continuously</option>
+	</select>
+</td></tr>
+<tr><td valign="top"><div style="padding-top:8px;">Deposit Length</div></td><td>
+	<input type="text" name="cyears" id="cyears" value="3" class="inhalf inuiyear"><span class="inuiyearspan">years</span><br>
+	<input type="text" name="cmonths" id="cmonths" value="0" class="inhalf inuiyearpound"><span class="inuipoundspan">months</span></td></tr>
+<tr><td>Marginal Tax Rate</td><td><input type="text" name="ctaxtrate" id="ctaxtrate" value="0" class="inhalf inpct"></td></tr>
+<tr><td>Inflation Rate</td><td><input type="text" name="cinflationrate" id="cinflationrate" value="3" class="inhalf inpct"></td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</td><td valign="top"><a name="cdresult"></a><h2 class="h2result">Results</h2><table cellpadding='3' width='100%'><tr><td><b>End Balance</b></td><td align=right><b>$5,788.13</b></td></tr><tr><td>After Inflation Adjustment</td><td align=right>$5,296.95</td></tr><tr><td>Total Principal</td><td align=right>$5,000.00</td></tr><tr><td>Total Interest</td><td align=right>$788.13</td></tr></table></td></tr></table>
+<div id="mRateData"></div>
+<div class="leftchart">
+	<div class="bigtext" style="text-align:center;"><b>Balance Accumulation Graph</b></div>
+	<div id="cchartdiv" style="min-width: 320px; height: 250px; margin: 0 auto"></div>
+
+</div>
+<div class="rightpie">
+	<div class="bigtext" style="text-align:center;"><b>Breakdown</b></div>
+	<div id="cpiechartdiv" style="min-width: 155px; height: 250px; margin: 0 auto"></div>
+</div>
+<div id="clear"></div>
+<div id="camortizationschdis"></div>
+<p><fieldset><legend>Related</legend><a href="investment-calculator.html">Investment Calculator</a> | <a href="interest-calculator.html">Interest Calculator</a></fieldset></p><br>
+<h3>What is a Certificate of Deposit?</h3>
+<p>A certificate of deposit is an agreement to deposit money for a fixed period that will pay interest. Common term lengths range from three months to five years. The lengthier the term, the higher the exposure to interest rate risk. Generally, the larger the initial deposit, or the longer the investment period, the higher the interest rate. As a type of investment, CDs fall on the low-risk, low-return end of the spectrum. Historically, interest rates of CDs tend to be higher than rates of savings accounts and money markets, but much lower than the historical average return rate of the equity market. There are also different types of CDs with varying rates of interest or rates linked to indexes of various kinds, but the calculator can only do calculations based on fixed-rate CDs.</p>
+<p>The gains from CDs are taxable as income in the U.S. unless they are in accounts that are tax-deferred or tax-free, such as an IRA or Roth IRA. For more information about or to do calculations involving a traditional IRA or Roth IRA, please visit the <a href="ira-calculator.html">IRA Calculator</a> or <a href="roth-ira-calculator.html">Roth IRA Calculator</a>.</p>
+<p>CDs are called "certificates of deposit" because before electronic transfers were invented, buyers of CDs were issued certificates in exchange for their deposits as a way for financial institutions to keep track of buyers of their CDs. Receiving actual certificates for making deposits is no longer practiced today, as transactions are done electronically.</p>
+
+<h3>FDIC-Backed</h3>
+<p>One of the defining characteristics of CDs in the U.S. is that they are protected by the Federal Deposit Insurance Corporation (FDIC). CDs that originate from FDIC-insured banks are insured for up to $250,000, meaning that if banks fail, up to $250,000 of each depositor's funds is guaranteed to be safe. Anyone who wishes to deposit more than the $250,000 limit and wants all of it to be FDIC-insured can simply buy CDs from other FDIC-insured banks. Due to this insurance, there are few lower-risk investments. Similarly, credit unions are covered by insurance from the National Credit Union Administration (NCUA insurance), which provides essentially the same insurance coverage on deposits as the FDIC.</p>
+
+<h3>Where and How to Purchase CDs</h3>
+<p>CDs are typically offered by many financial institutions (including the largest banks) as fixed-income investments. Different banks offer different interest rates on CDs, so it is important to first shop around and compare maturity periods of CDs, especially their annual percentage yields (APY). This ultimately determines how much interest is received. The process of buying CDs is straightforward; an initial deposit will be required, along with the desired term. CDs tend to have various minimum deposit requirements. Brokers can also charge fees for CDs purchased through them.</p>
+<p>"Buying" a CD is effectively lending money to the seller of the CD. Financial institutions use the funds from sold CDs to re-lend (and profit from the difference), hold in their reserves, spend for their operations, or take care of other miscellaneous expenses. Along with the federal funds rate, all of these factors play a part in determining the interest rates that each financial institution will pay on their CDs.</p>
+
+<h3>History of CDs</h3>
+<p>Although they weren't called CDs then, a financial concept similar to that of a modern CD was first used by European banks in the 1600s. These banks gave a receipt to account holders for the funds they deposited, which they lent to merchants. However, to ensure that account holders did not withdraw their funds while they were lent out, the banks began to pay interest for the use of their money for a designated period of time. This sort of financial transaction is essentially how a modern CD operates.</p>
+<p>A major turning point for CDs happened in the early twentieth century after the stock market crash of 1929, which was partly due to unregulated banks that didn't have reserve requirements. In response, the FDIC was established to regulate banks and give investors (such as CD holders) assurance that the government would protect their assets up to a limit.</p>
+<p>Historically, rates of CD yields have varied greatly. During the high-inflation years of the late 1970s and 1980s, CDs had return rates of almost 20%. After that the CD rates declined steadily. In late 2007, just before the economy spiraled downward, they were at around 4%. In comparison, the average one-year CD yield is below 1% in 2021. It gradually increased in 2022 due to the picking up of inflation. In the U.S., the Federal Reserve, which controls federal funds rates, calibrates them accordingly based on the economic climate.</p>
+
+<h3>How to Use CDs</h3>
+<p>CDs are effective financial instruments when it comes to protecting savings, building short-term wealth, and ensuring returns without risk. With these key benefits in mind, it is possible to capitalize on CDs by using them to:</p>
+<ul>
+	<li>supplement diversified portfolios to reduce total risk exposure. This can come in handy as retirees get closer to their retirement date and require a more guaranteed return to ensure they have savings in retirement to live off of.</li>
+	<li>act as a short-term (5 years or less) place to put extra money that isn't needed or isn't required until a set future date. This can come in handy when saving for a down payment for a home or car several years in the future.</li>
+	<li>estimate future returns accurately because most CDs have fixed rates. The result of this is a useful investment for people who prefer predictability.</li>
+</ul>
+<p>As the maturity date for a CD approaches, CD owners have options of what to do next. In most cases, if nothing is done after the maturity date, the funds will likely be reinvested into another similar CD. If not, it is possible for buyers to notify the sellers to transfer the funds into a checking or savings account, or reinvest into a different CD.</p>
+
+<h3>Withdrawing from a CD</h3>
+<p>Funds that are invested in CDs are meant to be tied up for the life of the certificate, and any early withdrawals are normally subject to a penalty (except liquid CDs). The severity of the penalty depends on the length of the CD and the issuing institution. As an aside, in certain rising interest rate environments, it can be financially beneficial to pay the early withdrawal penalty in order to reinvest the proceeds into new higher-yielding CDs or other investments.</p>
+
+<h3>CD Ladder</h3>
+<p>While longer-term CDs offer higher returns, an obvious drawback to them is that the funds are locked up for longer. A CD ladder is a common strategy employed by investors that attempts to circumvent this drawback by using multiple CDs. Instead of renewing just one CD with a specific amount, the CD is split up into multiple amounts for multiple CDs in a setup that allows them to mature at staggered intervals. For example, instead of investing all funds into a 3-year CD, the funds are used to invest in 3 different CDs at the same time with terms of 1, 2, and 3 years. As one matures, making principal and earnings available, proceeds can be optionally reinvested into a new CD or withdrawal. CD laddering can be beneficial when more flexibility is required, by giving a person access to previously invested funds at more frequent intervals, or the ability to purchase new CDs at higher rates if interest rates go up.</p>
+
+<h3>APY vs. APR</h3>
+<p>It is important to make the distinction between annual percentage yield (APY) and annual percentage rate (APR). Banks tend to use APR for debt-related accounts such as mortgages, credit cards, and car loans, whereas APY is often related to interest-accruing accounts such as CDs and money market investments. APY denotes the amount of interest earned with compound interest accounted for in an entire year, while APR is the annualized representation of the monthly interest rate. APY is typically the more accurate representation of effective net gains or losses, and CDs are often advertised in APY rates.</p>
+
+<h3>Compounding Frequency</h3>
+<p>The calculator contains options for different compounding frequencies. As a rule of thumb, the more frequently compounding occurs, the greater the return. To understand the differences between compounding frequencies or to do calculations involving them, please use our <a href="compound-interest-calculator.html">Compound Interest Calculator</a>.</p>
+
+<h3>Types of CDs</h3>
+<ul>
+	<li><b>Traditional CD</b>&mdash;Investors receive fixed interest rates over a specified period of time. Money can only be withdrawn without penalty after maturity, and there are also options to roll earnings over for more terms. Traditional CDs that require initial deposits of $100,000 or more are often referred to as "jumbo" CDs, and usually have higher interest rates.</li>
+	<li><b>Bump-Up CD</b>&mdash;Investors are allowed to "bump up" preexisting interest rates on CDs to match higher current market rates. Bump-up CDs offer the best returns for investors who hold them while interest rates increase. Compared to traditional CDs, these generally receive lower rates.</li>
+	<li><b>Liquid CD</b>&mdash;Investors can withdraw from liquid CDs without penalties, but they require maintaining a minimum balance. Interest rates are relatively lower than other types of CDs, but for the most part, still higher than savings accounts or money market investments.</li>
+	<li><b>Zero-Coupon CD</b>&mdash;Similar to zero-coupon bonds, these CDs contain no interest payments. Rather, they are reinvested in order to earn more interest. Zero-coupon CDs are bought at fractions of their par values (face value, or amount received at maturity), and generally have longer terms compared to traditional CDs, which can expose investors to considerable risk.</li>
+	<li><b>Callable CD</b>&mdash;Issuers that sell callable CDs can possibly recall them from their investors after call-protection periods expire and before they mature, resulting in the return of the initial deposit and any subsequent interest earnings. To make up for this, sellers offer higher rates for these CDs than other types.</li>
+	<li><b>Brokered CD</b>&mdash;These are different in that they are sold in brokerage accounts and not through financial institutions such as banks or credit unions. An advantage to brokered CDs is that there is exposure to a wide variety of CDs instead of just the CDs offered by individual banks.</li>
+</ul>
+
+<h3>Alternatives to CDs</h3>
+<ul>
+	<li><b>Paying off Debt</b>&mdash;Especially for high-interest debt, paying off existing debt is a great alternative to CDs because it is essentially a guaranteed rate of return, compared to any further investment. Comparatively, even the interest rate of a low rate loan, such as a home mortgage, is normally higher than CDs, making it financially rewarding to pay off a loan than to collect interest from CD.</li>
+	<li><b>Money Market Accounts</b>&mdash;Investors who like the security of a CD and are okay with slightly lower returns can consider money market accounts, which are certain types of FDIC-insured savings accounts that have restrictions such as limits on how funds can be withdrawn. They are generally offered by banks.</li>
+	<li><b>Bonds</b>&mdash;Similar to CDs, bonds are relatively low-risk financial instruments. Bonds are sold by the government (municipal, state, or federal) or corporate entities.</li>
+	<li><b>Peer-to-Peer Lending</b>&mdash;Peer-to-peer (P2P) lending is a fairly new form of lending that arose from advances in internet technology that enables lenders and borrowers to link up on an online platform. Peer borrowers request loans through the platform, and lenders can fund the loans they find desirable. Each P2P lending service will come with rules in order to regulate cases of default.</li>
+	<li><b>Bundled Mortgages</b>&mdash;Commonly available through mutual funds, bundled mortgages are securities that are traded in a similar manner as bonds but generally yield more than Treasury securities. Although they received a lot of negative publicity for the role they played in the 2008 financial crisis, mortgage securities have bounced back through more stringent regulations. Bundled mortgages are backed by the Government National Mortgage Association (Ginnie Mae).</li>
+</ul>
+<p>Listed above are just some of the low-risk alternatives to CDs. There are much more investment options for those that can tolerate higher risk.</p>
+
+
+<script type="text/javascript">
+allData = "5000.00:5000.00:5020.37:20.37:5000.00:20.37:0.00:0.00|5000.00:5020.37:5040.82:20.45:5000.00:40.82:0.00:0.00|5000.00:5040.82:5061.36:20.54:5000.00:61.36:0.00:0.00|5000.00:5061.36:5081.98:20.62:5000.00:81.98:0.00:0.00|5000.00:5081.98:5102.69:20.70:5000.00:102.69:0.00:0.00|5000.00:5102.69:5123.48:20.79:5000.00:123.48:0.00:0.00|5000.00:5123.48:5144.35:20.87:5000.00:144.35:0.00:0.00|5000.00:5144.35:5165.31:20.96:5000.00:165.31:0.00:0.00|5000.00:5165.31:5186.35:21.04:5000.00:186.35:0.00:0.00|5000.00:5186.35:5207.48:21.13:5000.00:207.48:0.00:0.00|5000.00:5207.48:5228.70:21.22:5000.00:228.70:0.00:0.00|5000.00:5228.70:5250.00:21.30:5000.00:250.00:0.00:0.00|5000.00:5250.00:5271.39:21.39:5000.00:271.39:0.00:0.00|5000.00:5271.39:5292.87:21.48:5000.00:292.87:0.00:0.00|5000.00:5292.87:5314.43:21.56:5000.00:314.43:0.00:0.00|5000.00:5314.43:5336.08:21.65:5000.00:336.08:0.00:0.00|5000.00:5336.08:5357.82:21.74:5000.00:357.82:0.00:0.00|5000.00:5357.82:5379.65:21.83:5000.00:379.65:0.00:0.00|5000.00:5379.65:5401.57:21.92:5000.00:401.57:0.00:0.00|5000.00:5401.57:5423.57:22.01:5000.00:423.57:0.00:0.00|5000.00:5423.57:5445.67:22.10:5000.00:445.67:0.00:0.00|5000.00:5445.67:5467.86:22.19:5000.00:467.86:0.00:0.00|5000.00:5467.86:5490.13:22.28:5000.00:490.13:0.00:0.00|5000.00:5490.13:5512.50:22.37:5000.00:512.50:0.00:0.00|5000.00:5512.50:5534.96:22.46:5000.00:534.96:0.00:0.00|5000.00:5534.96:5557.51:22.55:5000.00:557.51:0.00:0.00|5000.00:5557.51:5580.15:22.64:5000.00:580.15:0.00:0.00|5000.00:5580.15:5602.88:22.73:5000.00:602.88:0.00:0.00|5000.00:5602.88:5625.71:22.83:5000.00:625.71:0.00:0.00|5000.00:5625.71:5648.63:22.92:5000.00:648.63:0.00:0.00|5000.00:5648.63:5671.64:23.01:5000.00:671.64:0.00:0.00|5000.00:5671.64:5694.75:23.11:5000.00:694.75:0.00:0.00|5000.00:5694.75:5717.95:23.20:5000.00:717.95:0.00:0.00|5000.00:5717.95:5741.25:23.30:5000.00:741.25:0.00:0.00|5000.00:5741.25:5764.64:23.39:5000.00:764.64:0.00:0.00|5000.00:5764.64:5788.13:23.49:5000.00:788.13:0.00:0.00|";cyears=3;remainingTerm=0;biggestItem=36;var chartStrBuilderBalance = [];
+var chartStrBuilderPrincipal = [];
+var chartStrBuilderInterest = [];
+var chartStrBuilderTax = [];
+xmax = cyears;
+if (cyears<=1) xmax = cyears*12;
+chartStrBuilderBalance.push([0,5000]);
+chartStrBuilderPrincipal.push([0,5000]);
+chartStrBuilderInterest.push([0,0]);
+chartStrBuilderTax.push([0,0]);
+
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+		outPutData[i][5] = parseFloat(tempArray[5]);
+		outPutData[i][6] = parseFloat(tempArray[6]);
+		outPutData[i][7] = parseFloat(tempArray[7]);
+
+		tempVal = (i+1)/12;
+		if (cyears<=1) tempVal = i+1;
+		chartStrBuilderBalance.push([tempVal,outPutData[i][2]]);
+		chartStrBuilderPrincipal.push([tempVal,outPutData[i][4]]);
+		chartStrBuilderInterest.push([tempVal,outPutData[i][5]]);
+		chartStrBuilderTax.push([tempVal,outPutData[i][7]]);
+	}
+}
+
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-28,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',5000],['Interest',788]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cyears<=1){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Principal',data: chartStrBuilderPrincipal},
+			{name: 'Interest',data: chartStrBuilderInterest},
+						{name: 'Balance',data: chartStrBuilderBalance}
+		]
+	});
+});
+function showAmo(showOption){
+	var showCents = 1;
+	
+	var outputStrBuilder = [];
+	outputStrBuilder.push("<table border='0'  cellpadding='3' width='100%'>");
+	outputStrBuilder.push("<tr align='right' bgcolor='#E0F0FE'><td>&nbsp;</td><td><b>start principal</b></td><td><b>start balance</b></td><td><b>interest</b></td><td><b>tax</b></td><td><b>end balance</b></td><td><b>end principal</b></td></tr>");
+	if (showOption==1){
+		for (i=1;i<=(cyears*12);i++){
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align='right' bgcolor='#dddddd'><td>" + i);
+			}else{
+				outputStrBuilder.push("<tr align='right'><td>" + i);
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(outPutData[(i-1)][0]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][1]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][3]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][6]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][2]) + "</td><td>" + formatAsMoney(outPutData[(i-1)][4]) + "</td></tr>");
+			if ((i%12)==0){
+				tempVal = parseInt(i/12);
+				outputStrBuilder.push("<tr bgcolor='#E0F0FE' align='center'><td colspan='7'><b>year " + tempVal + " end</b></td></tr>");
+			}
+		}
+		if (remainingTerm > 0.0001){
+			showLastNum = (biggestItem + remainingTerm).toFixed(3);
+			outputStrBuilder.push("<tr align=right><td>" + showLastNum + "</td><td>" + formatAsMoney(outPutData[biggestItem][0]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][1]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][3]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][6]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][2]) + "</td><td>" + formatAsMoney(outPutData[biggestItem][4]) + "</td></tr>");
+		}
+	}else{
+		for (i=0;i<parseInt(cyears);i++){
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(i*12+11)][2];
+			tData4 = outPutData[(i*12+11)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=0;j<12;j++){
+				idN = i * 12 + j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(tData0) + "</td><td>" + formatAsMoney(tData1) + "</td><td>" + formatAsMoney(tData3) + "</td><td>" + formatAsMoney(tData6) + "</td><td>" + formatAsMoney(tData2) + "</td><td>" + formatAsMoney(tData4) + "</td></tr>");
+		}
+
+		if ((cyears - parseInt(cyears)) > 0.0001){
+			i = parseInt(cyears);
+			tData0 = outPutData[(i*12)][0];
+			tData1 = outPutData[(i*12)][1];
+			tData2 = outPutData[(biggestItem-1)][2];
+			tData4 = outPutData[(biggestItem-1)][4];
+			tData3 = 0;
+			tData6 = 0;
+			for (j=(i*12);j<biggestItem;j++){
+				idN = j;
+				tData3 += outPutData[idN][3];
+				tData6 += outPutData[idN][6];
+			}
+			if ((i%2)==1){
+				outputStrBuilder.push("<tr align=right><td>" + (i + 1));
+			}else{
+				outputStrBuilder.push("<tr align=right bgcolor='#dddddd'><td>" + (i + 1));
+			}
+			outputStrBuilder.push("</td><td>" + formatAsMoney(tData0) + "</td><td>" + formatAsMoney(tData1) + "</td><td>" + formatAsMoney(tData3) + "</td><td>" + formatAsMoney(tData6) + "</td><td>" + formatAsMoney(tData2) + "</td><td>" + formatAsMoney(tData4) + "</td></tr>");
+		}
+
+	}
+	outputStrBuilder.push("</table>");
+	outPutString = outputStrBuilder.join("");
+	if (showOption==1){
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Monthly Schedule</h2><div id='topmenu'><ul><li><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li id='menuon'><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}else{
+		document.getElementById("camortizationschdis").innerHTML = "<h2>Annual Schedule</h2><div id='topmenu'><ul><li id='menuon'><a href='#' onclick='showAmo(0);return false;'>Annual Schedule</a></li> <li><a href='#' onclick='showAmo(1);return false;'>Monthly Schedule</a></li></ul></div>"+outPutString;
+	}
+}
+if (cyears>2){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/cd-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/cd-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

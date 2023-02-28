@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/rent-vs-buy-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Rent vs. Buy Calculator</title>
+	<meta name="description" content="Free calculator to compare the financial aspects of renting vs. buying a house. The calculator accounts for interest, tax, fees, and many other factors." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="rent-vs-buy-calculator.html" itemprop="item"><span itemprop="name">rent vs. buy calculator</span></a><meta itemprop="position" content="3" /></span></div>		<h1>Rent vs. Buy Calculator</h1>
+<div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table class="panel" align="center"><form action="https://www.calculator.net/rent-vs-buy-calculator.html"><tr><td valign="top"><div id="sectitle">Home Purchase</div>
+<table width="100%">
+<tr><td>Home Price</td><td><input type="text" name="chomeprice" id="chomeprice" value="390000" class="inlong indollar"></td></tr>
+<tr><td>Down Payment</td><td><input type="text" name="cdownpay" id="cdownpay" value="20" class="inlong inpct"></td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterest" id="cinterest" value="6.94" class="inlong inpct"></td></tr>
+<tr><td>Loan Term</td><td><input type="text" name="cloanterm" id="cloanterm" value="30" class="innormal"> years</td></tr>
+<tr><td>Buying Closing Costs</td><td><input type="text" name="cbuyclosing" id="cbuyclosing" value="4" class="innormal inpct"></td></tr>
+<tr><td>Property Tax</td><td><input type="text" name="cpropertytax" id="cpropertytax" value="1.5" class="innormal inpct"> / year</td></tr>
+<tr><td>Property Tax Increase</td><td><input type="text" name="cpropertytaxincrease" id="cpropertytaxincrease" value="3" class="innormal inpct"> / year</td></tr>
+<tr><td>Home Insurance</td><td nowrap><input type="text" name="chomeinsurance" id="chomeinsurance" value="1200" class="innormal indollar"> / year</td></tr>
+<tr><td>HOA Fee</td><td><input type="text" name="choa" id="choa" value="0" class="innormal indollar"> / year</td></tr>
+<tr><td>Maintenance Cost</td><td><input type="text" name="cmaintenance" id="cmaintenance" value="1.5" class="innormal inpct"> / year</td></tr>
+<tr><td>Home Value Appreciation</td><td><input type="text" name="cvalueincrease" id="cvalueincrease" value="3" class="innormal inpct"> / year</td></tr>
+<tr><td>Cost/Insurance Increase</td><td><input type="text" name="ccostinsuranceincrease" id="ccostinsuranceincrease" value="3" class="innormal inpct"> / year</td></tr>
+<tr><td>Selling Closing Costs</td><td><input type="text" name="csellclosing" id="csellclosing" value="8" class="innormal inpct"></td></tr>
+</table>
+</td><td width="10">&nbsp;</td><td valign="top"><div id="sectitle">Home Rent</div>
+<table width="100%">
+<tr><td>Monthly Rental Fee</td><td><input type="text" name="crental" id="crental" value="2000" class="innormal indollar"></td></tr>
+<tr><td>Rental Fee Increase</td><td><input type="text" name="crentalincrease" id="crentalincrease" value="3" class="innormal inpct"> / year</td></tr>
+<tr><td>Renter's Insurance</td><td nowrap><input type="text" name="crentinsurance" id="crentinsurance" value="15" class="innormal indollar"> / month</td></tr>
+<tr><td>Security Deposit</td><td><input type="text" name="cdeposit" id="cdeposit" value="2000" class="innormal indollar">&nbsp;</td></tr>
+<tr><td>Upfront Cost</td><td><input type="text" name="cupfront" id="cupfront" value="50" class="innormal indollar">&nbsp;</td></tr>
+</table>
+<br><div id="sectitle">Your Information</div>
+<table width="100%">
+<tr><td>Average Investment Return</td><td><input type="text" name="cinvestreturn" id="cinvestreturn" value="5" class="innormal inpct"></td></tr>
+<tr><td>Marginal Federal Tax Rate</td><td><input type="text" name="cfedtax" id="cfedtax" value="25" class="innormal inpct"></td></tr>
+<tr><td>Marginal State Tax Rate</td><td><input type="text" name="cstatetax" id="cstatetax" value="0" class="innormal inpct"></td></tr>
+<tr>
+	<td colspan="2">Tax Filing Status:
+		<select name="cfilestatus">
+			<option value="Single" >Single</option>
+			<option value="MarriedJoint" selected>Married Filing Jointly</option>
+			<option value="MarriedSeparately" >Married Filing Separately</option>
+			<option value="HeadofHousehold" >Head of Household</option>
+			<option value="Widow" >Qualified Widow</option>
+		</select>
+	</td>
+</tr>
+<tr><td colspan="2" align="center" style="padding: 15px;"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td></tr>
+</table>
+</td></tr></form></table>
+
+<h2 class="h2result">Result</h2><p class="bigtext">Buying is cheaper if you stay for <b><font color="green">12.5 years</font></b> or longer. Otherwise, renting is cheaper.</p><div id="cchartdiv" style="min-width: 320px; height: 200px; margin: 0 auto"></div><script>$(function () {$('#cchartdiv').highcharts({chart: {type: 'spline',plotBorderWidth: 1},title: {text: ''},xAxis: {min: 1, max:30, title: {text: ''},gridLineWidth: 1,labels: {formatter: function() {return this.value+'yr';}}},yAxis: {title: {text: 'Average Monthly Cost'},gridLineWidth: 1, labels: {formatter: function() {tempVal = this.value;if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';return '$'+tempVal;}}},tooltip: {enabled: true,formatter: function() {return this.series.name+': Year #'+this.x+' / $' + this.y;}},plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 85,y: 3},series: [{name: 'Buy',data: [5913,5913,4017,3422,3154,3017,2948,2917,2912,2923,2948,2982,3025,3074,3129,3189,3253,3322,3395,3472,3553,3637,3725,3817,3912,4010,4112,4218,4327,4440,4489]},{name: 'Rent',data: [2086,2086,2154,2226,2301,2378,2458,2541,2626,2715,2806,2901,2999,3100,3205,3313,3425,3541,3660,3784,3912,4044,4181,4322,4468,4620,4776,4937,5104,5277,5456]}]});});</script><p>The following is the average cost based on the length you stay for the next 30 years.</p><table class="cinfoT"><tr align="center"><td class="cinfoHd" rowspan="2">Staying Length</td><td class="cinfoHdL" colspan="2">Average Buying Cost</td><td class="cinfoHdL" colspan="2">Average Renting Cost</td></tr><tr align="center"><td class="cinfoHdL">Monthly</td><td class="cinfoHdL">Annual</td><td class="cinfoHdL">Monthly</td><td class="cinfoHdL">Annual</td></tr><tr align="right" style="background-color: #ffffff;"><td>1 Year</td><td class="cinfoBodL">$5,913</td><td class="cinfoBodL">$70,956</td><td class="cinfoBodL">$2,086</td><td class="cinfoBodL">$25,032</td></tr><tr align="right" style="background-color: #ffffff;"><td>2 Years</td><td class="cinfoBodL">$4,017</td><td class="cinfoBodL">$48,200</td><td class="cinfoBodL">$2,154</td><td class="cinfoBodL">$25,849</td></tr><tr align="right" style="background-color: #ffffff;"><td>3 Years</td><td class="cinfoBodL">$3,422</td><td class="cinfoBodL">$41,063</td><td class="cinfoBodL">$2,226</td><td class="cinfoBodL">$26,711</td></tr><tr align="right" style="background-color: #ffffff;"><td>4 Years</td><td class="cinfoBodL">$3,154</td><td class="cinfoBodL">$37,846</td><td class="cinfoBodL">$2,301</td><td class="cinfoBodL">$27,607</td></tr><tr align="right" style="background-color: #ffffff;"><td>5 Years</td><td class="cinfoBodL">$3,017</td><td class="cinfoBodL">$36,210</td><td class="cinfoBodL">$2,378</td><td class="cinfoBodL">$28,535</td></tr><tr align="right" style="background-color: #ffffff;"><td>6 Years</td><td class="cinfoBodL">$2,948</td><td class="cinfoBodL">$35,374</td><td class="cinfoBodL">$2,458</td><td class="cinfoBodL">$29,496</td></tr><tr align="right" style="background-color: #ffffff;"><td>7 Years</td><td class="cinfoBodL">$2,917</td><td class="cinfoBodL">$35,006</td><td class="cinfoBodL">$2,541</td><td class="cinfoBodL">$30,489</td></tr><tr align="right" style="background-color: #ffffff;"><td>8 Years</td><td class="cinfoBodL">$2,912</td><td class="cinfoBodL">$34,938</td><td class="cinfoBodL">$2,626</td><td class="cinfoBodL">$31,517</td></tr><tr align="right" style="background-color: #ffffff;"><td>9 Years</td><td class="cinfoBodL">$2,923</td><td class="cinfoBodL">$35,079</td><td class="cinfoBodL">$2,715</td><td class="cinfoBodL">$32,579</td></tr><tr align="right" style="background-color: #ffffff;"><td>10 Years</td><td class="cinfoBodL">$2,948</td><td class="cinfoBodL">$35,374</td><td class="cinfoBodL">$2,806</td><td class="cinfoBodL">$33,678</td></tr><tr align="right" style="background-color: #ffffff;"><td>11 Years</td><td class="cinfoBodL">$2,982</td><td class="cinfoBodL">$35,787</td><td class="cinfoBodL">$2,901</td><td class="cinfoBodL">$34,814</td></tr><tr align="right" style="background-color: #ffffff;"><td>12 Years</td><td class="cinfoBodL">$3,025</td><td class="cinfoBodL">$36,296</td><td class="cinfoBodL">$2,999</td><td class="cinfoBodL">$35,989</td></tr><tr align="right" style="background-color: #dddddd;"><td>13 Years</td><td class="cinfoBodL">$3,074</td><td class="cinfoBodL">$36,886</td><td class="cinfoBodL">$3,100</td><td class="cinfoBodL">$37,203</td></tr><tr align="right" style="background-color: #dddddd;"><td>14 Years</td><td class="cinfoBodL">$3,129</td><td class="cinfoBodL">$37,544</td><td class="cinfoBodL">$3,205</td><td class="cinfoBodL">$38,459</td></tr><tr align="right" style="background-color: #dddddd;"><td>15 Years</td><td class="cinfoBodL">$3,189</td><td class="cinfoBodL">$38,264</td><td class="cinfoBodL">$3,313</td><td class="cinfoBodL">$39,758</td></tr><tr align="right" style="background-color: #dddddd;"><td>16 Years</td><td class="cinfoBodL">$3,253</td><td class="cinfoBodL">$39,040</td><td class="cinfoBodL">$3,425</td><td class="cinfoBodL">$41,100</td></tr><tr align="right" style="background-color: #dddddd;"><td>17 Years</td><td class="cinfoBodL">$3,322</td><td class="cinfoBodL">$39,868</td><td class="cinfoBodL">$3,541</td><td class="cinfoBodL">$42,489</td></tr><tr align="right" style="background-color: #dddddd;"><td>18 Years</td><td class="cinfoBodL">$3,395</td><td class="cinfoBodL">$40,744</td><td class="cinfoBodL">$3,660</td><td class="cinfoBodL">$43,924</td></tr><tr align="right" style="background-color: #dddddd;"><td>19 Years</td><td class="cinfoBodL">$3,472</td><td class="cinfoBodL">$41,667</td><td class="cinfoBodL">$3,784</td><td class="cinfoBodL">$45,408</td></tr><tr align="right" style="background-color: #dddddd;"><td>20 Years</td><td class="cinfoBodL">$3,553</td><td class="cinfoBodL">$42,635</td><td class="cinfoBodL">$3,912</td><td class="cinfoBodL">$46,943</td></tr><tr align="right" style="background-color: #dddddd;"><td>21 Years</td><td class="cinfoBodL">$3,637</td><td class="cinfoBodL">$43,646</td><td class="cinfoBodL">$4,044</td><td class="cinfoBodL">$48,530</td></tr><tr align="right" style="background-color: #dddddd;"><td>22 Years</td><td class="cinfoBodL">$3,725</td><td class="cinfoBodL">$44,701</td><td class="cinfoBodL">$4,181</td><td class="cinfoBodL">$50,170</td></tr><tr align="right" style="background-color: #dddddd;"><td>23 Years</td><td class="cinfoBodL">$3,817</td><td class="cinfoBodL">$45,798</td><td class="cinfoBodL">$4,322</td><td class="cinfoBodL">$51,867</td></tr><tr align="right" style="background-color: #dddddd;"><td>24 Years</td><td class="cinfoBodL">$3,912</td><td class="cinfoBodL">$46,938</td><td class="cinfoBodL">$4,468</td><td class="cinfoBodL">$53,621</td></tr><tr align="right" style="background-color: #dddddd;"><td>25 Years</td><td class="cinfoBodL">$4,010</td><td class="cinfoBodL">$48,121</td><td class="cinfoBodL">$4,620</td><td class="cinfoBodL">$55,434</td></tr><tr align="right" style="background-color: #dddddd;"><td>26 Years</td><td class="cinfoBodL">$4,112</td><td class="cinfoBodL">$49,347</td><td class="cinfoBodL">$4,776</td><td class="cinfoBodL">$57,310</td></tr><tr align="right" style="background-color: #dddddd;"><td>27 Years</td><td class="cinfoBodL">$4,218</td><td class="cinfoBodL">$50,615</td><td class="cinfoBodL">$4,937</td><td class="cinfoBodL">$59,249</td></tr><tr align="right" style="background-color: #dddddd;"><td>28 Years</td><td class="cinfoBodL">$4,327</td><td class="cinfoBodL">$51,927</td><td class="cinfoBodL">$5,104</td><td class="cinfoBodL">$61,253</td></tr><tr align="right" style="background-color: #dddddd;"><td>29 Years</td><td class="cinfoBodL">$4,440</td><td class="cinfoBodL">$53,284</td><td class="cinfoBodL">$5,277</td><td class="cinfoBodL">$63,327</td></tr><tr align="right" style="background-color: #dddddd;"><td>30 Years</td><td class="cinfoBodL">$4,489</td><td class="cinfoBodL">$53,866</td><td class="cinfoBodL">$5,456</td><td class="cinfoBodL">$65,470</td></tr></table>
+
+
+<br>
+<p><fieldset><legend>Related</legend><a href="mortgage-calculator.html">Mortgage Calculator</a> | <a href="house-affordability-calculator.html">House Affordability Calculator</a></fieldset></p>
+
+<br>
+<p>Should I rent or buy? This is the all-important, life-changing question every potential homeowner will face. For our Rent vs. Buy Calculator, we evaluate the decision from a purely financial standpoint. We base the calculations on many assumptions, such as constant home value appreciation rates and constant rental fee increases rates in the future. We assume the user can afford to either buy or rent. We strive to give users the best results possible. However, because our calculator cannot precisely predict the future, the result is an estimate based on input values only. Also, this calculator is intended for use by U.S. residents only.</p>
+<p>In the real world, numbers cannot reflect many intangible human elements involved in the Rent vs. Buy question, such as the value of homeownership or not having to deal with landlords. Sometimes, buyers want the ability to do things such as paint their walls a specific color or house ten cats without hearing complaints from landlords or neighbors. Conversely, renters might prefer the peace of mind that comes with a predictable monthly rent instead of paying a large upfront down payment and closing costs. Whether renting or buying, consumers need to factor personal preferences into this decision.</p>
+
+<h3>What to Expect When Buying a Home</h3>
+<p>Homeownership is a relatively new phenomenon in society. It did not become easily accessible to the average Joe until the mid-twentieth century. Before this time, homeownership was common only for the wealthy.</p>
+<p>In the U.S. today, homeownership is as American as bald eagles and hot dogs. Moreover, the federal government offers tax incentives for owning a home, a strong reason not to rent. Furthermore, many believe that mortgages build equity. Considering these factors, one can easily see why buying seems to make more sense than renting, at least on the surface.</p>
+<p>While a mortgage can technically build equity, it is not significant in most cases. Robert Shiller, a leading economist, conducted a study of home prices in the twentieth century. His study found that the average appreciation rate for home prices after adjusting for inflation came to only 0.2%. Moreover, after factoring in yearly maintenance, repairs, and annual property taxes, most homeowners will find that their home purchase investment merely breaks even.</p>
+<p>However, home markets vary widely across different regions. A house in San Francisco will appreciate at a very different rate than a comparable home in Wyoming. Hence, the decision to buy may come down to intangible factors. For most people, primary homeownership is an investment in family, long-term stability, happiness, and shelter, not a speculative way to increase the dollar amount of their total assets.</p>
+<p>Owning a home also includes some one-time transaction costs and recurring maintenance costs. The former mainly refers to the costs associated with buying and selling the house, such as the down payment, closing costs, and commission fees. After adding such expenses, the cost of buying and selling a house can be very high, often reaching 10% or more of the home's value.</p>
+<p>The recurring maintenance costs mainly refer to the four most significant costs associated with homeownership called PITI, an acronym standing for principal, interest, taxes, and insurance, charges typically in descending order by amount. PITI does not cover all costs, but this abbreviation represents the largest expenses.</p>
+<p><b>P - Principal</b></p>
+<p>The principal is the amount borrowed from the lender. It builds the highly sought-after equity of the home. It is part of the monthly mortgage payment and often represents the most sizable portion of the PITI. Also, it is the only part of the PITI that accumulates equity.</p>
+<p><b>I - Interest</b></p>
+<p>The second part of the monthly mortgage payment is the interest, which is the cost of borrowing the money, usually a percentage of the principal. Banks typically express it as an annual percentage rate or APR. Mortgage interest is tax-deductible, something homeowners should not forget during tax season!</p>
+<p><b>T - Taxes</b></p>
+<p>Property taxes are annual levies paid to the home's city, county, school district, or other ruling jurisdictions. Prospective buyers can find a ballpark figure for the annual property tax of any home by going to the website of the ruling jurisdiction's appraisal district. This information is usually public, and in most places, homeowners will pay between 1% and 3% of the home's value annually. The Rent vs. Buy Calculator requires both the annual amount in tax due each year and a forecasted percentage increase to calculate more accurate results.</p>
+<p><b>I - Insurance</b></p>
+<p>Lenders typically require buyers to obtain homeowners insurance for disasters such as hurricanes and fires. In addition, traditional home loans with down payments of less than 20% will generally require private mortgage insurance (PMI), which protects lenders in case of a default. Some owners also purchase a homeowners' warranty, which can help with repair costs.</p>
+<p>Our site has several calculators that can aid in navigating the home-buying process, and we suggest using the following tools for decision-making purposes:</p>
+<ul>
+	<li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+	<li><a href="mortgage-payoff-calculator.html">Mortgage Payoff Calculator</a></li>
+	<li><a href="house-affordability-calculator.html">House Affordability Calculator</a></li>
+	<li><a href="down-payment-calculator.html">Down Payment Calculator</a></li>
+	<li><a href="fha-loan-calculator.html">FHA Loan Calculator</a></li>
+	<li><a href="va-mortgage-calculator.html">VA Mortgage Calculator</a></li>
+	<li><a href="apr-calculator.html">APR Calculator</a></li>
+	<li><a href="down-payment-calculator.html">Down Payment Calculator</a></li>
+</ul>
+
+<h3>What to Know When Renting</h3>
+<p>Rent is the act of paying a landlord for the right of use on a residential property. The primary cost of renting a home is the monthly rental fee. Other costs include the security deposit, application fee, and possibly, insurance.</p>
+<p>A rental home is typically considered a temporary residence. Its main advantage is the flexibility of negotiable lease terms, which generally range from a few months to a few years. Therefore, it makes sense for those with an uncertain future to rent instead of buy.</p>
+<p>For more information on renting or to estimate an affordable monthly rent, please use our <a href="rent-calculator.html">Rent Calculator</a>.</p>
+<p><b>Notes regarding renting</b></p>
+<p>Prospective renters should keep these tips in mind before signing a lease agreement:</p>
+<ul>
+	<li>Negotiating the rent and terms of a lease can help lower monthly bills. Just like car buying, it does not hurt to poke and prod a bit to see if the landlord will budge on rental costs.</li>
+	<li>Try to get everything in writing, including promises made by landlords or renter responsibilities. It is easy to take verbal agreements as is, but written agreements will be your friend when unexpected situations arise, such as disputes over vague contract details.</li>
+	<li>Upon moving in, take pictures of the apartment to evaluate its condition. If the landlord tries to charge for damages to the property, the lessor holds proof of the property's pre-existing condition before the move-in.</li>
+	<li>By federal law, landlords may not refuse rent to anyone based on race, sex, religion, disability, national origin, or familial status. At the state or local level, laws against housing discrimination based on age, marital status, or sexual orientation may also apply.</li>
+	<li>For fixed leases, landlords may not raise rent prices on existing renters during the lease term.
+</ul>
+
+<h3>Should I Consider Buying or Renting?</h3>
+<p>At least from a purely financial perspective, this decision comes down to two important questions:</p>
+<p><b>Do I have enough savings to purchase a home?</b></p>
+<p>Purchasing a home typically involves a considerable upfront price, including the down payment, closing costs, fees, and other expenses. Hence, the first step when deciding to buy a house is to see if one's available savings will cover the upfront costs. Please use our <a href="house-affordability-calculator.html">House Affordability Calculator</a> to estimate the ability to cover these costs.</p>
+<p><b>Will I live long enough in the home?</b></p>
+<p>The time one intends to stay in the house is probably the most critical variable in determining whether to buy or rent, assuming a buyer can afford both. As a general rule of thumb, the longer the intended stay, the more it makes sense (financially) to buy. Otherwise, one should consider renting. Typically, owning a house involves significant one-time buying or selling costs. Compared with renting a similar home, the recurring maintenance cost is lower than the monthly rental fee. If one stays in a house long enough, it justifies the massive buying and selling costs and makes the average total monthly cost of owning a home lower than renting.</p>
+<p>Our Rent vs. Buy Calculator above can estimate the minimum period required for buying to make sense over renting. If one plans to stay in the house for less than the minimum time of residence, it is financially wise to rent. Otherwise, buying makes more sense. This number can vary based on both personal life situations and the region where one lives.</p>
+<p>Additionally, we base the calculation on the financial information of the buyer and the house. For this reason, we encourage users to input the data into the calculators as accurately as possible.</p>
+<p>The following is a list of the factors that impact the calculation results:</p>
+<p><b>Major Factors</b></p>
+<ul>
+	<li><b>Average Investment Return (AIR)</b>&mdash;This external opportunity cost is difficult to calculate accurately. This is because it involves factors ranging from whether there's a downturn in the market to the home's location.<br>Worldwide economic factors can also affect returns. Annual stock market returns generally exceed mortgage interest rates historically. The lost opportunity costs associated with building equity in an owned home are therefore evident. Hence, each individual should tailor their AIR to their specific situations. For example, a senior citizen close to retirement with most of their savings in treasury bills should have a lower AIR than most. This lowers the opportunity cost of building home equity.</li>
+	<li><b>Home Appreciation Rate</b>&mdash;For most people, purchasing a home is the largest investment they'll ever make. Not surprisingly, the higher the estimated appreciation, the more sense it makes to buy. This figure might be somewhat difficult to pinpoint, but prospective buyers can employ several methods to make this estimate. The most common way is to research the most recent comparable sales within the same zip code. Using this method, the appraiser estimates their appreciation over time using purchase and sales prices and averages them all out to calculate a reasonable estimate. On average, home values appreciate by about 3-5% a year in the U.S.</li>
+	<li><b>Mortgage Interest Rate</b>&mdash;Considering the size of a home purchase, one can expect the amount of money going towards interest to be relatively high, even in an environment of low mortgage rates. Borrowers can calculate this cost simply by inputting the interest rate listed on the mortgage papers from the lenders to run calculations.</li>
+</ul>
+<p><b>Minor Factors</b></p>
+<p>Though not as crucial to the process as the four variables above, borrowers need to determine the effects of additional factors to receive the most accurate results.</p>
+<p>Aside from the purchase price of the home itself, these costs usually include:</p>
+<ul>
+	<li>Property taxes</li>
+	<li>Homeowners' insurance</li>
+	<li>Maintenance</li>
+	<li>Repairs</li>
+	<li>Condo or HOA fees</li>
+	<li>Buying and selling costs</li>
+</ul>
+<p>Rent usually involves fewer additional costs. Aside from the rent itself, expenses to take note of are the:</p>
+<ul>
+	<li>Application fee or upfront cost</li>
+	<li>Security deposit</li>
+	<li>Renter's insurance</li>
+	<li>Rent increases</li>
+</ul>
+
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/rent-vs-buy-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/rent-vs-buy-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:40 GMT -->
+</html>

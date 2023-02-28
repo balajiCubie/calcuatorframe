@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/mortgage-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Mortgage Calculator</title>
+	<meta name="description" content="Free mortgage calculator to find monthly payment, total home ownership cost, and amortization schedule with options for taxes, PMI, HOA, and early payoff." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/mortgagenew.js"></script>
+</head><body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="mortgage-calculator.html" itemprop="item"><span itemprop="name">mortgage calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Mortgage Calculator</h1>
+<div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table cellpadding="0" cellspacing="0" align="center">
+<tr><td valign="top" width="310">
+<table class="panel">
+<form name="calform" action="https://www.calculator.net/mortgage-calculator.html">
+<tr><td align="right">Home Price</td><td align="right"><input type="text" name="chouseprice" id="chouseprice" value="400000" class="innormal indollar"></td><td>&nbsp;</td></tr>
+<tr><td align="right"><a href="#mcdown">Down Payment</a></td><td align="right" valign="bottom"><input type="text" name="cdownpayment" id="cdownpayment" value="20" class="innormal inpct"></td><td><select name="cdownpaymentunit" onChange="cunitchange('cdownpayment', this.value);"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td align="right"><a href="#mclterm">Loan Term</a></td><td align="right"><input type="text" name="cloanterm" id="cloanterm" value="30" class="innormal"></td><td>years</td></tr>
+<tr><td align="right"><a href="#mcinterest">Interest Rate</a></td><td align="right"><input type="text" name="cinterestrate" id="cinterestrate" value="6.94" class="innormal inpct"></td><td>&nbsp;</td></tr>
+<tr><td align="right">Start Date</td><td align="left" colspan="2"><select name="cstartmonth" id="cstartmonth"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select> <input type="text" name="cstartyear" id="cstartyear" value="2023" class="in4char"></td></tr>
+<tr><td colspan="3"><br><label for="caddoptional" class="cbcontainer"><input type="checkbox" name="caddoptional" id="caddoptional" value="1" checked /><span class="cbmark"></span><b>Include Options Below</b></label></td></tr>
+
+<tr><td>&nbsp;</td><td colspan="2" align="center" valign="bottom">Annual Tax &amp; Cost</td></tr>
+<tr><td align="right"><a href="#mcptax">Property Taxes</a></td><td align="right"><input type="text" name="cpropertytaxes" id="cpropertytaxes" value="1.2" class="innormal inpct"></td><td><select name="cpropertytaxesunit" onChange="cunitchange('cpropertytaxes', this.value);"><option value="p" selected>%</option><option value="d">$</option></select></td></tr>
+<tr><td align="right"><a href="#mchins">Home Insurance</a></td><td align="right"><input type="text" name="chomeins" id="chomeins" value="1500" class="innormal  indollar"></td><td><select name="chomeinsunit" onChange="cunitchange('chomeins', this.value);"><option value="p">%</option><option value="d" selected>$</option></select></td></tr>
+<tr><td align="right"><a href="#mcpmi">PMI Insurance</a></td><td align="right"><input type="text" name="cpmi" id="cpmi" value="0" class="innormal  indollar"></td><td><select name="cpmiunit" onChange="cunitchange('cpmi', this.value);"><option value="p">%</option><option value="d" selected>$</option></select></td></tr>
+<tr><td align="right"><a href="#mchoa">HOA Fee</a></td><td align="right"><input type="text" name="choa" id="choa" value="0" class="innormal  indollar"></td><td><select name="choaunit" onChange="cunitchange('choa', this.value);"><option value="p">%</option><option value="d" selected>$</option></select></td></tr>
+<tr><td align="right"><a href="#mcother">Other Costs</a></td><td align="right"><input type="text" name="cothercost" id="cothercost" value="4000" class="innormal  indollar"></td><td><select name="cothercostunit" onChange="cunitchange('cothercost', this.value);"><option value="p">%</option><option value="d" selected>$</option></select></td></tr>
+<tr><td colspan="3" align="center">
+<div style="padding:10px 0px;font-weight:bold;"><span id="cmoreoptionlinks"><a href="#" onClick="cshmoreoption(1);return false;">+ More Options</a></span><input type="hidden" name="cmop" id="cmoreoption" value="0"></div>
+<table id="cmoreoptioninputs" style="display: none;">
+	<tr><td colspan="3" style="padding-top:5px;font-weight:bold;text-align:left;">Annual Tax &amp; Cost Increase</td></tr>
+	<tr><td style="padding-left:10px;text-align:left;">Property Taxes Increase</td><td colspan="2"><input type="text" name="cptinc" value="0" class="in4char inpct"></td></tr>
+	<tr><td style="padding-left:10px;text-align:left;">Home Insurance Increase</td><td colspan="2"><input type="text" name="chiinc" value="0" class="in4char inpct"></td></tr>
+	<tr><td style="padding-left:10px;text-align:left;">HOA Fee Increase</td><td colspan="2"><input type="text" name="choainc" value="0" class="in4char inpct"></td></tr>
+	<tr><td style="padding-left:10px;text-align:left;">Other Costs Increase</td><td colspan="2"><input type="text" name="cocinc" value="0" class="in4char inpct"></td></tr>
+	<tr><td colspan="3" style="padding:10px 0px 3px 0px;font-weight:bold;text-align:left;">Extra Payments</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;text-align:left;">Extra Monthly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cexma" value="0" class="innormal indollar">
+		from <select name="cexmsm"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="cexmsy" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;text-align:left;">Extra Yearly Pay
+		<div style="padding-bottom:5px;"><input type="text" name="cexya" value="0" class="innormal indollar">
+		from <select name="cexysm"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="cexysy" value="2023" class="in4char"></div>
+	</td></tr>
+	<tr><td colspan="3" style="padding-left:10px;text-align:left;">Extra One-time Pay
+		<div><input type="text" name="cexoa" value="0" class="innormal indollar">
+		in <select name="cexosm"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="cexosy" value="2023" class="in4char"></div>
+		<div id="cadditionalonetimelink" style="text-align:center; padding-top:8px;"><a href="#" onClick="cshadditionalonetime(1);return false;">Additional One-Time Payments</a></div>
+		<div id="cadditionalonetimediv" style="padding:5px 0px;display: none;">
+			<input name="caot" id="cadditionalonetime" value="0" type="hidden">
+			<input type="text" name="xa1" value="0" class="innormal indollar"> in <select name="xm1"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy1" value="2023" class="in4char"><br><input type="text" name="xa2" value="0" class="innormal indollar"> in <select name="xm2"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy2" value="2023" class="in4char"><br><input type="text" name="xa3" value="0" class="innormal indollar"> in <select name="xm3"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy3" value="2023" class="in4char"><br><input type="text" name="xa4" value="0" class="innormal indollar"> in <select name="xm4"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy4" value="2023" class="in4char"><br><input type="text" name="xa5" value="0" class="innormal indollar"> in <select name="xm5"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy5" value="2023" class="in4char"><br><input type="text" name="xa6" value="0" class="innormal indollar"> in <select name="xm6"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy6" value="2023" class="in4char"><br><input type="text" name="xa7" value="0" class="innormal indollar"> in <select name="xm7"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy7" value="2023" class="in4char"><br><input type="text" name="xa8" value="0" class="innormal indollar"> in <select name="xm8"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy8" value="2023" class="in4char"><br><input type="text" name="xa9" value="0" class="innormal indollar"> in <select name="xm9"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy9" value="2023" class="in4char"><br><input type="text" name="xa10" value="0" class="innormal indollar"> in <select name="xm10"><option value="1">Jan</option><option value="2" selected>Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><input type="text" name="xy10" value="2023" class="in4char"><br>		</div>
+
+	</td></tr>
+
+	<tr><td colspan="3" style="padding:10px 0px 6px 0px">
+		<label for="csbw" class="cbcontainer"><input type="checkbox" name="csbw" id="csbw" value="1" checked /><span class="cbmark"></span><b>Show Biweekly Payback Results</b></label>
+	</td></tr>
+</table>
+<script>
+cshmoreoption(0);
+cshadditionalonetime(0);
+</script>
+</td></tr>
+<tr><td colspan="2" align="right"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate"></td><td>&nbsp;</td></tr>
+</form>
+</table>
+</td><td valign="top">
+<a name="results"></a><table align="center"><tr><td><h2 class="h2result">Monthly Pay: &nbsp; $2,116.09</h2><table cellpadding='3' width='100%'><tr><td>&nbsp;</td><td align=right><b>Monthly</b></td><td align=right><b>Total</b></td></tr><tr bgcolor='#dddddd'><td><b>Mortgage Payment</b></td><td align=right><b>$2,116.09</b></td><td align=right><b>$761,792.03</b></td></tr><tr><td><a href="#mcptax">Property Tax</a></td><td align=right>$400.00</td><td align=right>$144,000.00</td></tr><tr><td><a href="#mchins">Home Insurance</a></td><td align=right>$125.00</td><td align=right>$45,000.00</td></tr><tr><td><a href="#mcother">Other Costs</a></td><td align=right>$333.33</td><td align=right>$120,000.00</td></tr><tr bgcolor='#dddddd'><td><b>Total Out-of-Pocket</b></td><td align=right>$2,974.42</td><td align=right>$1,070,792.03</td></tr><tr><td colspan="3">&nbsp;</td></tr><tr bgcolor='#dddddd'><td colspan='2'><b>House Price</b></td><td align='right'>$400,000.00</td></tr><tr><td colspan='2'>Loan Amount</td><td align='right'>$320,000.00</td></tr><tr><td colspan='2'>Down Payment</td><td align='right'>$80,000.00</td></tr><tr><td colspan='2'>Total of 360 Mortgage Payments</td><td align='right'>$761,792.03</td></tr><tr><td colspan='2'>Total Interest</td><td align='right'>$441,792.03</td></tr><tr><td colspan='2'>Mortgage Payoff Date</td><td align='right'>Feb. 2053</td></tr></table></td></tr></table></td></tr></table>
+<div id="mRateData"></div><table width="100%">
+	<tr>
+		<td valign="top" width="200">
+			<br><div class="bigtext" style="text-align:center;"><b>Payments</b></div>			<div id="cpiechartdiv" style="min-width: 155px; height: 250px; margin: 0 auto"></div>
+		</td>
+		<td valign="top">
+			<br><div class="bigtext" style="text-align:center;"><b>Mortgage Amortization Graph</b></div>
+			<div id="cchartdiv" style="min-width: 370px; height: 250px; margin: 0 auto"></div>
+		</td>
+	</tr>
+</table>
+<div id="camortizationschdis"></div>
+
+<br><br>
+<p>The Mortgage Calculator helps estimate the monthly payment due along with other financial costs associated with mortgages. There are options to include extra payments or annual percentage increases of common mortgage-related expenses. The calculator is mainly intended for use by U.S. residents.</p>
+
+<h3>Mortgages</h3>
+<p>A mortgage is a loan secured by property, usually real estate property. Lenders define it as the money borrowed to pay for real estate. In essence, the lender helps the buyer pay the seller of a house, and the buyer agrees to repay the money borrowed over a period of time, usually 15 or 30 years in the U.S. Each month, a payment is made from buyer to lender. A portion of the monthly payment is called the principal, which is the original amount borrowed. The other portion is the interest, which is the cost paid to the lender for using the money. There may be an escrow account involved to cover the cost of property taxes and insurance. The buyer cannot be considered the full owner of the mortgaged property until the last monthly payment is made. In the U.S., the most common mortgage loan is the conventional 30-year fixed-interest loan, which represents 70% to 90% of all mortgages. Mortgages are how most people are able to own homes in the U.S.</p>
+
+<h3>Mortgage Calculator Components</h3>
+<p>A mortgage usually includes the following key components. These are also the basic components of a mortgage calculator.</p>
+<ul>
+	<li><b>Loan amount</b>&mdash;the amount borrowed from a lender or bank. In a mortgage, this amounts to the purchase price minus any down payment. The maximum loan amount one can borrow normally correlates with household income or affordability. To estimate an affordable amount, please use our <a href="house-affordability-calculator.html">House Affordability Calculator</a>.</li>
+	<li><a name="mcdown"></a><b>Down payment</b>&mdash;the upfront payment of the purchase, usually a percentage of the total price. This is the portion of the purchase price covered by the borrower. Typically, mortgage lenders want the borrower to put 20% or more as a down payment. In some cases, borrowers may put down as low as 3%. If the borrowers make a down payment of less than 20%, they will be required to pay private mortgage insurance (PMI). Borrowers need to hold this insurance until the loan's remaining principal dropped below 80% of the home's original purchase price. A general rule-of-thumb is that the higher the down payment, the more favorable the interest rate and the more likely the loan will be approved.</li>
+	<li><a name="mclterm"></a><b>Loan term</b>&mdash;the amount of time over which the loan must be repaid in full. Most fixed-rate mortgages are for 15, 20, or 30-year terms. A shorter period, such as 15 or 20 years, typically includes a lower interest rate.</li>
+	<li><a name="mcinterest"></a><b>Interest rate</b>&mdash;the percentage of the loan charged as a cost of borrowing. Mortgages can charge either fixed-rate mortgages (FRM) or adjustable-rate mortgages (ARM). As the name implies, interest rates remain the same for the term of the FRM loan. The calculator above calculates fixed rates only. For ARMs, interest rates are generally fixed for a period of time, after which they will be periodically adjusted based on market indices. ARMs transfer part of the risk to borrowers. Therefore, the initial interest rates are normally 0.5% to 2% lower than FRM with the same loan term. Mortgage interest rates are normally expressed in Annual Percentage Rate (APR), sometimes called nominal APR or effective APR. It is the interest rate expressed as a periodic rate multiplied by the number of compounding periods in a year. For example, if a mortgage rate is 6% APR, it means the borrower will have to pay 6% divided by twelve, which comes out to 0.5% in interest every month.</li>
+</ul>
+
+<h3>Costs Associated with Home Ownership and Mortgages</h3>
+<p>Monthly mortgage payments usually comprise the bulk of the financial costs associated with owning a house, but there are other substantial costs to keep in mind. These costs are separated into two categories, recurring and non-recurring.</p>
+<p><b>Recurring Costs</b></p>
+<p>Most recurring costs persist throughout and beyond the life of a mortgage. They are a significant financial factor. Property taxes, home insurance, HOA fees, and other costs increase with time as a byproduct of inflation. In the calculator, the recurring costs are under the "Include Options Below" checkbox. There are also optional inputs within the calculator for annual percentage increases under "More Options." Using these can result in more accurate calculations.</p>
+<ul>
+	<li><a name="mcptax"></a><b>Property taxes</b>&mdash;a tax that property owners pay to governing authorities. In the U.S., property tax is usually managed by municipal or county governments. All 50 states impose taxes on property at the local level. The annual real estate tax in the U.S. varies by location; on average, Americans pay about 1.1% of their property's value as property tax each year.</li>
+	<li><a name="mchins"></a><b>Home insurance</b>&mdash;an insurance policy that protects the owner from accidents that may happen to their real estate properties. Home insurance can also contain personal liability coverage, which protects against lawsuits involving injuries that occur on and off the property. The cost of home insurance varies according to factors such as location, condition of the property, and the coverage amount.</li>
+	<li><a name="mcpmi"></a><b>Private mortgage insurance (PMI)</b>&mdash;protects the mortgage lender if the borrower is unable to repay the loan. In the U.S. specifically, if the down payment is less than 20% of the property's value, the lender will normally require the borrower to purchase PMI until the loan-to-value ratio (LTV) reaches 80% or 78%. PMI price varies according to factors such as down payment, size of the loan, and credit of the borrower. The annual cost typically ranges from 0.3% to 1.9% of the loan amount.</li>
+	<li><a name="mchoa"></a><b>HOA fee</b>&mdash;a fee imposed on the property owner by a homeowner's association (HOA), which is an organization that maintains and improves the property and environment of the neighborhoods within its purview. Condominiums, townhomes, and some single-family homes commonly require the payment of HOA fees. Annual HOA fees usually amount to less than one percent of the property value.</li>
+	<li><a name="mcother"></a><b>Other costs</b>&mdash;includes utilities, home maintenance costs, and anything pertaining to the general upkeep of the property. It is common to spend 1% or more of the property value on annual maintenance alone.</li>
+</ul>
+<p><b>Non-Recurring Costs</b></p>
+<p>These costs aren't addressed by the calculator, but they are still important to keep in mind.</p>
+<ul>
+	<li><b>Closing costs</b>&mdash;the fees paid at the closing of a real estate transaction. These are not recurring fees, but they can be expensive. In the U.S., the closing cost on a mortgage can include an attorney fee, the title service cost, recording fee, survey fee, property transfer tax, brokerage commission, mortgage application fee, points, appraisal fee, inspection fee, home warranty, pre-paid home insurance, pro-rata property taxes, pro-rata homeowner association dues, pro-rata interest, and more. These costs typically fall on the buyer, but it is possible to negotiate a "credit" with the seller or the lender. It is not unusual for a buyer to pay about $10,000 in total closing costs on a $400,000 transaction.</li>
+	<li><b>Initial renovations</b>&mdash;some buyers choose to renovate before moving in. Examples of renovations include changing the flooring, repainting the walls, updating the kitchen, or even overhauling the entire interior or exterior. While these expenses can add up quickly, renovation costs are optional, and owners may choose not to address renovation issues immediately.</li>
+	<li><b>Miscellaneous</b>&mdash;new furniture, new appliances, and moving costs are typical non-recurring costs of a home purchase. This also includes repair costs.</li>
+</ul>
+
+<h3>Early Repayment and Extra Payments</h3>
+<p>In many situations, mortgage borrowers may want to pay off mortgages earlier rather than later, either in whole or in part, for reasons including but not limited to interest savings, wanting to sell their home, or refinancing. Our calculator can factor in monthly, annual, or one-time extra payments. However, borrowers need to understand the advantages and disadvantages of paying ahead on the mortgage.</p>
+<p><b>Early Repayment Strategies</b></p>
+<p>Aside from paying off the mortgage loan entirely, typically, there are three main strategies that can be used to repay a mortgage loan earlier. Borrowers mainly adopt these strategies to save on interest. These methods can be used in combination or individually.</p>
+<ol>
+	<li><b>Make extra payments</b>&mdash;This is simply an extra payment over and above the monthly payment. On typical long-term mortgage loans, a very big portion of the earlier payments will go towards paying down interest rather than the principal. Any extra payments will decrease the loan balance, thereby decreasing interest and allowing the borrower to pay off the loan earlier in the long run. Some people form the habit of paying extra every month, while others pay extra whenever they can. There are optional inputs in the Mortgage Calculator to include many extra payments, and it can be helpful to compare the results of supplementing mortgages with or without extra payments.</li>
+	<li><b>Biweekly payments</b>&mdash;The borrower pays half the monthly payment every two weeks. With 52 weeks in a year, this amounts to 26 payments or 13 months of mortgage repayments during the year. This method is mainly for those who receive their paycheck biweekly. It is easier for them to form a habit of taking a portion from each paycheck to make mortgage payments. Displayed in the calculated results are biweekly payments for comparison purposes.</li>
+	<li><b>Refinance to a loan with a shorter term</b>&mdash;Refinancing involves taking out a new loan to pay off an old loan. In employing this strategy, borrowers can shorten the term, typically resulting in a lower interest rate. This can speed up the payoff and save on interest. However, this usually imposes a larger monthly payment on the borrower. Also, a borrower will likely need to pay closing costs and fees when they refinance.</li>
+</ol>
+<p><b>Reasons for early repayment</b></p>
+<p>Making extra payments offers the following advantages:</p>
+<ul>
+	<li><b>Lower interest costs</b>&mdash;Borrowers can save money on interest, which often amounts to a significant expense.</li>
+	<li><b>Shorter repayment period</b>&mdash;A shortened repayment period means the payoff will come faster than the original term stated in the mortgage agreement. This results in the borrower paying off the mortgage faster.</li>
+	<li><b>Personal satisfaction</b>&mdash;The feeling of emotional well-being that can come with freedom from debt obligations. A debt-free status also empowers borrowers to spend and invest in other areas.</li>
+</ul>
+<p><b>Drawbacks of early repayment</b></p>
+<p>However, extra payments also come at a cost. Borrowers should consider the following factors before paying ahead on a mortgage:</p>
+<ul>
+	<li><b>Possible prepayment penalties</b>&mdash;A prepayment penalty is an agreement, most likely explained in a mortgage contract, between a borrower and a mortgage lender that regulates what the borrower is allowed to pay off and when. Penalty amounts are usually expressed as a percent of the outstanding balance at the time of prepayment or a specified number of months of interest. The penalty amount typically decreases with time until it phases out eventually, normally within 5 years. One-time payoff due to home selling is normally exempt from a prepayment penalty.</li>
+	<li><b>Opportunity costs</b>&mdash;Paying off a mortgage early may not be ideal since mortgage rates are relatively low compared to other financial rates. For example, paying off a mortgage with a 4% interest rate when a person could potentially make 10% or more by instead investing that money can be a significant opportunity cost.</li>
+	<li><b>Capital locked up in the house</b>&mdash;Money put into the house is cash that the borrower cannot spend elsewhere. This may ultimately force a borrower to take out an additional loan if an unexpected need for cash arises.</li>
+	<li><b>Loss of tax deduction</b>&mdash;Borrowers in the U.S. can deduct mortgage interest costs from their taxes. Lower interest payments result in less of a deduction. However, only taxpayers who itemize (rather than taking the standard deduction) can take advantage of this benefit.</li>
+</ul>
+
+<h3>Brief History of Mortgages in the U.S.</h3>
+<p>In the early 20<sup>th</sup> century, buying a home involved saving up a large down payment. Borrowers would have to put 50% down, take out a three or five-year loan, then face a balloon payment at the end of the term.</p>
+<p>Only four in ten Americans could afford a home under such conditions. During the Great Depression, one-fourth of homeowners lost their homes.</p>
+<p>To remedy this situation, the government created the Federal Housing Administration (FHA) and Fannie Mae in the 1930s to bring liquidity, stability, and affordability to the mortgage market. Both entities helped to bring 30-year mortgages with more modest down payments and universal construction standards.</p>
+<p>These programs also helped returning soldiers finance a home after the end of World War II and sparked a construction boom in the following decades. Also, the FHA helped borrowers during harder times, such as the inflation crisis of the 1970s and the drop in energy prices in the 1980s.</p>
+<p>By 2001, the homeownership rate had reached a record level of 68.1%.</p>
+<p>Government involvement also helped during the 2008 financial crisis. The crisis forced a federal takeover of Fannie Mae as it lost billions amid massive defaults, though it returned to profitability by 2012.</p>
+<p>The FHA also offered further help amid the nationwide drop in real estate prices. It stepped in, claiming a higher percentage of mortgages amid backing by the Federal Reserve. This helped to stabilize the housing market by 2013. Today, both entities continue to actively insure millions of single-family homes and other residential properties.</p>
+
+
+
+<script>
+document.getElementById("mRateData").innerHTML = '<div style="background:#eee;border:1px solid #ccc;padding: 3px;margin:3px;"><b>Latest Mortgage Rates:</b> <span style="font-size:11px;color:#888;">(U.S. National Average Fixed, Source: BankRate.com, Feb. 23, 2023)</span><br>&nbsp; &nbsp; 30 Years: <a href="#" onClick="return setYearRate(\'6.94\', \'30\');">6.94%</a> &nbsp; 15 Years: <a href="#" onClick="return setYearRate(\'6.22\', \'15\');">6.22%</a> &nbsp; 10 Years: <a href="#" onClick="return setYearRate(\'6.4\', \'10\');">6.4%</a><p style="text-align:center;padding-top:10px;" id="mratetablebtn"><span id="bluebtn" style="cursor: pointer;" onClick="return showMratetable();">See Your Local Rates</span></p><div id="mratetable"></div></div>';
+</script>
+<script>
+function showMratetable(){
+	document.getElementById("mratetable").innerHTML = '<iframe src="https://widgets.icanbuy.com/c/standard/us/en/mortgage/tables/Mortgage.aspx?siteid=77c21319f69f80e0&property_value=400000&down_payment_percentage=20&loan_product=PERIOD_FIXED_30YEARS&result_count=5" style="width: 100%; height: 1200px; border:0px;"></iframe>';
+	document.getElementById("mratetablebtn").innerHTML = '<span id="bluebtn" style="cursor: pointer;" onClick="return hideMratetable();">Hide The Rate Table Below</span>';
+	return false;
+}
+function hideMratetable(){
+	document.getElementById("mratetable").innerHTML = '';
+	document.getElementById("mratetablebtn").innerHTML = '<span id="bluebtn" style="cursor: pointer;" onClick="return showMratetable();">See Your Local Rates</span>';
+	return false;
+}
+</script>
+<script type="text/javascript">
+allData = "320000.00:319734.58:2116.09:1850.67:1850.67|319734.58:319467.62:2116.09:1849.13:3699.80|319467.62:319199.12:2116.09:1847.59:5547.39|319199.12:318929.07:2116.09:1846.03:7393.42|318929.07:318657.45:2116.09:1844.47:9237.89|318657.45:318384.26:2116.09:1842.90:11080.80|318384.26:318109.50:2116.09:1841.32:12922.12|318109.50:317833.14:2116.09:1839.73:14761.85|317833.14:317555.19:2116.09:1838.13:16599.99|317555.19:317275.62:2116.09:1836.53:18436.51|317275.62:316994.45:2116.09:1834.91:20271.43|316994.45:316711.64:2116.09:1833.28:22104.71|316711.64:316427.20:2116.09:1831.65:23936.36|316427.20:316141.12:2116.09:1830.00:25766.36|316141.12:315853.38:2116.09:1828.35:27594.71|315853.38:315563.97:2116.09:1826.69:29421.40|315563.97:315272.90:2116.09:1825.01:31246.41|315272.90:314980.14:2116.09:1823.33:33069.74|314980.14:314685.68:2116.09:1821.64:34891.37|314685.68:314389.53:2116.09:1819.93:36711.30|314389.53:314091.66:2116.09:1818.22:38529.52|314091.66:313792.06:2116.09:1816.50:40346.02|313792.06:313490.74:2116.09:1814.76:42160.78|313490.74:313187.67:2116.09:1813.02:43973.81|313187.67:312882.85:2116.09:1811.27:45785.07|312882.85:312576.27:2116.09:1809.51:47594.58|312576.27:312267.91:2116.09:1807.73:49402.31|312267.91:311957.77:2116.09:1805.95:51208.26|311957.77:311645.84:2116.09:1804.16:53012.42|311645.84:311332.10:2116.09:1802.35:54814.77|311332.10:311016.55:2116.09:1800.54:56615.31|311016.55:310699.17:2116.09:1798.71:58414.02|310699.17:310379.96:2116.09:1796.88:60210.90|310379.96:310058.90:2116.09:1795.03:62005.93|310058.90:309735.99:2116.09:1793.17:63799.10|309735.99:309411.21:2116.09:1791.31:65590.41|309411.21:309084.54:2116.09:1789.43:67379.84|309084.54:308755.99:2116.09:1787.54:69167.38|308755.99:308425.54:2116.09:1785.64:70953.01|308425.54:308093.18:2116.09:1783.73:72736.74|308093.18:307758.90:2116.09:1781.81:74518.55|307758.90:307422.68:2116.09:1779.87:76298.42|307422.68:307084.52:2116.09:1777.93:78076.35|307084.52:306744.40:2116.09:1775.97:79852.32|306744.40:306402.32:2116.09:1774.01:81626.33|306402.32:306058.26:2116.09:1772.03:83398.35|306058.26:305712.21:2116.09:1770.04:85168.39|305712.21:305364.15:2116.09:1768.04:86936.42|305364.15:305014.09:2116.09:1766.02:88702.45|305014.09:304662.00:2116.09:1764.00:90466.45|304662.00:304307.87:2116.09:1761.96:92228.41|304307.87:303951.69:2116.09:1759.91:93988.32|303951.69:303593.46:2116.09:1757.85:95746.17|303593.46:303233.15:2116.09:1755.78:97501.96|303233.15:302870.76:2116.09:1753.70:99255.66|302870.76:302506.28:2116.09:1751.60:101007.26|302506.28:302139.68:2116.09:1749.49:102756.75|302139.68:301770.97:2116.09:1747.37:104504.13|301770.97:301400.12:2116.09:1745.24:106249.37|301400.12:301027.13:2116.09:1743.10:107992.47|301027.13:300651.98:2116.09:1740.94:109733.41|300651.98:300274.66:2116.09:1738.77:111472.18|300274.66:299895.16:2116.09:1736.59:113208.77|299895.16:299513.46:2116.09:1734.39:114943.16|299513.46:299129.56:2116.09:1732.19:116675.35|299129.56:298743.44:2116.09:1729.97:118405.31|298743.44:298355.08:2116.09:1727.73:120133.04|298355.08:297964.48:2116.09:1725.49:121858.53|297964.48:297571.62:2116.09:1723.23:123581.76|297571.62:297176.49:2116.09:1720.96:125302.72|297176.49:296779.07:2116.09:1718.67:127021.39|296779.07:296379.35:2116.09:1716.37:128737.76|296379.35:295977.32:2116.09:1714.06:130451.82|295977.32:295572.97:2116.09:1711.74:132163.55|295572.97:295166.28:2116.09:1709.40:133872.95|295166.28:294757.23:2116.09:1707.04:135580.00|294757.23:294345.82:2116.09:1704.68:137284.68|294345.82:293932.04:2116.09:1702.30:138986.98|293932.04:293515.85:2116.09:1699.91:140686.88|293515.85:293097.26:2116.09:1697.50:142384.38|293097.26:292676.25:2116.09:1695.08:144079.46|292676.25:292252.81:2116.09:1692.64:145772.11|292252.81:291826.92:2116.09:1690.20:147462.30|291826.92:291398.56:2116.09:1687.73:149150.03|291398.56:290967.73:2116.09:1685.26:150835.29|290967.73:290534.40:2116.09:1682.76:152518.05|290534.40:290098.57:2116.09:1680.26:154198.31|290098.57:289660.22:2116.09:1677.74:155876.05|289660.22:289219.33:2116.09:1675.20:157551.25|289219.33:288775.89:2116.09:1672.65:159223.90|288775.89:288329.89:2116.09:1670.09:160893.99|288329.89:287881.31:2116.09:1667.51:162561.49|287881.31:287430.13:2116.09:1664.91:164226.41|287430.13:286976.35:2116.09:1662.30:165888.71|286976.35:286519.94:2116.09:1659.68:167548.39|286519.94:286060.89:2116.09:1657.04:169205.43|286060.89:285599.19:2116.09:1654.39:170859.82|285599.19:285134.81:2116.09:1651.72:172511.53|285134.81:284667.75:2116.09:1649.03:174160.56|284667.75:284197.99:2116.09:1646.33:175806.89|284197.99:283725.52:2116.09:1643.61:177450.50|283725.52:283250.31:2116.09:1640.88:179091.38|283250.31:282772.35:2116.09:1638.13:180729.51|282772.35:282291.63:2116.09:1635.37:182364.88|282291.63:281808.12:2116.09:1632.59:183997.47|281808.12:281321.83:2116.09:1629.79:185627.26|281321.83:280832.71:2116.09:1626.98:187254.24|280832.71:280340.77:2116.09:1624.15:188878.38|280340.77:279845.99:2116.09:1621.30:190499.69|279845.99:279348.34:2116.09:1618.44:192118.13|279348.34:278847.82:2116.09:1615.56:193733.70|278847.82:278344.40:2116.09:1612.67:195346.37|278344.40:277838.07:2116.09:1609.76:196956.12|277838.07:277328.81:2116.09:1606.83:198562.95|277328.81:276816.61:2116.09:1603.88:200166.84|276816.61:276301.44:2116.09:1600.92:201767.76|276301.44:275783.29:2116.09:1597.94:203365.71|275783.29:275262.15:2116.09:1594.95:204960.65|275262.15:274738.00:2116.09:1591.93:206552.58|274738.00:274210.81:2116.09:1588.90:208141.49|274210.81:273680.57:2116.09:1585.85:209727.34|273680.57:273147.27:2116.09:1582.79:211310.12|273147.27:272610.88:2116.09:1579.70:212889.83|272610.88:272071.39:2116.09:1576.60:214466.43|272071.39:271528.78:2116.09:1573.48:216039.91|271528.78:270983.04:2116.09:1570.34:217610.25|270983.04:270434.13:2116.09:1567.19:219177.43|270434.13:269882.05:2116.09:1564.01:220741.44|269882.05:269326.78:2116.09:1560.82:222302.26|269326.78:268768.30:2116.09:1557.61:223859.87|268768.30:268206.59:2116.09:1554.38:225414.24|268206.59:267641.63:2116.09:1551.13:226965.37|267641.63:267073.40:2116.09:1547.86:228513.23|267073.40:266501.88:2116.09:1544.57:230057.81|266501.88:265927.06:2116.09:1541.27:231599.08|265927.06:265348.92:2116.09:1537.94:233137.02|265348.92:264767.43:2116.09:1534.60:234671.62|264767.43:264182.58:2116.09:1531.24:236202.86|264182.58:263594.35:2116.09:1527.86:237730.72|263594.35:263002.71:2116.09:1524.45:239255.17|263002.71:262407.66:2116.09:1521.03:240776.20|262407.66:261809.16:2116.09:1517.59:242293.79|261809.16:261207.20:2116.09:1514.13:243807.92|261207.20:260601.76:2116.09:1510.65:245318.57|260601.76:259992.82:2116.09:1507.15:246825.72|259992.82:259380.35:2116.09:1503.63:248329.34|259380.35:258764.35:2116.09:1500.08:249829.43|258764.35:258144.78:2116.09:1496.52:251325.95|258144.78:257521.63:2116.09:1492.94:252818.89|257521.63:256894.87:2116.09:1489.33:254308.22|256894.87:256264.49:2116.09:1485.71:255793.93|256264.49:255630.47:2116.09:1482.06:257275.99|255630.47:254992.77:2116.09:1478.40:258754.39|254992.77:254351.39:2116.09:1474.71:260229.09|254351.39:253706.30:2116.09:1471.00:261700.09|253706.30:253057.48:2116.09:1467.27:263167.36|253057.48:252404.91:2116.09:1463.52:264630.88|252404.91:251748.56:2116.09:1459.74:266090.62|251748.56:251088.42:2116.09:1455.95:267546.56|251088.42:250424.46:2116.09:1452.13:268998.69|250424.46:249756.66:2116.09:1448.29:270446.98|249756.66:249084.99:2116.09:1444.43:271891.41|249084.99:248409.45:2116.09:1440.54:273331.95|248409.45:247729.99:2116.09:1436.63:274768.58|247729.99:247046.61:2116.09:1432.71:276201.29|247046.61:246359.27:2116.09:1428.75:277630.04|246359.27:245667.96:2116.09:1424.78:279054.82|245667.96:244972.65:2116.09:1420.78:280475.60|244972.65:244273.32:2116.09:1416.76:281892.36|244273.32:243569.95:2116.09:1412.71:283305.07|243569.95:242862.50:2116.09:1408.65:284713.72|242862.50:242150.97:2116.09:1404.55:286118.27|242150.97:241435.32:2116.09:1400.44:287518.71|241435.32:240715.53:2116.09:1396.30:288915.01|240715.53:239991.58:2116.09:1392.14:290307.15|239991.58:239263.44:2116.09:1387.95:291695.10|239263.44:238531.09:2116.09:1383.74:293078.84|238531.09:237794.51:2116.09:1379.50:294458.35|237794.51:237053.67:2116.09:1375.24:295833.59|237053.67:236308.54:2116.09:1370.96:297204.55|236308.54:235559.10:2116.09:1366.65:298571.20|235559.10:234805.33:2116.09:1362.32:299933.52|234805.33:234047.20:2116.09:1357.96:301291.48|234047.20:233284.68:2116.09:1353.57:302645.05|233284.68:232517.75:2116.09:1349.16:303994.21|232517.75:231746.39:2116.09:1344.73:305338.94|231746.39:230970.57:2116.09:1340.27:306679.21|230970.57:230190.26:2116.09:1335.78:308014.99|230190.26:229405.44:2116.09:1331.27:309346.25|229405.44:228616.08:2116.09:1326.73:310672.98|228616.08:227822.15:2116.09:1322.16:311995.15|227822.15:227023.63:2116.09:1317.57:313312.72|227023.63:226220.50:2116.09:1312.95:314625.67|226220.50:225412.72:2116.09:1308.31:315933.98|225412.72:224600.27:2116.09:1303.64:317237.62|224600.27:223783.12:2116.09:1298.94:318536.55|223783.12:222961.24:2116.09:1294.21:319830.77|222961.24:222134.61:2116.09:1289.46:321120.23|222134.61:221303.20:2116.09:1284.68:322404.90|221303.20:220466.98:2116.09:1279.87:323684.77|220466.98:219625.92:2116.09:1275.03:324959.81|219625.92:218780.01:2116.09:1270.17:326229.98|218780.01:217929.19:2116.09:1265.28:327495.26|217929.19:217073.46:2116.09:1260.36:328755.61|217073.46:216212.78:2116.09:1255.41:330011.02|216212.78:215347.12:2116.09:1250.43:331261.45|215347.12:214476.46:2116.09:1245.42:332506.88|214476.46:213600.76:2116.09:1240.39:333747.27|213600.76:212719.99:2116.09:1235.32:334982.59|212719.99:211834.14:2116.09:1230.23:336212.82|211834.14:210943.15:2116.09:1225.11:337437.93|210943.15:210047.02:2116.09:1219.95:338657.88|210047.02:209145.70:2116.09:1214.77:339872.65|209145.70:208239.17:2116.09:1209.56:341082.21|208239.17:207327.40:2116.09:1204.32:342286.53|207327.40:206410.35:2116.09:1199.04:343485.57|206410.35:205488.01:2116.09:1193.74:344679.31|205488.01:204560.32:2116.09:1188.41:345867.72|204560.32:203627.27:2116.09:1183.04:347050.76|203627.27:202688.83:2116.09:1177.64:348228.40|202688.83:201744.96:2116.09:1172.22:349400.62|201744.96:200795.63:2116.09:1166.76:350567.38|200795.63:199840.81:2116.09:1161.27:351728.65|199840.81:198880.46:2116.09:1155.75:352884.39|198880.46:197914.57:2116.09:1150.19:354034.59|197914.57:196943.08:2116.09:1144.61:355179.19|196943.08:195965.98:2116.09:1138.99:356318.18|195965.98:194983.23:2116.09:1133.34:357451.52|194983.23:193994.79:2116.09:1127.65:358579.17|193994.79:193000.64:2116.09:1121.94:359701.11|193000.64:192000.74:2116.09:1116.19:360817.29|192000.74:190995.05:2116.09:1110.40:361927.70|190995.05:189983.55:2116.09:1104.59:363032.28|189983.55:188966.20:2116.09:1098.74:364131.02|188966.20:187942.97:2116.09:1092.85:365223.88|187942.97:186913.82:2116.09:1086.94:366310.81|186913.82:185878.71:2116.09:1080.98:367391.80|185878.71:184837.62:2116.09:1075.00:368466.80|184837.62:183790.51:2116.09:1068.98:369535.77|183790.51:182737.34:2116.09:1062.92:370598.70|182737.34:181678.08:2116.09:1056.83:371655.53|181678.08:180612.70:2116.09:1050.70:372706.23|180612.70:179541.15:2116.09:1044.54:373750.78|179541.15:178463.41:2116.09:1038.35:374789.12|178463.41:177379.44:2116.09:1032.11:375821.24|177379.44:176289.19:2116.09:1025.84:376847.08|176289.19:175192.64:2116.09:1019.54:377866.62|175192.64:174089.75:2116.09:1013.20:378879.82|174089.75:172980.48:2116.09:1006.82:379886.64|172980.48:171864.80:2116.09:1000.40:380887.04|171864.80:170742.66:2116.09:993.95:381880.99|170742.66:169614.03:2116.09:987.46:382868.45|169614.03:168478.88:2116.09:980.93:383849.39|168478.88:167337.16:2116.09:974.37:384823.76|167337.16:166188.83:2116.09:967.77:385791.52|166188.83:165033.87:2116.09:961.13:386752.65|165033.87:163872.23:2116.09:954.45:387707.09|163872.23:162703.87:2116.09:947.73:388654.82|162703.87:161528.75:2116.09:940.97:389595.79|161528.75:160346.83:2116.09:934.17:390529.97|160346.83:159158.08:2116.09:927.34:391457.31|159158.08:157962.46:2116.09:920.46:392377.77|157962.46:156759.92:2116.09:913.55:393291.32|156759.92:155550.43:2116.09:906.59:394197.92|155550.43:154333.94:2116.09:899.60:395097.52|154333.94:153110.41:2116.09:892.56:395990.08|153110.41:151879.81:2116.09:885.49:396875.57|151879.81:150642.09:2116.09:878.37:397753.94|150642.09:149397.22:2116.09:871.21:398625.15|149397.22:148145.14:2116.09:864.01:399489.17|148145.14:146885.83:2116.09:856.77:400345.94|146885.83:145619.23:2116.09:849.49:401195.43|145619.23:144345.30:2116.09:842.16:402037.59|144345.30:143064.01:2116.09:834.80:402872.39|143064.01:141775.31:2116.09:827.39:403699.78|141775.31:140479.15:2116.09:819.93:404519.71|140479.15:139175.50:2116.09:812.44:405332.15|139175.50:137864.31:2116.09:804.90:406137.05|137864.31:136545.54:2116.09:797.32:406934.36|136545.54:135219.14:2116.09:789.69:407724.05|135219.14:133885.07:2116.09:782.02:408506.07|133885.07:132543.28:2116.09:774.30:409280.37|132543.28:131193.73:2116.09:766.54:410046.91|131193.73:129836.38:2116.09:758.74:410805.65|129836.38:128471.18:2116.09:750.89:411556.54|128471.18:127098.08:2116.09:742.99:412299.53|127098.08:125717.04:2116.09:735.05:413034.58|125717.04:124328.02:2116.09:727.06:413761.64|124328.02:122930.96:2116.09:719.03:414480.67|122930.96:121525.82:2116.09:710.95:415191.62|121525.82:120112.56:2116.09:702.82:415894.45|120112.56:118691.12:2116.09:694.65:416589.10|118691.12:117261.46:2116.09:686.43:417275.53|117261.46:115823.53:2116.09:678.16:417953.69|115823.53:114377.29:2116.09:669.85:418623.54|114377.29:112922.68:2116.09:661.48:419285.02|112922.68:111459.66:2116.09:653.07:419938.09|111459.66:109988.18:2116.09:644.61:420582.70|109988.18:108508.19:2116.09:636.10:421218.80|108508.19:107019.64:2116.09:627.54:421846.34|107019.64:105522.48:2116.09:618.93:422465.27|105522.48:104016.67:2116.09:610.27:423075.54|104016.67:102502.14:2116.09:601.56:423677.10|102502.14:100978.86:2116.09:592.80:424269.90|100978.86:99446.76:2116.09:583.99:424853.90|99446.76:97905.81:2116.09:575.13:425429.03|97905.81:96355.94:2116.09:566.22:425995.25|96355.94:94797.11:2116.09:557.26:426552.51|94797.11:93229.26:2116.09:548.24:427100.76|93229.26:91652.35:2116.09:539.18:427639.93|91652.35:90066.32:2116.09:530.06:428169.99|90066.32:88471.11:2116.09:520.88:428690.87|88471.11:86866.68:2116.09:511.66:429202.53|86866.68:85252.97:2116.09:502.38:429704.91|85252.97:83629.93:2116.09:493.05:430197.96|83629.93:81997.50:2116.09:483.66:430681.61|81997.50:80355.63:2116.09:474.22:431155.83|80355.63:78704.26:2116.09:464.72:431620.56|78704.26:77043.35:2116.09:455.17:432075.73|77043.35:75372.83:2116.09:445.57:432521.30|75372.83:73692.64:2116.09:435.91:432957.20|73692.64:72002.74:2116.09:426.19:433383.39|72002.74:70303.07:2116.09:416.42:433799.81|70303.07:68593.57:2116.09:406.59:434206.39|68593.57:66874.18:2116.09:396.70:434603.09|66874.18:65144.84:2116.09:386.76:434989.85|65144.84:63405.51:2116.09:376.75:435366.60|63405.51:61656.12:2116.09:366.70:435733.30|61656.12:59896.60:2116.09:356.58:436089.88|59896.60:58126.92:2116.09:346.40:436436.28|58126.92:56347.00:2116.09:336.17:436772.45|56347.00:54556.78:2116.09:325.87:437098.32|54556.78:52756.21:2116.09:315.52:437413.84|52756.21:50945.23:2116.09:305.11:437718.95|50945.23:49123.77:2116.09:294.63:438013.58|49123.77:47291.78:2116.09:284.10:438297.68|47291.78:45449.20:2116.09:273.50:438571.18|45449.20:43595.96:2116.09:262.85:438834.03|43595.96:41732.00:2116.09:252.13:439086.16|41732.00:39857.26:2116.09:241.35:439327.51|39857.26:37971.68:2116.09:230.51:439558.02|37971.68:36075.19:2116.09:219.60:439777.62|36075.19:34167.74:2116.09:208.63:439986.26|34167.74:32249.25:2116.09:197.60:440183.86|32249.25:30319.67:2116.09:186.51:440370.37|30319.67:28378.93:2116.09:175.35:440545.72|28378.93:26426.97:2116.09:164.12:440709.84|26426.97:24463.71:2116.09:152.84:440862.68|24463.71:22489.11:2116.09:141.48:441004.16|22489.11:20503.08:2116.09:130.06:441134.22|20503.08:18505.57:2116.09:118.58:441252.80|18505.57:16496.50:2116.09:107.02:441359.82|16496.50:14475.82:2116.09:95.40:441455.23|14475.82:12443.45:2116.09:83.72:441538.95|12443.45:10399.32:2116.09:71.96:441610.91|10399.32:8343.38:2116.09:60.14:441671.05|8343.38:6275.54:2116.09:48.25:441719.30|6275.54:4195.74:2116.09:36.29:441755.60|4195.74:2103.92:2116.09:24.27:441779.86|2103.92:-0.00:2116.09:12.17:441792.03|";cstartmonth=02;cstartyear=2023;monthlypayment=2116.0889764966;cloanterm=30;cloanamount=320000;remainingTerm=0;biggestItem=359;
+var chartStrBuilderPayment = [];
+var chartStrBuilderBalance = [];
+var chartStrBuilderInterest = [];
+xmax = cloanterm;
+chartSep = 12;
+if (cloanterm<=5){
+	chartSep = 1;
+	xmax = cloanterm*12;
+
+	chartStrBuilderPayment.push(0);
+	chartStrBuilderBalance.push(cloanamount);
+	chartStrBuilderInterest.push(0);
+}
+var allDataArray = allData.split("|");
+outPutData = new Array();
+for (var i=0;i<allDataArray.length;i++){
+	if ((allDataArray[i]+"").length>3){
+		tempArray = allDataArray[i].split(":");
+		outPutData[i] = new Array();
+		outPutData[i][0] = parseFloat(tempArray[0]);
+		outPutData[i][1] = parseFloat(tempArray[1]);
+		outPutData[i][2] = parseFloat(tempArray[2]);
+		outPutData[i][3] = parseFloat(tempArray[3]);
+		outPutData[i][4] = parseFloat(tempArray[4]);
+
+		if (((i%chartSep)==0)||((i+2)==allDataArray.length)){
+			chartStrBuilderPayment.push((i+1)*monthlypayment);
+			chartStrBuilderBalance.push(outPutData[i][1]);
+			chartStrBuilderInterest.push(outPutData[i][4]);
+		}
+	}
+}
+hideDate = 0;
+if (cloanterm>5){
+	showAmo(0);
+}else{
+	showAmo(1);
+}
+var tempVal = 45;
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:0,			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',320000],['Interest',441792],['Property Taxes',144000],['Other Cost',120000],['Home Insurance',45000]]
+		}]
+	});
+});
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:xmax, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					if (cloanterm<=5){
+						return this.value+'mo';
+					}else{
+						return this.value+'yr';
+					}
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'left',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: 55,y: 3},
+		series: [
+			{name: 'Balance',data: chartStrBuilderBalance},
+			{name: 'Interest',data: chartStrBuilderInterest},
+			{name: 'Payment',data: chartStrBuilderPayment}
+		]
+	});
+});
+
+</script>
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/mortgage-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/mortgage-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:57:20 GMT -->
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/annuity-payout-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Annuity Payout Calculator</title>
+	<meta name="description" content="Free annuity payout calculator to find the payout amount based on fixed-length or to find the length the fund can last based on a given payment amount." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="annuity-payout-calculator.html" itemprop="item"><span itemprop="name">annuity payout calculator</span></a><meta itemprop="position" content="3" /></span></div>
+<h1>Annuity Payout Calculator</h1>
+<p>This calculator can estimate the annuity payout amount for a fixed payout length or estimate the length that an annuity can last if supplied a fixed payout amount. Please use our <a href="annuity-calculator.html">Annuity Calculator</a> to estimate the end balance of an annuity for the accumulation phase.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top" width="320"><div id="topmenu"><ul><li id='menuon'><a href="#" onclick="popMenu('fixlength', 1);">Fix Length</a></li><li><a href="#" onclick="popMenu('fixpayment', 1);">Fix Payment</a></li></ul></div>
+<div class="panel2" style="padding:5px;">
+<table id="calinputtable" align="center">
+<form name="calform">
+<tr>
+	<td>Starting Principal</td>
+	<td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="500000" class="inhalf indollar"></td>
+</tr>
+<tr>
+	<td>Interest / Return Rate</td>
+	<td><input type="text" name="cinterestrate" id="cinterestrate" value="6" class="inhalf inpct"></td>
+</tr>
+<tr>
+	<td>Inflation Rate</td>
+	<td><input type="text" name="cinflationrate" id="cinflationrate" value="3" class="inhalf inpct"></td>
+</tr>
+<tr>
+	<td>
+		<span id="cyamt1">Years to Payout</span>
+	</td>
+	<td>
+		<span id="cyamt21"><input type="text" name="cyearstopayout" id="cyearstopayout" value="10" class="inhalf inuiyear"><span class="inuiyearspan">years</span></span>
+		<span id="cyamt22"><input type="text" name="camounttopayout" id="camounttopayout" value="5000" class="inhalf indollar"></span>
+	</td>
+</tr>
+<tr>
+	<td>Payout Frequency</td>
+	<td><select name="cpayfrequency" class="inhalf">
+		<option value="annually" >Annually</option>
+		<option value="semiannually" >Semiannually</option>
+		<option value="quarterly" >Quarterly</option>
+		<option value="monthly" selected>Monthly</option>
+		<option value="semimonthly" >Semimonthly</option>
+		<option value="biweekly" >Biweekly</option>
+	</select></td>
+</tr>
+<tr><td colspan="2" align="center"><input type="hidden" name="ctype" id="ctype" value="fixlength"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table></div>
+
+</td><td width="20">&nbsp;</td><td valign="top"><h2 class="h2result">Result</h2><p class="bigtext">You can withdraw <b><font color="green">$5,511.20</font></b> monthly.</p><p class="bigtext">After 10 years, $5,511.20 is equivalent to <b><font color="green">$4,100.85</font></b> in purchase power.</p><p class="bigtext">Total interest earned: <b><font color="green">$161,344.16</font></b>.</p></td></tr></table>
+<div class="leftchart">
+<div class="bigtext" style="text-align:center;"><b>Balance/Interest Graph</b></div>
+<div id="cchartdiv" style="min-width: 320px; height: 220px; margin: 0 auto"></div>
+</div>
+<div class="rightpie">
+<div class="bigtext" style="text-align:center;"><b>Breakdown</b></div>
+<div id="cpiechartdiv" style="min-width: 155px; max-width: 165px; height: 250px; margin: 0 auto"></div>
+</div>
+<div id="clear"></div>
+<script>
+$(function () {
+	$('#cpiechartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["50%", "18%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			y:-38,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',500000],['Interest',161344]]
+		}]
+	});
+});
+
+$(function () {
+	$('#cchartdiv').highcharts({
+		chart: {type: 'spline',plotBorderWidth: 1},
+		title: {text: ''},
+		xAxis: {min: 0, max:10, title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					return this.value+'yr';
+				}
+			}
+		},
+		yAxis: {
+			min: 0,title: {text: ''},gridLineWidth: 1,
+			labels: {
+				formatter: function() {
+					tempVal = this.value;
+					if (this.value>999) tempVal = (this.value/1000).toFixed(1) + 'K';
+					if (this.value>999999) tempVal = (this.value/1000000).toFixed(1) + 'M';
+					return '$'+tempVal;
+				}
+			}
+		},
+		tooltip: {enabled: false,formatter: function() {return this.series.name+': $' + this.y;}},
+		plotOptions: {spline: {lineWidth: 4,states: {hover: {lineWidth: 3}},marker: {enabled: false}}},
+		legend: {layout: 'vertical',align: 'right',verticalAlign: 'top',floating: true,backgroundColor: '#FCFFC5',borderWidth: 1,x: -10,y: 3},
+		series: [
+			{name: 'Balance',data: [500000,462066.02088981,421856.003033,379233.38410479,334053.40804089,286162.63341315,235398.41230775,181588.33793602,124549.65910199,64088.659537916,-8.8493834482506E-10]},
+			{name: 'Interest',data: [0,28200.436574571,54124.834402531,77636.631159083,98591.070779942,116834.71183697,132204.90641633,144529.24772936,153624.9845801,159298.40070079,161344.15684763]}
+		]
+	});
+});
+</script>
+<h2>Annual Balances</h2><table class="cinfoT"><tr valign="bottom"><td class="cinfoHd">Year</td><td class="cinfoHdL">Beginning Balance</td><td class="cinfoHdL">Interest Earned<br>In the Period</td><td class="cinfoHdL">Ending Balance</td></tr><tr><td align="right">1.</td><td align="right">$500,000.00</td><td align="right">$28,200.44</td><td align="right">$462,066.02</td></tr><tr><td align="right">2.</td><td align="right">$462,066.02</td><td align="right">$25,924.40</td><td align="right">$421,856.00</td></tr><tr><td align="right">3.</td><td align="right">$421,856.00</td><td align="right">$23,511.80</td><td align="right">$379,233.38</td></tr><tr><td align="right">4.</td><td align="right">$379,233.38</td><td align="right">$20,954.44</td><td align="right">$334,053.41</td></tr><tr><td align="right">5.</td><td align="right">$334,053.41</td><td align="right">$18,243.64</td><td align="right">$286,162.63</td></tr><tr><td align="right">6.</td><td align="right">$286,162.63</td><td align="right">$15,370.19</td><td align="right">$235,398.41</td></tr><tr><td align="right">7.</td><td align="right">$235,398.41</td><td align="right">$12,324.34</td><td align="right">$181,588.34</td></tr><tr><td align="right">8.</td><td align="right">$181,588.34</td><td align="right">$9,095.74</td><td align="right">$124,549.66</td></tr><tr><td align="right">9.</td><td align="right">$124,549.66</td><td align="right">$5,673.42</td><td align="right">$64,088.66</td></tr><tr><td align="right">10.</td><td align="right">$64,088.66</td><td align="right">$2,045.76</td><td align="right">$-0.00</td></tr></table><p><fieldset><legend>Related</legend><a href="annuity-calculator.html">Annuity Calculator</a> | <a href="retirement-calculator.html">Retirement Calculator</a></fieldset></p>
+
+<br>
+<h3>Qualified vs. Non-Qualified Annuities</h3>
+<p><b>Qualified</b></p>
+<p>In the U.S., a tax-qualified annuity is one used for qualified, tax-advantaged retirement plans such as an IRA or 401(k). Less common qualified retirement plans include defined benefit pension plans, 403(b)s (similar to 401(k)s), Keogh Plans, Thrift Savings Plans (TSPs), and Simplified Employee Pensions (SEPs). Contributions to qualified annuities are generally paid with pretax money, including any investments purchased for use in a qualified retirement plan, and are not included in taxable income for the year in which they are paid. This means that contributions during a tax year can be deductible, lowering taxable income. However, the eventual distributions during a future tax year are subject to ordinary income taxes.</p>
+<p>When used as a form of retirement savings, these annuities are entitled to the tax benefits and penalties of their respective plans. However, the rules of the annuity plan still govern all matters and may override certain rules. With that said, features that are unique to annuities such as guaranteed death benefits (benefits that must be paid out to beneficiaries regardless of factors such as down markets and decreases in account value) may still be included.</p>
+<p><b>Non-Qualified</b></p>
+<p>These annuities are purchased with after-tax dollars. In other words, the only portion of a non-qualified annuity policy that is eligible for taxation is the earnings, which are taxed as ordinary income. A big distinction to make is that, unlike qualified annuities, non-qualified annuities are not subject to minimum distribution rules after the age of 72. There is no limit on the amount of non-qualified money that can be placed into an annuity or the number of annuities that can be purchased.</p>
+
+<h3>Early Withdrawals</h3>
+<p>Withdrawals from an annuity before the age of 59 &#189; will result in a 10% early withdrawal penalty on top of regular income tax. For all types of annuities, earnings are not taxable until the money is withdrawn. Because withdrawals are taxed on a "last in, first out" (LIFO) basis for a non-qualified annuity purchased after Aug. 13, 1982, earnings are paid out before principal.</p>
+<p>With that said, however, there are exceptions. Most annuity contracts allow the withdrawal of a portion of the account value each year without incurring a surrender charge. Other annuity contracts may allow the withdrawal of the gains (not principal) from an annuity without penalty. Also, as retirement accounts, annuities allow early withdrawals without penalty under certain situations. For example, the annuitants become disabled, suffer a major medical emergency, or are diagnosed with a terminal illness. In addition, some contracts offer benefits for using penalty-free withdrawals to pay for long-term care expenses.</p>
+
+<h3>Phases of an Annuity</h3>
+<p>There are several phases in the life of an annuity: the accumulation, annuitization, and payout phases.</p>
+
+<h4>Accumulation Phase</h4>
+<p>The accumulation phase is the first stage during which an annuity builds up cash value utilizing gathered funds. It always comes first and begins after an initial investment is made. There are several ways this can be accomplished; the most common method is to transfer funds, usually by check or bank transfer. Funds can come in the form of one lump sum or a series of payments, and there is precise reasoning for both methods. A lump sum is more commonly chosen by investors close to or already in retirement in order to start the annuitization and payout phase as quickly as possible. This allows them to start receiving distributions that are usually guaranteed for life right away. Also called "immediate annuities" because their distribution, or payout, of income is almost immediate, they have very short accumulation phases as a result. On the other hand, a series of payments might be more beneficial for younger investors who want to grow wealth over time in order to have future income in retirement. As an aside, even after the accumulation phase of an annuity ends, it does not stop increasing in value (given good economic conditions). Assets will continue to be invested well into all three phases, regardless of whether the annuity is fixed, indexed, or variable. By following annuity rules, earnings will accumulate on a tax-deferred basis until withdrawals are ready to be made.</p>
+
+<p><b>1035 Exchange</b></p>
+<p>A 1035 Exchange, taken from the Internal Revenue Code section of the same number, is an IRS provision in the tax code that allows policyholders to transfer funds from a life insurance plan, endowment, or annuity to a new policy without it being treated as a sale. As such, the payment of tax is not required.</p>
+<p>This is beneficial to policyholders for several reasons:</p>
+<ul>
+	<li>Economic conditions continually change over time and can potentially adversely affect each individual and their long-term contracts.</li>
+	<li>General improvements in the health and life expectancy of the entire population can lower insurance costs.</li>
+	<li>Policyholders who feel they no longer need coverage may benefit from moving life insurance cash into annuities. Converting a life insurance policy into an income annuity will surrender the death benefit, but premium payments will no longer be required, and income will be secured for a specified number of years.</li>
+</ul>
+<p>In these scenarios, a 1035 Exchange allows policyholders to get out of sticky situations by replacing outdated contracts with new contracts that have improved benefits, higher death benefits, lower fees, and/or alternate investment options.</p>
+<p>Only the following transfers are considered tax-free by the IRS:</p>
+<ul>
+	<li>Exchanging one annuity contract with another annuity contract or an annuity with long-term care benefits</li>
+	<li>Exchanging one life insurance contract with another life insurance contract, endowment contract, or annuity contract</li>
+	<li>Exchanging one endowment policy for an identical endowment policy that does not delay the date upon which payments will begin, or an annuity contract</li>
+</ul>
+<p>Anything else, such as exchanging an annuity contract for a life insurance policy, is not valid as a 1035 Exchange and will be considered by the IRS as a taxable event. In addition, for a 1035 exchange to take place, the owner, the insured, and the annuitant must be the same people listed on the old contract.</p>
+
+<p><b>Partial 1035 Exchange of Annuity</b></p>
+<p>Unlike a 1035 Exchange, which concerns the transfer of entire annuity contracts, annuity owners have the opportunity to exchange a portion of their annuity contract for another annuity contract tax-free. The basis is divided pro-rata, not income-out-first. For instance, if half the value of the annuity is exchanged for a second annuity, the new annuity will take half the cost basis.</p>
+<p>As an example, an annuity owner has a $50,000 non-qualified deferred annuity with a $40,000 basis. If they require a $10,000 distribution, it would be taxed at the full amount of $10,000. However, if they take $25,000 instead and exchange it for a second annuity, each contract will then have $25,000 with a $20,000 basis. With this rule, a $10,000 distribution from either contract will result in only $5,000 in taxable income.</p>
+<p>In order to qualify, distributions must not be taken from either contract within 180 days of the exchange. The IRS may treat a distribution during this window as being part of the original transaction resulting in the full amount of income of both contracts being taxable, as opposed to only taxing income from the contract that distributed the funds. While partial exchanges are allowed by the IRS, many insurance companies do not provide this service.</p>
+<p>1035 Exchanges (including partial 1035 exchanges) involve a complex set of tax rules and regulations. It can be helpful to work with a professional.</p>
+
+<h4>Annuitization Phase</h4>
+<p>The annuitization phase is more of a single, immediate event rather than a phase, acting as a separation between the accumulation and payout phases. It represents the point at which the insurance company stops receiving payments from the investor in preparation to return the accumulated assets as periodic payments to the annuitant (who was the investor). In other words, the annuity is "annuitized." In the case of a variable annuity, annuitization also represents the point at which all accumulated units purchased in the contract are converted into annuity units for payout. The decision to annuitize is final, and once made, it is not possible to request a different form of payout or access the principal.</p>
+
+<h4>Payout Phase</h4>
+<p>Sometimes referred to as the distribution phase, this is the final phase of an annuity, which can be calculated by this Annuity Payout Calculator. This is the phase in which the insurance company distributes payments to the investor. The length of the phase can vary widely, depending on various factors such as the payout amount and the total value accrued during the accumulation phase. Whether buying an immediate annuity or converting a deferred annuity into income payments, the options are essentially the same. Payments can be distributed over a specific period of time: monthly, quarterly, semiannually, or annually. It is important to note that regardless of which option is chosen, once applied, the choice is irrevocable.</p>
+<p>In non-qualified annuities (annuities that aren't used to fund tax-advantaged retirement plans), a portion of each payment is considered either earnings or principal. The latter will be tax-free, while the former is subject to the same taxes as ordinary income. The earnings are considered withdrawn first and are therefore subject to taxation. All withdrawals are fully taxable until the account value reaches the principal invested.</p>
+
+<h3>Payout Options</h3>
+<p>There are several options for choosing how annuity payouts occur, and not all annuities offer every payout option. The Annuity Payout Calculator only calculates fixed payment or fixed length, two of the most common options. Both are represented by tabs on the calculator.</p>
+
+<p><b>Lump-Sum</b></p>
+<p>The lump-sum payment option allows annuitants to withdraw the entire account value of an annuity in a single withdrawal. This can be useful in many cases where the entire value of the account is desired immediately. A penalty will not be incurred as long as this is done after the age of 59 &#189;. However, income taxes may apply to the year of withdrawal. This makes it financially undesirable from a tax minimization standpoint.</p>
+
+<p><b>Fixed Length</b></p>
+<p>A fixed-length payout option, also known as fixed-period or period certain payout, allows annuitants to select a specific time period over which the annuity payments are guaranteed to last. For example, an annuitant aged 60 who selects a 10-year period certain payout will be guaranteed payments until around age 70. Fixed length payouts are usually paid in monthly installments over a chosen time period, such as 10, 15, or 20 years. It is very possible to choose too short or too long a fixed length for an annuity. If the main annuitant dies with funds left, any remaining amount will be passed to their heirs. This payout option is not affected by how long the main annuitant lives.</p>
+
+<p><b>Fixed Payment Amount</b></p>
+<p>A fixed payment amount payout option allows annuitants to select the amount they will receive in each monthly payment. These payments will continue until the annuity's balance is depleted. As the calculator shows, the duration of the payments depends on the amount chosen and the annuity's accumulated value at the time of annuitization. The fixed payment amount option shares the same risk as the fixed-length payout option; it is possible to choose too small or too large a fixed monthly payment amount, resulting in the retiree either outliving the annuity or dying with money remaining in the account. It is up to each individual to consider their situation to determine which option to choose, as there are different risks associated with all of them.</p>
+
+<p><b>Life Only</b></p>
+<p>For this option, the insurance company makes payments to the annuitant for as long as they live. Calculated life expectancy will determine the payment amount. The longer the life expectancy, the smaller the payment amount. A drawback to this option is that it is not possible to choose the payment amount, and there is no guarantee that the annuitant will receive the total value of their annuity. If they die within the first or second year, all the remaining funds in the annuity are lost. However, if the annuitant happens to live longer than the registered life expectancy, there is a possibility they receive more than the accumulated value of their annuity.</p>
+
+<p><b>Joint and Survivor</b></p>
+<p>This option ensures that retirement income provided by an annuity will continue for a spouse in the case of the death of the main annuitant. Payments are calculated and based on the life expectancy of the main annuitant and their spouse. Due to this, payments under this option will generally be lower than the life-only option. Payments will cease upon the death of the second annuitant. Another version of this payout is called the joint life with last survivor annuity, which can cover more than two people, such as the main annuitant, their spouse, and a dependent child.</p>
+
+<p><b>Life with Period Certain</b></p>
+<p>This option combines features of the fixed length and life-only options. It guarantees an income for life but also allows the annuitant to select a specific time period during which the annuity pays a designated beneficiary, such as 10 years, even in the case of death before the guaranteed period ends. If the annuitant dies after the period certain, no payments are made to the beneficiary.</p>
+
+
+
+
+<script>
+
+function popMenu(inval, insubmit){
+	htmlVal = "";
+	if (inval == "fixpayment"){
+		htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('fixlength', 1);\">Fixed Length</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('fixpayment', 1);\">Fixed Payment</a></li>";
+		document.getElementById("ctype").value="fixpayment";
+		document.getElementById("cyamt21").style.display = 'none';
+		document.getElementById("cyamt22").style.display = 'block';
+
+		document.getElementById("cyamt1").innerHTML = 'Payout Amount';
+		if (insubmit==1) document.calform.submit();
+	}else{
+		htmlVal = htmlVal + "<li id='menuon'><a href=\"#\" onclick=\"popMenu('fixlength', 1);\">Fixed Length</a></li> <li><a href=\"#\" onclick=\"popMenu('fixpayment', 1);\">Fixed Payment</a></li>";
+		document.getElementById("ctype").value="fixlength";
+		document.getElementById("cyamt21").style.display = 'block';
+		document.getElementById("cyamt22").style.display = 'none';
+		document.getElementById("cyamt1").innerHTML = 'Years to Payout';
+		if (insubmit==1) document.calform.submit();
+	}
+	htmlVal = "<ul>" + htmlVal + "</ul>";
+	document.getElementById("topmenu").innerHTML = htmlVal;
+}
+popMenu("fixlength", 0);
+</script>
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/annuity-payout-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/annuity-payout-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:41 GMT -->
+</html>

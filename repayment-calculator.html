@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/repayment-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Repayment Calculator</title>
+	<meta name="description" content="Free repayment calculator to find different ways to repay a loan, based on compounding periods, payment frequency, and fixed loan term or fixed payback amount." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/repayment.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="repayment-calculator.html" itemprop="item"><span itemprop="name">repayment calculator</span></a><meta itemprop="position" content="3" /></span></div><div id="printit"><a href="#" onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>		<h1>Repayment Calculator</h1>
+
+<p>The Repayment Calculator can be used for loans in which a fixed amount is paid back periodically, such as mortgages, auto loans, student loans, and small business loans. For other repayment options, please use the <a href="loan-calculator.html">Loan Calculator</a> instead. Include any upfront fees into the calculator to compute the real rate of interest.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><table width="100%"><tr><td valign="top" width="300"><table id="calinputtable" class="panel"><form name="calform" action="https://www.calculator.net/repayment-calculator.html#payment-result">
+<tr><td>Loan Amount</td><td><input type="text" name="cloanamount" id="cloanamount" value="10000" class="inhalf indollar"></td></tr>
+<tr><td>Upfront Fees</td><td><input type="text" name="cupfrontfee" id="cupfrontfee" value="500" class="inhalf indollar"></td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="10" class="inhalf inpct"></td></tr>
+
+<tr><td>Compound</td><td><select name="ccompound" id="ccompound">
+<option value="annually">Annually (APY)</option>
+<option value="semiannually">Semi-annually</option>
+<option value="quarterly">Quarterly</option>
+<option value="monthly" selected>Monthly (APR)</option>
+<option value="semimonthly">Semi-monthly</option>
+<option value="biweekly">Biweekly</option>
+<option value="weekly">Weekly</option>
+<option value="daily">Daily</option>
+<option value="continuously">Continuously</option></select></td></tr>
+<tr><td>Pay Back</td><td colspan="2"><select name="cpayback" id="cpayback" onChange="switchPaybackTerm(this.value);">
+<option value="daily">Every Day</option>
+<option value="weekly">Every Week</option>
+<option value="biweekly">Every 2 Weeks</option>
+<option value="halfmonth">Every Half Month</option>
+<option value="month" selected>Every Month</option>
+<option value="quarter">Every Quarter</option>
+<option value="halfyear">Every 6 Months</option>
+<option value="year">Every Year</option></select></td></tr>
+<tr><td colspan="2">
+<div style="padding:8px 0px;">
+<label for="cpaybackway1" class="cbcontainer"><input type="radio" name="cpaybackway" id="cpaybackway1" value="t" onclick="switchPaybackWay('t');" checked /><span class="rbmark"></span>Fixed Loan Term</label><br>
+<label for="cpaybackway2" class="cbcontainer"><input type="radio" name="cpaybackway" id="cpaybackway2" value="a" onclick="switchPaybackWay('a');"  /><span class="rbmark"></span>Fixed Installments</label>
+</div>
+
+<table id="cpaybackwayterm"><tr><td valign="top"><div style="padding-top:6px;">Loan Term</div></td><td><input type="text" name="cyears" id="cyears" value="5" class="inhalf inuiyear"><span class="inuiyearspan">years</span><br>
+	<input type="text" name="cmonths" id="cmonths" value="0" class="inhalf inuipound"><span class="inuipoundspan">months</span></td></tr></table>
+
+<table id="cpaybackwayamount"><tr><td>Pay Back</td><td><input type="text" name="cpaybackwayamount" value="200" class="innormal indollar"> <span id="cpaybackwayamountterm">Every Month</span></td></tr></table>
+
+</td></tr>
+<tr><td colspan="2" align="center"><input name="printit" value="0" type="hidden"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</td><td valign="top"><script>
+function switchPaybackWay(spwType){
+	if (spwType=='t'){
+		document.getElementById("cpaybackwayterm").style.display = "inline";
+		document.getElementById("cpaybackwayamount").style.display = "none";
+	}else{
+		document.getElementById("cpaybackwayterm").style.display = "none";
+		document.getElementById("cpaybackwayamount").style.display = "inline";
+	}
+}
+function switchPaybackTerm(sptType){
+	var sptOutput = 'Every Month';
+	if (sptType=='daily'){
+		sptOutput = 'Every Day';
+	}else if (sptType=='weekly'){
+		sptOutput = 'Every Week';
+	}else if (sptType=='biweekly'){
+		sptOutput = 'Biweekly';
+	}else if (sptType=='halfmonth'){
+		sptOutput = 'Semimonthly';
+	}else if (sptType=='month'){
+		sptOutput = 'Every Month';
+	}else if (sptType=='quarter'){
+		sptOutput = 'Every Quarter';
+	}else if (sptType=='halfyear'){
+		sptOutput = 'Semiannually ';
+	}else if (sptType=='year'){
+		sptOutput = 'Every Year';
+	}
+	document.getElementById("cpaybackwayamountterm").innerHTML = sptOutput;
+}
+switchPaybackWay("t");switchPaybackTerm("month");</script>
+<a name="payment-result"></a>
+<h2 class="h2result">$212.47 Every Month</h2><table cellpadding='3' width='100%'><tr><td colspan='2'>Total of 60 Loan Payments</td><td align='right'>$12,748.23</td></tr><tr><td colspan='2'>Interest</td><td align='right'>$2,748.23</td></tr><tr><td colspan='2'>Interest + Fee</td><td align='right'>$3,248.23</td></tr><tr><td colspan='2'>Real Rate (APR)</td><td align='right'>12.240%</td></tr></table>		<br><div id="mloanchartdiv" style="min-width: 160px; height: 140px; margin-bottom: -25px;"></div>
+		<script>
+		$(function () {
+			$('#mloanchartdiv').highcharts({
+				title: {text: ''},
+				tooltip: {formatter: function() {return this.point.name + '<br><b>'+ this.percentage.toFixed(1) +' %</b><br>$'+ this.y;}},
+				plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["20%", "20%"],
+					dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+				}},
+				legend: {
+					layout: 'vertical',
+					x:30,
+					y:-38,
+					floating:true
+				},
+				series: [{
+					type: 'pie',
+					name: 'Share',
+					data: [['Principal',10000],['Interest',2748],['Upfront Fees',500]]
+				}]
+			});
+		});
+		</script>
+		</td></tr></table>
+<div id="lcamotable1"></div><script>showAmo(10000, 0.0083333333333333, 60, 212.47044711268, 'month', 'lcamotable1');</script><p><fieldset><legend>Related</legend><a href="mortgage-calculator.html">Mortgage Calculator</a> | <a href="auto-loan-calculator.html">Auto Loan Calculator</a> | <a href="credit-card-calculator.html">Credit Card Calculator</a> | <a href="loan-calculator.html">Loan Calculator</a></fieldset></p>
+
+<br>
+
+<p>Repayment is the act of paying back money previously borrowed from a lender, and failure to repay debt can potentially force a person to declare bankruptcy and/or severely affect credit rating. The repayments of consumer loans are usually made in periodic payments that include some principal and interest. There can possibly be fees involved in loans; when doing calculations, all upfront fees entered will be rolled into the loans. Also, in the calculator, there are two repayment schedules to choose from: a fixed loan term or a fixed installment.</p>
+
+<h3>Fixed Loan Term</h3>
+<p>Choose this option to enter a fixed loan term. For instance, the calculator can be used to determine whether a 15-year or 30-year mortgage makes more sense, a common decision most people have to make when purchasing a house. The calculated results will display the monthly installment required to pay off the loan within the specified loan term.</p>
+
+<h3>Fixed Installments</h3>
+<p>Choose this option to enter a fixed amount to be paid each month until the loan and interest are paid in full. The calculated results will display the loan term required to pay off the loan at this monthly installment. For instance, this may be a set amount of disposable income determined by subtracting expenses from income that can be used to pay back a credit card balance.</p>
+
+<br>
+<p>In the U.S., most of the consumer loans are set to be repaid monthly. The following are four of the most common loans.</p>
+
+<h3>Mortgages</h3>
+<p>In the U.S., mortgages are required to be repaid monthly using fixed or variable rates, or even switched from one to the other during the life of the loan. For fixed-rate mortgages, the monthly repayment amount is fixed throughout the loan term. Borrowers can choose to pay more (but not less) than the required repayment amount. This calculator does not consider variable rate loans. For more information, use the <a href="mortgage-calculator.html">Mortgage Calculator</a>.</p>
+
+<h3>Auto Loan</h3>
+<p>Like mortgage loans, auto loans need to be repaid monthly, usually at fixed interest rates. Borrowers can also choose to pay more (but not less) than the required repayment amount. For more information, use the <a href="auto-loan-calculator.html">Auto Loan Calculator</a>.</p>
+
+<h3>Student Loans</h3>
+<p>In the United States, the government offers specialized plans that are geared specifically towards the repayment of federal student loans. Depending on the individual borrower, there are repayment plans that are income-based, plans that extend the term of the loan, or plans specifically for parents or graduate students. Repayment of most federal student loans can be postponed to some point in the future. Federal extended repayment plans can be stretched up to 25 years, but keep in mind that this will result in more interest paid out overall. For more information, use the <a href="student-loan-calculator.html">Student Loan Calculator</a>.</p>
+
+<h3>Credit Cards</h3>
+<p>Credit card loans are considered revolving credit. The repayment of credit cards is different from typically structured amortized loans. Whereas the latter requires a set amount to be paid a month, the repayment of revolving credit is more flexible in that the amount can vary, though there is a minimum payment due on each credit card each month that must be met to avoid penalty. For more information, use the <a href="credit-card-calculator.html">Credit Card Calculator</a>.</p>
+
+<br>
+<h3>How to Repay Loans Faster</h3>
+<p>Most people like the feeling of being debt-free. Listed below are some of the strategies to repay loans faster.</p>
+<p><b>Pay Extra</b></p>
+<p>If there is no prepayment penalty involved, any extra money going towards a loan will be used to lower the principal amount due. This will speed up the time in which the principal due finally reaches zero and reduces the amount of interest due because of the smaller principal amount that is owed.</p>
+<p><b>Biweekly Payments</b></p>
+<p>For loans that require monthly repayments, submitting half of the monthly payment every two weeks instead of one monthly payment can speed up the repayment of loans in two ways. Firstly, less total interest will accrue because payments will lower the principal balance more often. Secondly, biweekly payments for a whole year will equal 26 yearly payments because there are 52 weeks in a year. This is equivalent to making 13 monthly payments a year. Before making biweekly payments, make sure there are no prepayment penalties involved.</p>
+<p><b>Refinance</b></p>
+<p>Loan refinancing involves taking out a new loan, often with more favorable terms, to replace an existing loan. Borrowers can refinance their loans to shorter terms to repay the loans faster and save on interest. However, borrowers normally need to pay refinancing fees upfront. These fees can be very high. Be sure to evaluate the pros and cons before making the refinancing decision.</p>
+<br><p>The strategies above may not be applicable for all loans. Also, it is very important to evaluate whether repaying loans faster is actually wise financially. While making extra payments towards your loans are great, they are not absolutely necessary, and there are opportunity costs that deserve consideration. For instance, an emergency fund can come in handy when incidents like medical emergencies or car accidents happen. Even stocks that perform well during good years are more financially beneficial than extra payments towards a low-interest loan.</p>
+
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/repayment-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/repayment-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:41 GMT -->
+</html>

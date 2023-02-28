@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.calculator.net/apr-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>APR Calculator</title>
+	<meta name="description" content="Free calculator to find out the real APR of a loan, considering all the fees and extra charges. There is also a version specially designed for mortgage loans." />
+	<link rel="stylesheet" href="../d26tpo4cm8sb6k.cloudfront.net/style.css" /><script src="../d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">	<link rel="apple-touch-icon" sizes="180x180" href="../d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="manifest.json"><script type="text/javascript" src="../d26tpo4cm8sb6k.cloudfront.net/js/jquery.min.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/highchart/highcharts.js"></script>
+<script src="../d26tpo4cm8sb6k.cloudfront.net/js/loannew.js"></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="index.html"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22" alt="Calculator.net"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="apr-calculator.html" itemprop="item"><span itemprop="name">apr calculator</span></a><meta itemprop="position" content="3" /></span></div>		<h1>APR Calculator</h1>
+<p>The banking costs of a loan involve more than just interest rates. When applying for a loan, it is common for lenders to charge fees or points in addition to interest. Hence, instead of merely focusing on interest, lenders should pay more attention to the annual percentage rate, or real APR, when considering the actual cost of a mortgage. The following two calculators help reveal the true costs of loans through real APR.</p><div id="insmdc"><img src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/insm.svg"></div><h2 class="h2red">General APR Calculator</h2>
+<div class="leftinput">
+<table id="calinputtable" class="panel" >
+<form action="https://www.calculator.net/apr-calculator.html#generalapr">
+<tr><td>Loan Amount</td><td><input type="text" name="cloanamount" id="cloanamount" value="100000" class="inhalf indollar"></td></tr>
+<tr><td>Loan Term</td><td><input type="text" name="cloanterm" id="cloanterm" value="10" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td>&nbsp;</td><td><input type="text" name="cloantermmonth" id="cloantermmonth" value="0" class="inhalf inuipound"><span class="inuipoundspan">months</span></td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="cinterestrate" id="cinterestrate" value="6" class="inhalf inpct"></td></tr>
+
+<tr><td>Compound</td><td><select name="ccompound" id="ccompound">
+<option value="annually">Annually (APY)</option>
+<option value="semiannually">Semi-annually</option>
+<option value="quarterly">Quarterly</option>
+<option value="monthly" selected>Monthly (APR)</option>
+<option value="semimonthly">Semi-monthly</option>
+<option value="biweekly">Biweekly</option>
+<option value="weekly">Weekly</option>
+<option value="daily">Daily</option>
+<option value="continuously">Continuously</option></select></td></tr>
+
+<tr><td>Pay Back</td><td><select name="cpayback" id="cpayback">
+<option value="daily">Every Day</option>
+<option value="weekly">Every Week</option>
+<option value="biweekly">Every 2 Weeks</option>
+<option value="halfmonth">Every Half Month</option>
+<option value="month" selected>Every Month</option>
+<option value="quarter">Every Quarter</option>
+<option value="halfyear">Every 6 Months</option>
+<option value="year">Every Year</option></select></td></tr>
+
+<tr><td>Loaned Fees</td><td><input type="text" name="cloanedfees" value="0" class="innormal indollar" style="text-align:left;"><span class="smalltext"> add to the loan</span></td></tr>
+<tr><td>Upfront Fees</td><td><input type="text" name="cfrontfees" value="1500" class="innormal indollar" style="text-align:left;"><span class="smalltext"> not loaned</span></td></tr>
+
+<tr><td colspan="2" align="center"><input type="hidden" name="type" value="1"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</div>
+<div class="rightresult">
+<a name="generalapr"></a>
+<h2 class="h2result">Real APR: 6.335%</h2><table><tr><td>Amount Financed</td><td align='right'>&nbsp; <b>$100,000.00</b></td></tr><tr><td>Upfront Out-of-Pocket Fees</td><td align='right'>&nbsp; <b>$1,500.00</b></td></tr><tr><td>Payment Every Month</td><td align='right'>&nbsp; <b>$1,110.21</b></td></tr><tr><td>Total of 120 Payments</td><td align='right'>&nbsp; <b>$133,224.60</b></td></tr><tr><td>Total Interest</td><td align='right'>&nbsp; <b>$33,224.60</b></td></tr><tr><td>All Payments and Fees</td><td align='right'>&nbsp; <b>$134,724.60</b></td></tr></table><div style="text-align:center;padding:5px;"><a href="#" onClick="return showAmo(100000, 0.0049999999999999, 120, 1110.2050194165, 'month', 'lcamotable1');">View Amortization Table</a></div><div id="mloanchartdiv" style="min-width: 250px; height: 135px; margin-bottom: -25px;"></div>
+<script>
+$(function () {
+	$('#mloanchartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {enabled: false},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["20%", "20%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			x:30,
+			y:-38,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',100000],['Interest',33225], ['Fees',1500]]
+		}]
+	});
+});
+
+</script>
+</div>
+<div id="clear"></div>
+<div id="lcamotable1"></div>
+
+<h2 class="h2red"><br>Mortgage APR Calculator</h2>
+<p>Use the calculator below for mortgage loans in the United States.</p>
+
+<div class="leftinput">
+<table id="calinputtable" class="panel" >
+<form action="https://www.calculator.net/apr-calculator.html#mortgageapr">
+<tr><td>House Value</td><td><input type="text" name="c2housevalue" value="250000" class="inhalf indollar"></td></tr>
+<tr><td>Down Payment</td><td><input type="text" name="c2downpayment" value="20" class="inhalf inpct"></td></tr>
+<tr><td>Loan Term</td><td><input type="text" name="c2loanterm" value="30" class="inhalf inuiyear"><span class="inuiyearspan">years</span></td></tr>
+<tr><td>Interest Rate</td><td><input type="text" name="c2interestrate" value="4.5" class="inhalf inpct"></td></tr>
+<tr><td>Loan Fees</td><td><input type="text" name="c2loanfees" value="1500" class="inhalf indollar"></td></tr>
+<tr><td>Points</td><td><input type="text" name="c2points" value="0.5" class="inhalf"></td></tr>
+<tr><td>PMI Insurance</td><td><input type="text" name="c2pmi" value="0" class="inhalf indollar inuiyear"><span class="inuiyearspan">/year</span></td></tr>
+<tr><td colspan="2" align="center"><input type="hidden" name="type" value="2"><input type="image" src="http://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin:10px;"></td></tr>
+</form>
+</table>
+</div>
+<div class="rightresult">
+<a name="mortgageapr"></a>
+<h2 class="h2result">Real APR: 4.608%</h2><table><tr><td>Loan Amount</td><td align='right'>&nbsp; <b>$200,000.00</b></td></tr><tr><td>Down Payment</td><td align='right'>&nbsp; <b>$50,000.00</b></td></tr><tr><td>Monthly Pay</td><td align='right'>&nbsp; <b>$1,013.37</b></td></tr><tr><td>Total of 360 Payments</td><td align='right'>&nbsp; <b>$364,813.42</b></td></tr><tr><td>Total Interest</td><td align='right'>&nbsp; <b>$164,813.42</b></td></tr><tr><td>All Payments and Fees</td><td align='right'>&nbsp; <b>$366,313.42</b></td></tr></table><div id="m2loanchartdiv" style="min-width: 250px; height: 135px; margin-bottom: -25px;"></div>
+<script>
+$(function () {
+	$('#m2loanchartdiv').highcharts({
+		title: {text: ''},
+		tooltip: {enabled: false},
+		plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',showInLegend: true,center: ["20%", "20%"],
+			dataLabels: {color: '#eeeeee',connectorColor: '#FFFFFF',connectorPadding:-55,distance:-12,softConnector: false,formatter: function() {return this.percentage.toFixed(0) +'%';}}
+		}},
+		legend: {
+			layout: 'vertical',
+			x:30,
+			y:-38,
+			floating:true
+		},
+		series: [{
+			type: 'pie',
+			name: 'Share',
+			data: [['Principal',200000],['Interest',164813], ['Fees',1500]]
+		}]
+	});
+});
+
+</script>
+</div>
+<div id="clear"></div>
+
+<br><p><fieldset><legend>Related</legend><a href="interest-calculator.html">Interest Calculator</a> | <a href="loan-calculator.html">Loan Calculator</a> | <a href="mortgage-calculator.html">Mortgage Calculator</a></fieldset></p>
+
+<br>
+<p>The APR is an all-inclusive, annualized cost indicator of a loan. It includes interest as well as fees and other charges that borrowers will have to pay.</p>
+<p>Borrowers often confuse APR with the interest rate. The interest rate is the amount of compensation per period for borrowing money and includes the cost of principal only.</p>
+<p>While valid, interest rates do not offer the accuracy needed to determine which rate from which lender amounts to the best deal. Since the APR includes both interest and fees, it addresses this challenge by factoring into the interest rate and other additional costs associated with the loan.</p>
+<p>In the U.S., the Truth in Lending Act requires lenders to display APRs so borrowers can easily compare lending costs between competitors. Of course, every lender is different, and the fees listed below will not apply to every loan. For this reason, prospective borrowers should ask lenders to list out all added costs packaged into individual APRs to understand a specific loan. For mortgage loans in U.S., APRs may include fees such as:</p>
+<table width="100%"><tr><td valign="top">
+<ul>
+	<li>Administration fees</li>
+	<li>Application fees</li>
+	<li>Mortgage insurance</li>
+	<li>Mortgage broker fees</li>
+	<li>Audit fees</li>
+	<li>Certain closing fees</li>
+</ul></td><td valign="top"><ul>	<li>Escrow fees</li>
+	<li>Origination points</li>
+	<li>Discount points</li>
+	<li>Processing fees</li>
+	<li>Refinance fees</li>
+	<li>Underwriting fees</li>
+</ul>
+</td></tr></table>
+	
+<p>Fees usually exempt from the APR of a mortgage loan include:</p>
+<ul>
+	<li>Appraisal fees</li>
+	<li>Survey fees</li>
+	<li>Title insurance and fees</li>
+	<li>Builder Warranties</li>
+	<li>Pre-paid items on escrow balances, such as taxes or insurance</li>
+	<li>Intangible taxes</li>
+</ul>
+<h3>Limitations of the APR</h3>
+<p>While the APR serves as an excellent indicator for loan comparisons, the listed fee structure presumes that the loan will run its course. For any borrower planning to pay their loan off more quickly, the APR will tend to underestimate the impact of the upfront costs.</p>
+<p>For example, upfront fees appear significantly cheaper spread out over a 30-year mortgage compared with a more accelerated 10-year repayment plan. In the U.S., borrowers usually pay off 30-year mortgages early due to reasons such as home sales, refinancing, and pre-payments. Therefore, when comparing loans with the same APR, the loan with lower upfront fees is more favorable to borrowers intending to pay off a mortgage early.</p>
+
+<h3>Types of APRs</h3>
+<p>Lenders should also understand the two different types of APR loans. Banks offer both fixed and variable APR loans, and each loan type comes with pros and cons.</p>
+<p><b>Fixed APRs</b></p>
+<p>Loans with fixed APRs offer steady rates for the duration of the loan. For this reason, borrowers receiving an attractive fixed rate should consider locking it in during a period of relatively low market interest rates due to the likelihood that rates will rise later. Fixed rates are generally higher than variable rates at the time of loan origination.</p>
+<p><b>Variable APRs</b></p>
+<p>Loans with variable APRs include rates that may change with time. These rates tend to rise and fall with an index such as the Federal Funds Rate. For instance, if the market interest rates rise, variable APRs tied to that index will probably also increase.</p>
+<p>Borrowers should also be aware of another component to variable APRs called a credit-based margin. Lenders create credit-based margins, which use creditworthiness rather than the market index to determine a portion of the APR. Including the credit-based margin for each individual can prevent borrowers with poor credit scores from obtaining a lower variable rate assuming the lender will grant them the loan at all.</p>
+<p>Nonetheless, borrowers should consider variable rates under some circumstances. Suppose a borrower takes out a loan during a time of relatively high market rates when analysts forecast rate declines. In that case, variable rates will probably lead to lower overall interest payments. Historical data has shown that borrowers generally paid less interest with a variable rate than a fixed-rate loan.</p>
+<p>Additionally, borrowers should consider the duration of the loan. Generally, the longer the loan term, the greater the impact of rate fluctuations. This means that movements in interest rates can more deeply impact a 30-year loan than a loan with a 10 or 15-year term.</p>
+
+<h3>APR vs. APY</h3>
+<p>Borrowers should also understand the distinction between APR and APY. APY stands for annual percentage yield, a term primarily associated with deposit accounts. It reflects the total amount of interest paid on an account based on a given interest rate and the compounding frequency on an annual basis.</p>
+<p>APY can sometimes be called EAPR, meaning effective annual percentage rate, or EAR, referring to the effective annual rate. The main difference between APY and APR is that the former considers yearly compounded interest while APR always means a monthly period. Thus, at the equivalent rate, APR appears lower than the APY assuming positive rates.</p>
+<p>Financial institutions typically want to advertise the most enticing rates possible to their clientele. Hence, borrowers receive APR rates because the rates look smaller, whereas banks advertise APY rates for savings accounts holders since they appear higher.</p>
+<p>For example, if a loan of $100 includes an APR of 10%, the equation below calculates the equivalent interest paid at year-end:</p>
+<table align="center"><tr>
+<td>Principal &#215; ((1 +&nbsp;</td>
+<td><table><tr><td>r</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td>n</td></tr></table></td>
+<td>)<sup>n</sup> - 1)</td>
+</tr></table>
+<table align="center"><tr>
+<td>$100 &#215; ((1 +&nbsp;</td>
+<td><table><tr><td>10%</td></tr><tr><td bgcolor="#000000" height="1"></td></tr><tr><td align="center">12</td></tr></table></td>
+<td>)<sup>12</sup> - 1) = $10.47</td>
+</tr></table>
+<p>Therefore, the borrower will pay the lender $10.47 in interest.</p>
+<p>In comparison, if a $100 savings account includes an APY of 10.47%, the interest received at the end of the year is:</p>
+<p style="text-align:center;">$100 &#215; 10.47% = $10.47</p>
+<p>Despite appearances, 10% APR is equivalent to 10.47% APY.</p>
+<p>Please refer to the <a href="compound-interest-calculator.html">Compound Interest Calculator</a> to convert between APY and APR or interest rates of different compounding frequencies.</p>
+
+
+</div>
+	<div id="right">
+		<div style="padding-top:10px;  min-height:280px; text-align:center;">
+<script async src="../securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
+</script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
+</div>
+</div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div><div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a href="retirement-calculator.html">Retirement</a><a href="amortization-calculator.html">Amortization</a><a href="investment-calculator.html">Investment</a><a href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a href="finance-calculator.html">Finance</a><a href="mortgage-payoff-calculator.html">Mortgage Payoff</a><a href="tax-calculator.html">Income Tax</a><a href="compound-interest-calculator.html">Compound Interest</a><a href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div><div id="ocother"><a href="financial-calculator.html">Financial</a> | <a href="fitness-and-health-calculator.html">Fitness and Health</a> | <a href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div></div>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2023 <a href="index.html">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/apr-calculator.html_____Section_1_ID__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><div class="topNavAbs">
+<a href="financial-calculator.html" class="topNavOn">Financial</a>
+<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+<a href="math-calculator.html">Math</a>
+<a href="other-calculator.html">Other</a>
+</div>
+</body>
+
+<!-- Mirrored from www.calculator.net/apr-calculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Feb 2023 03:58:39 GMT -->
+</html>
